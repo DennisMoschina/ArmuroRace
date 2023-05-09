@@ -79,6 +79,8 @@ void Error_Handler(void);
 #define switch_right_GPIO_Port GPIOA
 #define switch_middle_Pin GPIO_PIN_9
 #define switch_middle_GPIO_Port GPIOA
+#define LED_rear_Pin GPIO_PIN_10
+#define LED_rear_GPIO_Port GPIOA
 #define switch_left_Pin GPIO_PIN_11
 #define switch_left_GPIO_Port GPIOA
 #define phase2_L_Pin GPIO_PIN_12
