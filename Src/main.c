@@ -32,6 +32,10 @@
 
 #include "armuro.h"
 
+#include "wheels.h"
+
+#include "blinkLED.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -111,6 +115,11 @@ int main(void)
 
   initMotors();
 
+  setupLED();
+
+  turnWheelByAngle(LEFT, 180);
+  turnWheelByAngle(RIGHT, -180);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -123,7 +132,8 @@ int main(void)
       didReadSensors(buffer);
     }
 
-    turnMotor(LEFT, FORWARD, 100);
+    blinkLED();
+    turnWheelsTask();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */

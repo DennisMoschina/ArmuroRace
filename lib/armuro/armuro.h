@@ -11,9 +11,17 @@
 #define LOW GPIO_PIN_RESET
 
 #include <stdint.h>
+#include <stdarg.h>
 
-extern uint16_t leftEncoderTicksCount;
-extern uint16_t rightEncoderTicksCount;
+extern uint16_t wheelEncoderTicksCount[2];
+
+/**
+ * @brief Print a message to the serial port.
+ * 
+ * @param format the format of the message
+ * @param ... the parameters for the format
+ */
+void print(char* format, ...);
 
 /**
  * @brief Initialize the motors
@@ -68,8 +76,18 @@ void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue);
 
 /**
  * @brief Reset the angle measurement for the wheels
+ * 
+ * @param wheel the wheel for which the angle measurement should be reset
  */
-void resetAngleMeasurement();
+void resetAngleMeasurement(int wheel);
+
+/**
+ * @brief et the Angle (in degrees) for the wheel
+ * 
+ * @param wheel the wheel for which the angle should be returned
+ * @return the angle of the wheel in degrees
+ */
+int getAngleForWheel(int wheel);
 
 /**
  * @brief Get the Angle (in degrees) for the wheels

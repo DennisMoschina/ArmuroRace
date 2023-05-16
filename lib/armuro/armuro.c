@@ -13,9 +13,17 @@
 
 #define MAX_PWM (1 << 16) - 1
 
-uint16_t leftEncoderTicksCount;
-uint16_t rightEncoderTicksCount;
+uint16_t wheelEncoderTicksCount[2];
+int wheelEncoderOldValues[2];
 
+inline void print(char* format, ...) {
+    va_list args;
+    va_start(args, format);
+    char buffer[100];
+    vsprintf(buffer, format, args);
+    va_end(args);
+    HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), 1000);
+}
 
 void initMotors() {
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
@@ -60,12 +68,10 @@ void turnMotor(int motor, int direction, int speed) {
 void stopMotor(int motor) {
     switch (motor) {
         case RIGHT:
-            TIM1->CCR2 = MAX_PWM;
-            HAL_GPIO_WritePin(phase2_L_GPIO_Port, phase2_L_Pin, GPIO_PIN_SET);
+            turnMotor(RIGHT, FORWARD, 0);
             break;
         case LEFT:
-            TIM1->CCR3 = MAX_PWM;
-            HAL_GPIO_WritePin(phase2_R_GPIO_Port, phase2_R_Pin, GPIO_PIN_RESET);
+            turnMotor(LEFT, FORWARD, 0);
             break;
         default:
             break;
@@ -94,16 +100,33 @@ void didReadSensors(uint32_t* values) {
 }
 
 void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue) {
-    leftEncoderTicksCount++;
-    rightEncoderTicksCount++;
+    if (leftValue > LEFT_ENCODER_HIGH_THRESHOLD) {
+        if (wheelEncoderOldValues[LEFT] == LOW) {
+            wheelEncoderTicksCount[LEFT]++;
+        }
+        wheelEncoderOldValues[LEFT] = HIGH;
+    } else if (leftValue < LEFT_ENCODER_LOW_THRESHOLD) {
+        wheelEncoderOldValues[LEFT] = LOW;
+    }
+    if (rightValue > RIGHT_ENCODER_HIGH_THRESHOLD) {
+        if (wheelEncoderOldValues[RIGHT] == LOW) {
+            wheelEncoderTicksCount[RIGHT]++;
+        }
+        wheelEncoderOldValues[RIGHT] = HIGH;
+    } else if (rightValue < RIGHT_ENCODER_LOW_THRESHOLD) {
+        wheelEncoderOldValues[RIGHT] = LOW;
+    }
 }
 
-void resetAngleMeasurement() {
-    leftEncoderTicksCount = 0;
-    rightEncoderTicksCount = 0;
+void resetAngleMeasurement(int wheel) {
+    wheelEncoderTicksCount[wheel] = 0;
+}
+
+int getAngleForWheel(int wheel) {
+    return wheelEncoderTicksCount[wheel] * 30;
 }
 
 void getAngleForWheels(int* leftAngle, int* rightAngle) {
-    *leftAngle = leftEncoderTicksCount * 30;
-    *rightAngle = rightEncoderTicksCount * 30;
+    *leftAngle = getAngleForWheel(LEFT);
+    *rightAngle = getAngleForWheel(RIGHT);
 }
