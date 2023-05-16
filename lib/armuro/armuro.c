@@ -13,6 +13,9 @@
 
 #define MAX_PWM (1 << 16) - 1
 
+uint16_t leftEncoderTicksCount;
+uint16_t rightEncoderTicksCount;
+
 
 void initMotors() {
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);

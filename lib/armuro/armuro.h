@@ -12,8 +12,8 @@
 
 #include <stdint.h>
 
-uint16_t leftEncoderTicksCount = 0;
-uint16_t rightEncoderTicksCount = 0;
+extern uint16_t leftEncoderTicksCount;
+extern uint16_t rightEncoderTicksCount;
 
 /**
  * @brief Initialize the motors
