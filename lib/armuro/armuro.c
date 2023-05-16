@@ -1,8 +1,18 @@
 #include "armuro.h"
 #include "gpio.h"
 #include "tim.h"
+#include "usart.h"
+#include "string.h"
+#include "stdio.h"
+
+#define RIGHT_ENCODER_HIGH_THRESHOLD 2000
+#define RIGHT_ENCODER_LOW_THRESHOLD 1000    
+
+#define LEFT_ENCODER_HIGH_THRESHOLD 3300
+#define LEFT_ENCODER_LOW_THRESHOLD 3100
 
 #define MAX_PWM (1 << 16) - 1
+
 
 void initMotors() {
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
@@ -74,4 +84,23 @@ void setLED(int led, int state) {
 
 void setRearLED(int state) {
     HAL_GPIO_WritePin(LED_right_GPIO_Port, LED_rear_Pin, state);
+}
+
+void didReadSensors(uint32_t* values) {
+    didReadWheelEncoder(values[1], values[4]);
+}
+
+void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue) {
+    leftEncoderTicksCount++;
+    rightEncoderTicksCount++;
+}
+
+void resetAngleMeasurement() {
+    leftEncoderTicksCount = 0;
+    rightEncoderTicksCount = 0;
+}
+
+void getAngleForWheels(int* leftAngle, int* rightAngle) {
+    *leftAngle = leftEncoderTicksCount * 30;
+    *rightAngle = rightEncoderTicksCount * 30;
 }

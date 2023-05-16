@@ -27,6 +27,11 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "stdio.h"
+#include "string.h"
+
+#include "armuro.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +52,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+volatile uint32_t adc[6];
+uint32_t buffer[6];
+volatile uint8_t conversion_done_flag = 1;
 
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1) {
+  for (int i = 0; i < 6; i++) {
+    adc[i] = buffer[i];
+    conversion_done_flag = 1;
+  }
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,7 +79,8 @@ void SystemClock_Config(void);
   * @brief  The application entry point.
   * @retval int
   */
-int main(void) {
+int main(void)
+{
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -94,13 +109,24 @@ int main(void) {
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
+  initMotors();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1) {
-    
+    if (conversion_done_flag) {
+      conversion_done_flag = 0;
+      HAL_ADC_Start_DMA(&hadc1, buffer, 6);
 
+      didReadSensors(buffer);
+    }
+
+    turnMotor(LEFT, FORWARD, 100);
+
+    /* USER CODE END WHILE */
+    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -109,7 +135,8 @@ int main(void) {
   * @brief System Clock Configuration
   * @retval None
   */
-void SystemClock_Config(void) {
+void SystemClock_Config(void)
+{
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 

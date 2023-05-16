@@ -10,6 +10,14 @@
 #define HIGH GPIO_PIN_SET
 #define LOW GPIO_PIN_RESET
 
+#include <stdint.h>
+
+uint16_t leftEncoderTicksCount = 0;
+uint16_t rightEncoderTicksCount = 0;
+
+/**
+ * @brief Initialize the motors
+ */
 void initMotors();
 
 /**
@@ -42,5 +50,33 @@ void setLED(int led, int state);
  * @param state the state of the LED (HIGH or LOW)
  */
 void setRearLED(int state);
+
+/**
+ * @brief Handle a new value from the sensors
+ * 
+ * @param values an array of 6 values, containing the sensor readigns
+ */
+void didReadSensors(uint32_t* values);
+
+/**
+ * @brief Handle a new value from the wheel encoders
+ * 
+ * @param leftValue the value of the left wheel encoder
+ * @param rightValue the value of the right wheel encoder
+ */
+void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue);
+
+/**
+ * @brief Reset the angle measurement for the wheels
+ */
+void resetAngleMeasurement();
+
+/**
+ * @brief Get the Angle (in degrees) for the wheels
+ * 
+ * @param leftAngle a pointer to a variable in which the left angle should be stored
+ * @param rightAngle a pointer to a variable in which the right angle should be stored
+ */
+void getAngleForWheels(int* leftAngle, int* rightAngle);
 
 #endif
