@@ -133,7 +133,7 @@ int main(void)
     }
 
     blinkLED();
-    turnWheelsTask();
+    TurnWheelsTaskType* wheelsState = turnWheelsTask();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
