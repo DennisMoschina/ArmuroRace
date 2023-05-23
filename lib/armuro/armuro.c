@@ -19,7 +19,7 @@ int wheelEncoderOldValues[2];
 inline void print(char* format, ...) {
     va_list args;
     va_start(args, format);
-    char buffer[100];
+    char buffer[strlen(format) * 2];
     vsprintf(buffer, format, args);
     va_end(args);
     HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), 1000);
@@ -31,6 +31,11 @@ void initMotors() {
 }
 
 void turnMotor(int motor, int direction, int speed) {
+    if (speed < 0) {
+        speed = -speed;
+        direction = (direction == FORWARD) ? BACKWARD : FORWARD;
+    }
+
     switch (motor) {
     case RIGHT:
         switch (direction) {

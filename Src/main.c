@@ -117,8 +117,7 @@ int main(void)
 
   setupLED();
 
-  turnWheelByAngle(LEFT, 180);
-  turnWheelByAngle(RIGHT, -180);
+  turnWheelsSynchronized(40, 40);
 
   /* USER CODE END 2 */
 
