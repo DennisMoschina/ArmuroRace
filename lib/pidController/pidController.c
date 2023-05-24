@@ -16,7 +16,7 @@ double calculatePIDOutput(double setpoint, double input, PIDConfig* config) {
     double error = setpoint - input;
 
     double p_term = error * config->p_gain;
-    config->integral = (config->integral - error) * config->i_relax;
+    config->integral = (config->integral + error) * config->i_relax;
     double i_term = config->integral * config->i_gain;
     double d_term = (input - config->old_input) * config->d_gain;
 

@@ -33,7 +33,7 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
 
-    synchronizeWheelsPID = initPID(0.5, 0.1, 0.1, 1, 0.9);
+    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
     synchronizeWheelsTimeout = HAL_GetTick() + 500;
 
     turnMotor(LEFT, FORWARD, leftSpeed);
@@ -92,20 +92,19 @@ void turnWheelsSynchronizedTask() {
     int leftAngle = getAngleForWheel(LEFT);
     int rightAngle = getAngleForWheel(RIGHT);
 
-    //TODO: check if angle is zero
+    int angleDifference = leftAngle - rightAngle;
+    int speedDifference = speedSetpoint[LEFT] - speedSetpoint[RIGHT];
 
-    double angleRatio = (double) leftAngle / (double) rightAngle;
-    double speedRatio = (double) speedSetpoint[LEFT] / (double) speedSetpoint[RIGHT];
+    int output = calculatePIDOutput(speedDifference, angleDifference, &synchronizeWheelsPID);
+    int speedOutput = speedSetpoint[RIGHT] - output;
 
-    double pidOutput = calculatePIDOutput(speedRatio, angleRatio, &synchronizeWheelsPID);
-    int speedOutput = speedSetpoint[RIGHT] * pidOutput;
     print(
-        "Angle left: %d, angle right: %d, angle ratio: %d, speed ratio: %d, pidOutput: %d, speedOutput: %d\n",
+        "Left angle: %d, right angle: %d, angle difference: %d, speed difference: %d, output: %d, speed output: %d\n",
         leftAngle,
         rightAngle,
-        (int) (angleRatio * 100),
-        (int) (speedRatio * 100),
-        (int) (pidOutput * 100),
+        angleDifference,
+        speedDifference,
+        output,
         speedOutput
     );
 
