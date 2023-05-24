@@ -7,7 +7,8 @@ typedef enum {
     NONE = 0,
     ANGLE = 1,
     SPEED = 2,
-    SYNCHRONIZED = 3
+    SYNCHRONIZED = 3,
+    TIMED_ANGLE = 4
 } TurnWheelsTaskType;
 
 /**
@@ -15,8 +16,18 @@ typedef enum {
  * 
  * @param wheel the wheel to turn
  * @param angle the angle to turn the wheel by (positive for forward, negative for backward)
+ * @param speed the speed at which the wheel should turn (0-100)
  */
-void turnWheelByAngle(int wheel, int angle);
+void turnWheelByAngle(int wheel, int angle, int speed);
+
+/**
+ * @brief Start to turn the wheel by a certain angle in a certain time
+ * 
+ * @param wheel the wheel to turn
+ * @param angle the angle to turn the wheel by (positive for forward, negative for backward)
+ * @param time the time in which the wheel should complete the turn (in ms)
+ */
+void turnWheelByAngleInTime(int wheel, int angle, int time);
 
 /**
  * @brief Start to turn the wheel with a certain speed
@@ -47,5 +58,7 @@ TurnWheelsTaskType* turnWheelsTask();
 void turnWheelByAngleTask(int wheel);
 
 void turnWheelsSynchronizedTask();
+
+void turnWheelByAngleInTimeTask(int wheel);
 
 #endif

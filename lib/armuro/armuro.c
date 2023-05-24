@@ -25,6 +25,10 @@ inline void print(char* format, ...) {
     HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), 1000);
 }
 
+int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
 void initMotors() {
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);

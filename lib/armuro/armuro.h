@@ -24,6 +24,18 @@ extern uint16_t wheelEncoderTicksCount[2];
 void print(char* format, ...);
 
 /**
+ * @brief Map a value from one range to another
+ * 
+ * @param x the value to map
+ * @param in_min the minimum value of the input range
+ * @param in_max the maximum value of the input range
+ * @param out_min the minimum value of the output range
+ * @param out_max the maximum value of the output range
+ * @return the value mapped to the output range
+ */
+int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
+
+/**
  * @brief Initialize the motors
  */
 void initMotors();

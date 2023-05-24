@@ -5,17 +5,39 @@
 
 #include <stdlib.h>
 
+#define MAX_ROTATION_RATE 900
+
 TurnWheelsTaskType turningWheels[] = {NONE, NONE};
 int angleSetpoint[] = {0, 0};
 int speedSetpoint[] = {0, 0};
+int rotationRateSetpoint[] = {0, 0};
+
+int oldAngle[] = {0, 0};
+uint32_t angleTimeout[] = {0, 0};
 
 PIDConfig synchronizeWheelsPID;
 uint32_t synchronizeWheelsTimeout = 0;
 
-void turnWheelByAngle(int wheel, int angle) {
+void turnWheelByAngle(int wheel, int angle, int speed) {
     angleSetpoint[wheel] = angle;
     turningWheels[wheel] = ANGLE;
+    speedSetpoint[wheel] = speed;
     resetAngleMeasurement(wheel);
+}
+
+void turnWheelByAngleInTime(int wheel, int angle, int time) {
+    angleSetpoint[wheel] = angle;
+    turningWheels[wheel] = TIMED_ANGLE;
+    rotationRateSetpoint[wheel] = (int) (angle / (time / 1000.0));
+    if (rotationRateSetpoint[wheel] > MAX_ROTATION_RATE) {
+        rotationRateSetpoint[wheel] = MAX_ROTATION_RATE;
+    }
+
+    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
+
+    resetAngleMeasurement(wheel);
+    oldAngle[wheel] = 0;
+    angleTimeout[wheel] = HAL_GetTick();
 }
 
 void turnWheelWithSpeed(int wheel, int speed) {
@@ -57,6 +79,9 @@ TurnWheelsTaskType* turnWheelsTask() {
             case SYNCHRONIZED:
                 turnWheelWithSpeed(i, speedSetpoint[i]);
                 break;
+            case TIMED_ANGLE:
+                turnWheelByAngleInTimeTask(i);
+                break;
             default:
                 break;
         }
@@ -71,9 +96,9 @@ void turnWheelByAngleTask(int wheel) {
     print("Current angle for %s: %d\n", wheel == LEFT ? "LEFT" : "RIGHT", currentAngle);
 
     if (angleSetpoint[wheel] > 0 && currentAngle < angleSetpoint[wheel]) {
-        turnMotor(wheel, FORWARD, 100);
+        turnMotor(wheel, FORWARD, speedSetpoint[wheel]);
     } else if (angleSetpoint[wheel] < 0 && currentAngle < abs(angleSetpoint[wheel])) {
-        turnMotor(wheel, BACKWARD, 100);
+        turnMotor(wheel, BACKWARD, speedSetpoint[wheel]);
     } else {
         stopMotor(wheel);
         turningWheels[wheel] = NONE;
@@ -112,4 +137,19 @@ void turnWheelsSynchronizedTask() {
 
     resetAngleMeasurement(RIGHT);
     resetAngleMeasurement(LEFT);
+}
+
+void turnWheelByAngleInTimeTask(int wheel) {
+    if (HAL_GetTick() < angleTimeout[wheel]) { return; }
+    angleTimeout[wheel] = angleTimeout[wheel] + 100;
+
+    int currentAngle = getAngleForWheel(wheel);
+    int currentRotationRate = (currentAngle - oldAngle[wheel]) * 10;
+    oldAngle[wheel] = currentAngle;
+
+    int rotationRateToPut = (int) calculatePIDOutput(rotationRateSetpoint[wheel], currentRotationRate, &synchronizeWheelsPID);
+
+    speedSetpoint[wheel] = map(rotationRateToPut, -MAX_ROTATION_RATE, MAX_ROTATION_RATE, -100, 100);
+
+    turnWheelByAngleTask(wheel);
 }
