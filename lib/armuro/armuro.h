@@ -10,6 +10,9 @@
 #define HIGH GPIO_PIN_SET
 #define LOW GPIO_PIN_RESET
 
+#define WHEEL_CIRCUMFERENCE 12.566
+#define TURN_CIRCUMFERENCE 48.3805268653
+
 #include <stdint.h>
 #include <stdarg.h>
 
@@ -108,5 +111,21 @@ int getAngleForWheel(int wheel);
  * @param rightAngle a pointer to a variable in which the right angle should be stored
  */
 void getAngleForWheels(int* leftAngle, int* rightAngle);
+
+/**
+ * @brief Translate a distance (in cm) to an angle (in degrees)
+ * 
+ * @param distance the distance for which the angle should be returned
+ * @return the angle for the distance 
+ */
+int distanceToAngle(double distance);
+
+/**
+ * @brief Get the Distance (in cm) for an angle (in degrees)
+ * 
+ * @param angle the angle for which the distance should be returned
+ * @return the distance for the angle
+ */
+double angleToDistance(int angle);
 
 #endif

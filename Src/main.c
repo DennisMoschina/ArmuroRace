@@ -117,7 +117,9 @@ int main(void)
 
   setupLED();
 
-  turnWheelsSynchronized(40, 40);
+  // turnWheelByAngleInTime(LEFT, distanceToAngle(10), 1000);
+  // turnWheelByAngleInTime(RIGHT, distanceToAngle(10), 1000);
+  turnArmuro(90, 1000);
 
   /* USER CODE END 2 */
 

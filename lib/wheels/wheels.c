@@ -14,6 +14,7 @@ int rotationRateSetpoint[] = {0, 0};
 
 int oldAngle[] = {0, 0};
 uint32_t angleTimeout[] = {0, 0};
+PIDConfig wheelsPID[2];
 
 PIDConfig synchronizeWheelsPID;
 uint32_t synchronizeWheelsTimeout = 0;
@@ -31,9 +32,11 @@ void turnWheelByAngleInTime(int wheel, int angle, int time) {
     rotationRateSetpoint[wheel] = (int) (angle / (time / 1000.0));
     if (rotationRateSetpoint[wheel] > MAX_ROTATION_RATE) {
         rotationRateSetpoint[wheel] = MAX_ROTATION_RATE;
+    } else if (rotationRateSetpoint[wheel] < -MAX_ROTATION_RATE) {
+        rotationRateSetpoint[wheel] = -MAX_ROTATION_RATE;
     }
 
-    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
+    wheelsPID[wheel] = initPID(0.05, 0.02, 0.02, 100, 0.9);
 
     resetAngleMeasurement(wheel);
     oldAngle[wheel] = 0;
@@ -60,6 +63,14 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
 
     turnMotor(LEFT, FORWARD, leftSpeed);
     turnMotor(RIGHT, FORWARD, rightSpeed);
+}
+
+void turnArmuro(int angle, int time) {
+    print("Turning armuro by %d degrees in %d ms\n", angle, time);
+    double distanceOnCircumference = angle / 360.0 * TURN_CIRCUMFERENCE;
+
+    turnWheelByAngleInTime(RIGHT, distanceToAngle(distanceOnCircumference), time);
+    turnWheelByAngleInTime(LEFT, -distanceToAngle(distanceOnCircumference), time);
 }
 
 TurnWheelsTaskType* turnWheelsTask() {
@@ -93,13 +104,14 @@ TurnWheelsTaskType* turnWheelsTask() {
 void turnWheelByAngleTask(int wheel) {
     int currentAngle = getAngleForWheel(wheel);
 
-    print("Current angle for %s: %d\n", wheel == LEFT ? "LEFT" : "RIGHT", currentAngle);
+    print("Current angle for %s: %d; setpoint: %d\n", wheel == LEFT ? "LEFT" : "RIGHT", currentAngle, angleSetpoint[wheel]);
 
     if (angleSetpoint[wheel] > 0 && currentAngle < angleSetpoint[wheel]) {
         turnMotor(wheel, FORWARD, speedSetpoint[wheel]);
     } else if (angleSetpoint[wheel] < 0 && currentAngle < abs(angleSetpoint[wheel])) {
         turnMotor(wheel, BACKWARD, speedSetpoint[wheel]);
     } else {
+        print("finished turning wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
         stopMotor(wheel);
         turningWheels[wheel] = NONE;
     }
@@ -147,9 +159,17 @@ void turnWheelByAngleInTimeTask(int wheel) {
     int currentRotationRate = (currentAngle - oldAngle[wheel]) * 10;
     oldAngle[wheel] = currentAngle;
 
-    int rotationRateToPut = (int) calculatePIDOutput(rotationRateSetpoint[wheel], currentRotationRate, &synchronizeWheelsPID);
+    int rotationRateToPut = (int) calculatePIDOutput(rotationRateSetpoint[wheel], currentRotationRate, &wheelsPID[wheel]);
 
-    speedSetpoint[wheel] = map(rotationRateToPut, -MAX_ROTATION_RATE, MAX_ROTATION_RATE, -100, 100);
+    speedSetpoint[wheel] = abs(map(rotationRateToPut, -MAX_ROTATION_RATE, MAX_ROTATION_RATE, -100, 100));
+
+    print("Current angle for %s: %d; setpoint: %d; rotation rate: %d; rotation rate setpoint: %d; speed setpoint: %d\n",
+        wheel == LEFT ? "LEFT" : "RIGHT",
+        currentAngle,
+        angleSetpoint[wheel],
+        currentRotationRate,
+        rotationRateSetpoint[wheel],
+        speedSetpoint[wheel]);
 
     turnWheelByAngleTask(wheel);
 }

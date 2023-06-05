@@ -48,6 +48,14 @@ void turnWheelWithSpeed(int wheel, int speed);
 void turnWheelsSynchronized(int leftSpeed, int rightSpeed);
 
 /**
+ * @brief Turn the armuro by a certain angle in a certain time.
+ * 
+ * @param angle the angle to turn by (positive for left, negative for right)
+ * @param time the time in which the armuro should complete the turn (in ms)
+ */
+void turnArmuro(int angle, int time);
+
+/**
  * @brief Manage the turning of the wheels
  * @details This function should be called in a loop
  * 

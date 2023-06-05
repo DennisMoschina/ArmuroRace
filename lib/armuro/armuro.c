@@ -139,3 +139,11 @@ void getAngleForWheels(int* leftAngle, int* rightAngle) {
     *leftAngle = getAngleForWheel(LEFT);
     *rightAngle = getAngleForWheel(RIGHT);
 }
+
+int distanceToAngle(double distance) {
+    return 360 * distance / WHEEL_CIRCUMFERENCE;
+}
+
+double angleToDistance(int angle) {
+    return (angle * WHEEL_CIRCUMFERENCE) / 360;
+}
