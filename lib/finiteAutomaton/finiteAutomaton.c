@@ -3,12 +3,14 @@
 #include "armuro.h"
 
 FiniteAutomaton* handleFiniteAutomaton(FiniteAutomaton* automaton) {
-    print("handle automaton: name=%s, state=%d\n", automaton->name, automaton->state);
     automaton->execute(automaton);
     if (automaton->state == FINISHED) {
-        print("automaton finished\n");
+        print("%s finished\n", automaton->name);
         automaton->state = READY;
-        return automaton->determinNext(automaton);
+        print("determin next at: %x\n", automaton->determinNext);
+        FiniteAutomaton* next = automaton->determinNext(automaton);
+        print("next: %s\n", next->name);
+        return next;
     } else {
         automaton->execute(automaton);
         return automaton;

@@ -65,12 +65,38 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
     turnMotor(RIGHT, FORWARD, rightSpeed);
 }
 
-void turnArmuro(int angle, int time) {
+void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle) {
+    turningWheels[LEFT] = SYNCHRONIZED_ANGLE;
+    turningWheels[RIGHT] = SYNCHRONIZED_ANGLE;
+
+    speedSetpoint[LEFT] = leftSpeed;
+    speedSetpoint[RIGHT] = rightSpeed;
+    angleSetpoint[RIGHT] = rightAngle;
+
+    resetAngleMeasurement(LEFT);
+    resetAngleMeasurement(RIGHT);
+
+    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
+    synchronizeWheelsTimeout = HAL_GetTick() + 500;
+
+    turnMotor(LEFT, FORWARD, leftSpeed);
+    turnMotor(RIGHT, FORWARD, rightSpeed);
+}
+
+void turnArmuroInTime(int angle, int time) {
     print("Turning armuro by %d degrees in %d ms\n", angle, time);
     double distanceOnCircumference = angle / 360.0 * TURN_CIRCUMFERENCE;
 
     turnWheelByAngleInTime(RIGHT, distanceToAngle(distanceOnCircumference), time);
     turnWheelByAngleInTime(LEFT, -distanceToAngle(distanceOnCircumference), time);
+}
+
+void turnArmuro(int angle, int speed) {
+    double distanceOnCircumference = angle / 360.0 * TURN_CIRCUMFERENCE;
+
+    if (angle > 0) {
+        turnWheelsSynchronizedByAngle(-speed, speed, distanceToAngle(distanceOnCircumference));
+    }
 }
 
 TurnWheelsTaskType* turnWheelsTask() {
@@ -81,6 +107,8 @@ TurnWheelsTaskType* turnWheelsTask() {
 
     for (int i = 0; i < 2; i++) {
         switch (turningWheels[i]) {
+            case NONE:
+                break;
             case ANGLE:
                 turnWheelByAngleTask(i);
                 break;
@@ -92,6 +120,9 @@ TurnWheelsTaskType* turnWheelsTask() {
                 break;
             case TIMED_ANGLE:
                 turnWheelByAngleInTimeTask(i);
+                break;
+            case SYNCHRONIZED_ANGLE:
+                turnWheelsSynchronizedByAngleTask();
                 break;
             default:
                 break;
@@ -147,6 +178,38 @@ void turnWheelsSynchronizedTask() {
 
     turnMotor(RIGHT, FORWARD, speedOutput);
 
+    resetAngleMeasurement(RIGHT);
+    resetAngleMeasurement(LEFT);
+}
+
+void turnWheelsSynchronizedByAngleTask() {
+    if (HAL_GetTick() < synchronizeWheelsTimeout) {
+        return;
+    }
+    synchronizeWheelsTimeout = HAL_GetTick() + 100;
+
+    if (angleSetpoint[RIGHT] <= 0) {
+        turningWheels[RIGHT] = NONE;
+        turningWheels[LEFT] = NONE;
+
+        stopMotor(RIGHT);
+        stopMotor(LEFT);
+
+        return;
+    }
+
+    int leftAngle = getAngleForWheel(LEFT);
+    int rightAngle = getAngleForWheel(RIGHT);
+
+    int angleDifference = leftAngle - rightAngle;
+    int speedDifference = speedSetpoint[LEFT] - speedSetpoint[RIGHT];
+
+    int output = calculatePIDOutput(speedDifference, angleDifference, &synchronizeWheelsPID);
+    int speedOutput = speedSetpoint[RIGHT] - output;
+
+    turnMotor(RIGHT, FORWARD, speedOutput);
+
+    angleSetpoint[RIGHT] -= rightAngle;
     resetAngleMeasurement(RIGHT);
     resetAngleMeasurement(LEFT);
 }

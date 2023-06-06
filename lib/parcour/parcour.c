@@ -33,10 +33,8 @@ FiniteAutomaton parcourTrajectoryAutomaton = {
 //MARK: - First Trajectory Part
 
 void driveFirstTrajectoryPart(FiniteAutomaton* automaton) {
-    print("driveFirstTrajectoryPart\n");
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(50), 5000);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(50), 5000);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50));
         automaton->state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
@@ -56,8 +54,9 @@ FiniteAutomaton driveFirstTrajectoryPartAutomaton = {
 //MARK: - Turn To Second Trajectory Part
 
 void turnToSecondTrajectoryPart(FiniteAutomaton* automaton) {
+    print("turnToSecondTrajectoryPart\n");
     if (automaton->state == READY) {
-        turnArmuro(-30, 500);
+        turnArmuro(-330, 70);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -77,8 +76,7 @@ FiniteAutomaton turnToSecondTrajectoryPartAutomaton = {
 
 void driveSecondTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(35.5), 2000);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(35.5), 2000);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5));
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -98,7 +96,7 @@ FiniteAutomaton driveSecondTrajectoryPartAutomaton = {
 
 void turnToThirdTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnArmuro(90, 1000);
+        turnArmuro(90, 70);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -118,8 +116,7 @@ FiniteAutomaton turnToThirdTrajectoryPartAutomaton = {
 
 void driveThirdTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(32.8), 4000);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(32.8), 4000);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8));
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
