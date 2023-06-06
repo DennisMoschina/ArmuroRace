@@ -11,7 +11,7 @@
 #define LOW GPIO_PIN_RESET
 
 #define WHEEL_CIRCUMFERENCE 12.566
-#define TURN_CIRCUMFERENCE 48.3805268653
+#define TURN_CIRCUMFERENCE 24.1902634326
 
 #include <stdint.h>
 #include <stdarg.h>

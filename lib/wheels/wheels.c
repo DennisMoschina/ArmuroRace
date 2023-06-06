@@ -77,7 +77,7 @@ void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle
     resetAngleMeasurement(RIGHT);
 
     synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
-    synchronizeWheelsTimeout = HAL_GetTick() + 500;
+    synchronizeWheelsTimeout = HAL_GetTick() + 100;
 
     turnMotor(LEFT, FORWARD, leftSpeed);
     turnMotor(RIGHT, FORWARD, rightSpeed);
@@ -96,6 +96,8 @@ void turnArmuro(int angle, int speed) {
 
     if (angle > 0) {
         turnWheelsSynchronizedByAngle(-speed, speed, distanceToAngle(distanceOnCircumference));
+    } else {
+        turnWheelsSynchronizedByAngle(speed, -speed, distanceToAngle(abs(distanceOnCircumference)));
     }
 }
 

@@ -2,160 +2,129 @@
 
 #include "wheels.h"
 #include "armuro.h"
-#include "finiteAutomaton.h"
+
+typedef enum State {
+    READY = 0,
+    RUNNING = 1,
+    FINISHED = 2
+} State;
+
+typedef enum StateMachine {
+    DRIVE_FIRST_TRAJECTORY_PART = 0,
+    TURN_TO_SECOND_TRAJECTORY_PART = 1,
+    DRIVE_SECOND_TRAJECTORY_PART = 2,
+    TURN_TO_THIRD_TRAJECTORY_PART = 3,
+    DRIVE_THIRD_TRAJECTORY_PART = 4,
+    IDLE = 5
+} StateMachine;
 
 
-FiniteAutomaton* currentAutomaton = 0;
-
-int trajectoryAutomatonIndex = 0;
-FiniteAutomaton* trajectoryAutomatons[7];
-
-FiniteAutomaton* determinNextTrajectoryAutomaton(FiniteAutomaton* automaton) {
-    print("current Automaton Index: %d\n", trajectoryAutomatonIndex);
-    return trajectoryAutomatons[++trajectoryAutomatonIndex];
-}
-
-FiniteAutomaton* getSelf(FiniteAutomaton* automaton) {
-    return automaton;
-}
-
-//MARK: - Parcour Trajectory
-
-void doNothing(FiniteAutomaton* automaton) { }
-
-FiniteAutomaton parcourTrajectoryAutomaton = {
-    .state = FINISHED,
-    .execute = &doNothing,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "trajecotryStart"
-};
+StateMachine currentState = DRIVE_FIRST_TRAJECTORY_PART;
+State state = READY;
 
 //MARK: - First Trajectory Part
 
-void driveFirstTrajectoryPart(FiniteAutomaton* automaton) {
-    if (automaton->state == READY) {
+void driveFirstTrajectoryPart() {
+    if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50));
-        automaton->state = RUNNING;
+        state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
-            automaton->state = FINISHED;
+            state = FINISHED;
         }
     }
 }
-
-FiniteAutomaton driveFirstTrajectoryPartAutomaton = {
-    .state = READY,
-    .execute = &driveFirstTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "driveFirstTrajectoryPart"
-};
 
 //MARK: - Turn To Second Trajectory Part
 
-void turnToSecondTrajectoryPart(FiniteAutomaton* automaton) {
-    print("turnToSecondTrajectoryPart\n");
-    if (automaton->state == READY) {
+void turnToSecondTrajectoryPart() {
+    if (state == READY) {
+        print("setting up turn to second trajectory part\n");
         turnArmuro(-330, 70);
+        state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
-            automaton->state = FINISHED;
+            state = FINISHED;
         }
     }
 }
-
-FiniteAutomaton turnToSecondTrajectoryPartAutomaton = {
-    .state = READY,
-    .execute = &driveFirstTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "turnToSecondTrajectoryPart"
-};
 
 //MARK: - Drive Second Trajectory Part
 
-void driveSecondTrajectoryPart(FiniteAutomaton* automaton) {
-    if (automaton->state == READY) {
+void driveSecondTrajectoryPart() {
+    if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5));
+        state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
-            automaton->state = FINISHED;
+            state = FINISHED;
         }
     }
 }
-
-FiniteAutomaton driveSecondTrajectoryPartAutomaton = {
-    .state = READY,
-    .execute = &driveSecondTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "driveSecondTrajectoryPart"
-};
 
 //MARK: - Turn To Third Trajectory Part
 
-void turnToThirdTrajectoryPart(FiniteAutomaton* automaton) {
-    if (automaton->state == READY) {
+void turnToThirdTrajectoryPart() {
+    if (state == READY) {
         turnArmuro(90, 70);
+        state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
-            automaton->state = FINISHED;
+            state = FINISHED;
         }
     }
 }
-
-FiniteAutomaton turnToThirdTrajectoryPartAutomaton = {
-    .state = READY,
-    .execute = &turnToThirdTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "turnToThirdTrajectoryPart"
-};
 
 //MARK: - Drive Third Trajectory Part
 
-void driveThirdTrajectoryPart(FiniteAutomaton* automaton) {
-    if (automaton->state == READY) {
+void driveThirdTrajectoryPart() {
+    if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8));
+        state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
-            automaton->state = FINISHED;
+            state = FINISHED;
         }
     }
 }
 
-FiniteAutomaton driveThirdTrajectoryPartAutomaton = {
-    .state = READY,
-    .execute = &driveThirdTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton,
-    .name = "driveThirdTrajectoryPart"
-};
-
-//MARK: - IDLE
-
-FiniteAutomaton idleAutomaton = {
-    .state = FINISHED,
-    .execute = &doNothing,
-    .determinNext = &getSelf,
-    .name = "idle"
-};
-
-
 
 void startParcour() {
-    trajectoryAutomatons[0] = &parcourTrajectoryAutomaton;
-    trajectoryAutomatons[1] = &driveFirstTrajectoryPartAutomaton;
-    trajectoryAutomatons[2] = &turnToSecondTrajectoryPartAutomaton;
-    trajectoryAutomatons[3] = &driveSecondTrajectoryPartAutomaton;
-    trajectoryAutomatons[4] = &turnToThirdTrajectoryPartAutomaton;
-    trajectoryAutomatons[5] = &driveThirdTrajectoryPartAutomaton;
-    trajectoryAutomatons[6] = &idleAutomaton;
-
-    trajectoryAutomatonIndex = 0;
-    currentAutomaton = trajectoryAutomatons[trajectoryAutomatonIndex];
+    currentState = DRIVE_FIRST_TRAJECTORY_PART;
+    state = READY;
 }
 
 void driveParcour() {
-    currentAutomaton = handleFiniteAutomaton(currentAutomaton);
+    if (state == FINISHED) {
+        print("state %d finished\n", currentState);
+        currentState++;
+        print("new state %d\n", currentState);
+        state = READY;
+    }
+    switch (currentState) {
+        case DRIVE_FIRST_TRAJECTORY_PART:
+            driveFirstTrajectoryPart();
+            break;
+        case TURN_TO_SECOND_TRAJECTORY_PART:
+            turnToSecondTrajectoryPart();
+            break;
+        case DRIVE_SECOND_TRAJECTORY_PART:
+            driveSecondTrajectoryPart();
+            break;
+        case TURN_TO_THIRD_TRAJECTORY_PART:
+            turnToThirdTrajectoryPart();
+            break;
+        case DRIVE_THIRD_TRAJECTORY_PART:
+            driveThirdTrajectoryPart();
+            break;
+        case IDLE:
+            break;
+        default:
+            break;
+    }
 }
