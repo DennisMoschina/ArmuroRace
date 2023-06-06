@@ -36,6 +36,8 @@
 
 #include "blinkLED.h"
 
+#include "parcour.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -117,9 +119,7 @@ int main(void)
 
   setupLED();
 
-  // turnWheelByAngleInTime(LEFT, distanceToAngle(10), 1000);
-  // turnWheelByAngleInTime(RIGHT, distanceToAngle(10), 1000);
-  turnArmuro(90, 1000);
+  startParcour();
 
   /* USER CODE END 2 */
 
@@ -134,7 +134,7 @@ int main(void)
     }
 
     blinkLED();
-    TurnWheelsTaskType* wheelsState = turnWheelsTask();
+    driveParcour();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
