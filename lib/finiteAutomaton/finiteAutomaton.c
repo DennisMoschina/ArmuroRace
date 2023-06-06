@@ -3,7 +3,7 @@
 #include "armuro.h"
 
 FiniteAutomaton* handleFiniteAutomaton(FiniteAutomaton* automaton) {
-    print("handle automaton %d\n", automaton);
+    print("handle automaton: name=%s, state=%d\n", automaton->name, automaton->state);
     automaton->execute(automaton);
     if (automaton->state == FINISHED) {
         print("automaton finished\n");

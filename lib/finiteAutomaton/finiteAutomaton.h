@@ -14,6 +14,8 @@ typedef struct FiniteAutomaton {
     FiniteAutomaton* (*determinNext)(FiniteAutomaton* automaton);
 
     void (*execute)(FiniteAutomaton* automaton);
+
+    char* name;
 } FiniteAutomaton;
 
 FiniteAutomaton* handleFiniteAutomaton(FiniteAutomaton* automaton);

@@ -12,7 +12,7 @@ FiniteAutomaton* trajectoryAutomatons[7];
 
 FiniteAutomaton* determinNextTrajectoryAutomaton(FiniteAutomaton* automaton) {
     print("current Automaton Index: %d\n", trajectoryAutomatonIndex);
-    return trajectoryAutomatons[trajectoryAutomatonIndex++];
+    return trajectoryAutomatons[++trajectoryAutomatonIndex];
 }
 
 FiniteAutomaton* getSelf(FiniteAutomaton* automaton) {
@@ -26,7 +26,8 @@ void doNothing(FiniteAutomaton* automaton) { }
 FiniteAutomaton parcourTrajectoryAutomaton = {
     .state = FINISHED,
     .execute = &doNothing,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "trajecotryStart"
 };
 
 //MARK: - First Trajectory Part
@@ -34,8 +35,9 @@ FiniteAutomaton parcourTrajectoryAutomaton = {
 void driveFirstTrajectoryPart(FiniteAutomaton* automaton) {
     print("driveFirstTrajectoryPart\n");
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(50), 2500);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(50), 2500);
+        turnWheelByAngleInTime(LEFT, distanceToAngle(50), 5000);
+        turnWheelByAngleInTime(RIGHT, distanceToAngle(50), 5000);
+        automaton->state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -47,14 +49,15 @@ void driveFirstTrajectoryPart(FiniteAutomaton* automaton) {
 FiniteAutomaton driveFirstTrajectoryPartAutomaton = {
     .state = READY,
     .execute = &driveFirstTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "driveFirstTrajectoryPart"
 };
 
 //MARK: - Turn To Second Trajectory Part
 
 void turnToSecondTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnArmuro(-30, 200);
+        turnArmuro(-30, 500);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -66,15 +69,16 @@ void turnToSecondTrajectoryPart(FiniteAutomaton* automaton) {
 FiniteAutomaton turnToSecondTrajectoryPartAutomaton = {
     .state = READY,
     .execute = &driveFirstTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "turnToSecondTrajectoryPart"
 };
 
 //MARK: - Drive Second Trajectory Part
 
 void driveSecondTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(35.5), 1500);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(35.5), 1500);
+        turnWheelByAngleInTime(LEFT, distanceToAngle(35.5), 2000);
+        turnWheelByAngleInTime(RIGHT, distanceToAngle(35.5), 2000);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -86,14 +90,15 @@ void driveSecondTrajectoryPart(FiniteAutomaton* automaton) {
 FiniteAutomaton driveSecondTrajectoryPartAutomaton = {
     .state = READY,
     .execute = &driveSecondTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "driveSecondTrajectoryPart"
 };
 
 //MARK: - Turn To Third Trajectory Part
 
 void turnToThirdTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnArmuro(90, 500);
+        turnArmuro(90, 1000);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -105,15 +110,16 @@ void turnToThirdTrajectoryPart(FiniteAutomaton* automaton) {
 FiniteAutomaton turnToThirdTrajectoryPartAutomaton = {
     .state = READY,
     .execute = &turnToThirdTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "turnToThirdTrajectoryPart"
 };
 
 //MARK: - Drive Third Trajectory Part
 
 void driveThirdTrajectoryPart(FiniteAutomaton* automaton) {
     if (automaton->state == READY) {
-        turnWheelByAngleInTime(LEFT, distanceToAngle(32.8), 1500);
-        turnWheelByAngleInTime(RIGHT, distanceToAngle(32.8), 1500);
+        turnWheelByAngleInTime(LEFT, distanceToAngle(32.8), 4000);
+        turnWheelByAngleInTime(RIGHT, distanceToAngle(32.8), 4000);
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -125,7 +131,8 @@ void driveThirdTrajectoryPart(FiniteAutomaton* automaton) {
 FiniteAutomaton driveThirdTrajectoryPartAutomaton = {
     .state = READY,
     .execute = &driveThirdTrajectoryPart,
-    .determinNext = &determinNextTrajectoryAutomaton
+    .determinNext = &determinNextTrajectoryAutomaton,
+    .name = "driveThirdTrajectoryPart"
 };
 
 //MARK: - IDLE
@@ -133,7 +140,8 @@ FiniteAutomaton driveThirdTrajectoryPartAutomaton = {
 FiniteAutomaton idleAutomaton = {
     .state = FINISHED,
     .execute = &doNothing,
-    .determinNext = &getSelf
+    .determinNext = &getSelf,
+    .name = "idle"
 };
 
 
@@ -148,7 +156,7 @@ void startParcour() {
     trajectoryAutomatons[6] = &idleAutomaton;
 
     trajectoryAutomatonIndex = 0;
-    currentAutomaton = &trajectoryAutomatons[trajectoryAutomatonIndex];
+    currentAutomaton = trajectoryAutomatons[trajectoryAutomatonIndex];
 }
 
 void driveParcour() {
