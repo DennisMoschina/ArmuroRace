@@ -101,9 +101,7 @@ void startParcour() {
 
 void driveParcour() {
     if (state == FINISHED) {
-        print("state %d finished\n", currentState);
         currentState++;
-        print("new state %d\n", currentState);
         state = READY;
     }
     switch (currentState) {

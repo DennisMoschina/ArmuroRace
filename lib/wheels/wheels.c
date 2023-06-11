@@ -185,11 +185,6 @@ void turnWheelsSynchronizedTask() {
 }
 
 void turnWheelsSynchronizedByAngleTask() {
-    if (HAL_GetTick() < synchronizeWheelsTimeout) {
-        return;
-    }
-    synchronizeWheelsTimeout = HAL_GetTick() + 100;
-
     if (angleSetpoint[RIGHT] <= 0) {
         turningWheels[RIGHT] = NONE;
         turningWheels[LEFT] = NONE;
@@ -199,6 +194,10 @@ void turnWheelsSynchronizedByAngleTask() {
 
         return;
     }
+    if (HAL_GetTick() < synchronizeWheelsTimeout) {
+        return;
+    }
+    synchronizeWheelsTimeout = HAL_GetTick() + 100;
 
     int leftAngle = getAngleForWheel(LEFT);
     int rightAngle = getAngleForWheel(RIGHT);
