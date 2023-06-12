@@ -107,8 +107,8 @@ void turnArmuro(int angle) {
     turningWheels[RIGHT] = TURN;
     turningWheels[LEFT] = TURN;
 
-    wheelsPID[RIGHT] = initPID(0.5, 0, 0, 100, 0.9);
-    wheelsPID[LEFT] = initPID(0.5, 0, 0, 100, 0.9);
+    wheelsPID[RIGHT] = initPID(1, 0, 0, 100, 0.9);
+    wheelsPID[LEFT] = initPID(1, 0, 0, 100, 0.9);
 
     angleTimeout[RIGHT] = HAL_GetTick();
     angleTimeout[LEFT] = HAL_GetTick();
@@ -256,7 +256,7 @@ void turnWheelByAngleInTimeTask(int wheel) {
 
 void turnArmuroTask(int wheel) {
     if (abs(abs(angleSetpoint[wheel]) - abs(getAngleForWheel(wheel))) <= 0.5 * MIN_ANGLE) {
-        print("finished turning wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
+        print("finished turning wheel %s with angle %d\n", wheel == LEFT ? "LEFT" : "RIGHT", getAngleForWheel(wheel));
         turningWheels[wheel] = NONE;
         stopMotor(wheel);
         return;
@@ -266,12 +266,13 @@ void turnArmuroTask(int wheel) {
     angleTimeout[wheel] = angleTimeout[wheel] + 100;
 
     int8_t angleSign = speedSetpoint[wheel] > 0 ? 1 : -1;
+    print("calculating pid for wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
     int speed = calculatePIDOutput(angleSetpoint[wheel], angleSign * getAngleForWheel(wheel), &wheelsPID[wheel]);
 
     speedSetpoint[wheel] = speed;
 
-    if (speed > 100) { speed = 100; }
-    if (speed < -100) { speed = -100; }
+    if (speed > 50) { speed = 50; }
+    if (speed < -50) { speed = -50; }
 
     turnMotor(wheel, FORWARD, speed);
 }

@@ -41,7 +41,7 @@ void driveFirstTrajectoryPart() {
 void turnToSecondTrajectoryPart() {
     if (state == READY) {
         print("setting up turn to second trajectory part\n");
-        turnArmuro(-330);
+        turnArmuro(-150);
         state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
@@ -101,7 +101,9 @@ void startParcour() {
 
 void driveParcour() {
     if (state == FINISHED) {
+        print("finished state %d\n", currentState);
         currentState++;
+        print("new state %d\n", currentState);
         state = READY;
     }
     switch (currentState) {
