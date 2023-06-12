@@ -9,7 +9,8 @@ typedef enum {
     SPEED = 2,
     SYNCHRONIZED = 3,
     TIMED_ANGLE = 4,
-    SYNCHRONIZED_ANGLE = 5
+    SYNCHRONIZED_ANGLE = 5,
+    TURN = 6
 } TurnWheelsTaskType;
 
 /**
@@ -69,9 +70,8 @@ void turnArmuroInTime(int angle, int time);
  * @brief Turn the armuro by a certain angle with a certain speed.
  * 
  * @param angle the angle to turn by (positive for left, negative for right)
- * @param speed the speed at which the armuro should turn (0-100)
  */
-void turnArmuro(int angle, int speed);
+void turnArmuro(int angle);
 
 /**
  * @brief Manage the turning of the wheels
@@ -88,5 +88,7 @@ void turnWheelsSynchronizedTask();
 void turnWheelsSynchronizedByAngleTask();
 
 void turnWheelByAngleInTimeTask(int wheel);
+
+void turnArmuroTask(int wheel);
 
 #endif

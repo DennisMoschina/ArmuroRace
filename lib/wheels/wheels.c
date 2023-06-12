@@ -91,14 +91,27 @@ void turnArmuroInTime(int angle, int time) {
     turnWheelByAngleInTime(LEFT, -distanceToAngle(distanceOnCircumference), time);
 }
 
-void turnArmuro(int angle, int speed) {
+void turnArmuro(int angle) {
     double distanceOnCircumference = angle / 360.0 * TURN_CIRCUMFERENCE;
 
-    if (angle > 0) {
-        turnWheelsSynchronizedByAngle(-speed, speed, distanceToAngle(distanceOnCircumference));
-    } else {
-        turnWheelsSynchronizedByAngle(speed, -speed, distanceToAngle(abs(distanceOnCircumference)));
-    }
+    angleSetpoint[RIGHT] = distanceToAngle(distanceOnCircumference);
+    angleSetpoint[LEFT] = -distanceToAngle(distanceOnCircumference);
+
+    // in this task the speedSetpoint is used to store the direction of an angle
+    speedSetpoint[RIGHT] = distanceOnCircumference;
+    speedSetpoint[LEFT] = distanceOnCircumference;
+
+    resetAngleMeasurement(LEFT);
+    resetAngleMeasurement(RIGHT);
+
+    turningWheels[RIGHT] = TURN;
+    turningWheels[LEFT] = TURN;
+
+    wheelsPID[RIGHT] = initPID(0.5, 0, 0, 100, 0.9);
+    wheelsPID[LEFT] = initPID(0.5, 0, 0, 100, 0.9);
+
+    angleTimeout[RIGHT] = HAL_GetTick();
+    angleTimeout[LEFT] = HAL_GetTick();
 }
 
 TurnWheelsTaskType* turnWheelsTask() {
@@ -125,6 +138,9 @@ TurnWheelsTaskType* turnWheelsTask() {
                 break;
             case SYNCHRONIZED_ANGLE:
                 turnWheelsSynchronizedByAngleTask();
+                break;
+            case TURN:
+                turnArmuroTask(i);
                 break;
             default:
                 break;
@@ -236,4 +252,26 @@ void turnWheelByAngleInTimeTask(int wheel) {
         speedSetpoint[wheel]);
 
     turnWheelByAngleTask(wheel);
+}
+
+void turnArmuroTask(int wheel) {
+    if (abs(abs(angleSetpoint[wheel]) - abs(getAngleForWheel(wheel))) <= 0.5 * MIN_ANGLE) {
+        print("finished turning wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
+        turningWheels[wheel] = NONE;
+        stopMotor(wheel);
+        return;
+    }
+
+    if (HAL_GetTick() < angleTimeout[wheel]) { return; }
+    angleTimeout[wheel] = angleTimeout[wheel] + 100;
+
+    int8_t angleSign = speedSetpoint[wheel] > 0 ? 1 : -1;
+    int speed = calculatePIDOutput(angleSetpoint[wheel], angleSign * getAngleForWheel(wheel), &wheelsPID[wheel]);
+
+    speedSetpoint[wheel] = speed;
+
+    if (speed > 100) { speed = 100; }
+    if (speed < -100) { speed = -100; }
+
+    turnMotor(wheel, FORWARD, speed);
 }

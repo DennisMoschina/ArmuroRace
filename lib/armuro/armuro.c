@@ -35,6 +35,8 @@ void initMotors() {
 }
 
 void turnMotor(int motor, int direction, int speed) {
+    if (speed > 100) { speed = 100; }
+    else if (speed < -100) { speed = -100; }
     if (speed < 0) {
         speed = -speed;
         direction = (direction == FORWARD) ? BACKWARD : FORWARD;
