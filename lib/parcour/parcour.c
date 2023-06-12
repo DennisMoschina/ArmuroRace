@@ -41,7 +41,7 @@ void driveFirstTrajectoryPart() {
 void turnToSecondTrajectoryPart() {
     if (state == READY) {
         print("setting up turn to second trajectory part\n");
-        turnArmuro(-330, 70);
+        turnArmuro(-330, 50);
         state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
@@ -69,7 +69,7 @@ void driveSecondTrajectoryPart() {
 
 void turnToThirdTrajectoryPart() {
     if (state == READY) {
-        turnArmuro(90, 70);
+        turnArmuro(90, 50);
         state = RUNNING;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();

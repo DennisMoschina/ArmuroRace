@@ -185,7 +185,7 @@ void turnWheelsSynchronizedTask() {
 }
 
 void turnWheelsSynchronizedByAngleTask() {
-    if (angleSetpoint[RIGHT] <= 0) {
+    if (angleSetpoint[RIGHT] - getAngleForWheel(RIGHT) <= 0) {
         turningWheels[RIGHT] = NONE;
         turningWheels[LEFT] = NONE;
 
@@ -203,7 +203,7 @@ void turnWheelsSynchronizedByAngleTask() {
     int rightAngle = getAngleForWheel(RIGHT);
 
     int angleDifference = leftAngle - rightAngle;
-    int speedDifference = speedSetpoint[LEFT] - speedSetpoint[RIGHT];
+    int speedDifference = abs(speedSetpoint[LEFT]) - abs(speedSetpoint[RIGHT]);
 
     int output = calculatePIDOutput(speedDifference, angleDifference, &synchronizeWheelsPID);
     int speedOutput = speedSetpoint[RIGHT] - output;

@@ -132,7 +132,7 @@ void resetAngleMeasurement(int wheel) {
 }
 
 int getAngleForWheel(int wheel) {
-    return wheelEncoderTicksCount[wheel] * 30;
+    return wheelEncoderTicksCount[wheel] * MIN_ANGLE;
 }
 
 void getAngleForWheels(int* leftAngle, int* rightAngle) {

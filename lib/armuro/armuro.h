@@ -13,6 +13,8 @@
 #define WHEEL_CIRCUMFERENCE 12.566
 #define TURN_CIRCUMFERENCE 23.8761041673
 
+#define MIN_ANGLE 30
+
 #include <stdint.h>
 #include <stdarg.h>
 
