@@ -110,22 +110,45 @@ void didReadSensors(uint32_t* values) {
     didReadWheelEncoder(values[1], values[4]);
 }
 
+/**
+ * @brief Check if the value is above the high threshold or below the low threshold
+ * 
+ * @param side 
+ * @param value 
+ * @return 1 for HIGH, 0 for LOW, -1 for invalid
+ */
+int schmittTrigger(int side, u_int32_t value) {
+    if (side == LEFT) {
+        if (value > LEFT_ENCODER_HIGH_THRESHOLD) {
+            return HIGH;
+        } else if (value < LEFT_ENCODER_LOW_THRESHOLD) {
+            return LOW;
+        }
+    } else if (side == RIGHT) {
+        if (value > RIGHT_ENCODER_HIGH_THRESHOLD) {
+            return HIGH;
+        } else if (value < RIGHT_ENCODER_LOW_THRESHOLD) {
+            return LOW;
+        }
+    }
+    return -1;
+}
+
 void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue) {
-    if (leftValue > LEFT_ENCODER_HIGH_THRESHOLD) {
-        if (wheelEncoderOldValues[LEFT] == LOW) {
+    int left = schmittTrigger(LEFT, leftValue);
+    int right = schmittTrigger(RIGHT, rightValue);
+
+    if (left != -1) {
+        if (wheelEncoderOldValues[LEFT] != left) {
+            wheelEncoderOldValues[LEFT] = left;
             wheelEncoderTicksCount[LEFT]++;
         }
-        wheelEncoderOldValues[LEFT] = HIGH;
-    } else if (leftValue < LEFT_ENCODER_LOW_THRESHOLD) {
-        wheelEncoderOldValues[LEFT] = LOW;
     }
-    if (rightValue > RIGHT_ENCODER_HIGH_THRESHOLD) {
-        if (wheelEncoderOldValues[RIGHT] == LOW) {
+    if (right != -1) {
+        if (wheelEncoderOldValues[RIGHT] != right) {
+            wheelEncoderOldValues[RIGHT] = right;
             wheelEncoderTicksCount[RIGHT]++;
         }
-        wheelEncoderOldValues[RIGHT] = HIGH;
-    } else if (rightValue < RIGHT_ENCODER_LOW_THRESHOLD) {
-        wheelEncoderOldValues[RIGHT] = LOW;
     }
 }
 
