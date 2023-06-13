@@ -38,6 +38,8 @@
 
 #include "parcour.h"
 
+#include "lineFollow.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -120,6 +122,7 @@ int main(void)
   setupLED();
 
   startParcour();
+  // followLine(30);
 
   /* USER CODE END 2 */
 
@@ -133,8 +136,8 @@ int main(void)
       didReadSensors(buffer);
     }
 
-    blinkLED();
     driveParcour();
+    // followLineTask();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */

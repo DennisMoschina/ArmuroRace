@@ -11,7 +11,7 @@ void followLine(int speed);
 /**
  * @brief Follows the line until the end of the line is reached.
  * 
- * @return 0 if currently following the line, -1 if line is lost
+ * @return 0 if currently following the line, -1 if line is lost, 1 if all is black
  */
 int followLineTask();
 

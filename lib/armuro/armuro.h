@@ -4,8 +4,8 @@
 #define FORWARD 0
 #define BACKWARD 1
 
-#define HIGH GPIO_PIN_SET
-#define LOW GPIO_PIN_RESET
+#define HIGH 1
+#define LOW 0
 
 #define WHEEL_CIRCUMFERENCE 12.566
 #define TURN_CIRCUMFERENCE 24.1902634326
@@ -142,6 +142,15 @@ void getRawLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right)
  * @param right a pointer to a variable in which the right sensor reading should be stored
  */
 void getLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right);
+
+/**
+ * @brief Map a line sensor reading to its typical range (0 - 1023)
+ * 
+ * @param value the value to map
+ * @param side the side on which the sensor is located
+ * @return the mapped value
+ */
+uint32_t mapLineSensorReadingToRange(uint32_t value, Side side);
 
 /**
  * @brief Translate a distance (in cm) to an angle (in degrees)

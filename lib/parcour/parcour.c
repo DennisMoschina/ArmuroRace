@@ -20,7 +20,7 @@ typedef enum StateMachine {
     IDLE = 6
 } StateMachine;
 
-StateMachine currentState = DRIVE_FIRST_TRAJECTORY_PART;
+StateMachine currentState = FOLLOW_LINE;
 StateMachine nextState = DRIVE_FIRST_TRAJECTORY_PART;
 State state = READY;
 
@@ -105,15 +105,33 @@ void driveThirdTrajectoryPart() {
 void lineFollow() {
     if (state == READY) {
         print("setting up follow line\n");
-        followLine(70);
+        followLine(30);
         state = RUNNING;
     } else {
-        followLineTask();
+        int result = followLineTask();
+        switch (result) {
+            case 0:
+                setLED(LEFT, HIGH);
+                setLED(RIGHT, HIGH);
+                break;
+            case 1:
+                setLED(LEFT, LOW);
+                setLED(RIGHT, HIGH);
+                break;
+            case -1:
+                stopMotor(LEFT);
+                stopMotor(RIGHT);
+                setLED(LEFT, HIGH);
+                setLED(RIGHT, LOW);
+                break;
+            default:
+                break;
+        }
     }
 }
 
 void startParcour() {
-    currentState = DRIVE_FIRST_TRAJECTORY_PART;
+    currentState = FOLLOW_LINE;
     state = READY;
 }
 
