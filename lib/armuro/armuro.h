@@ -1,9 +1,6 @@
 #ifndef _ARMURO_H_
 #define _ARMURO_H_
 
-#define RIGHT 0
-#define LEFT 1
-
 #define FORWARD 0
 #define BACKWARD 1
 
@@ -15,10 +12,24 @@
 
 #define MIN_ANGLE 15
 
+#define MAX_LEFT_LINE_SENSOR_VALUE 4000
+#define MAX_MIDDLE_LINE_SENSOR_VALUE 4000
+#define MAX_RIGHT_LINE_SENSOR_VALUE 4000
+#define MIN_LEFT_LINE_SENSOR_VALUE 2000
+#define MIN_MIDDLE_LINE_SENSOR_VALUE 2000
+#define MIN_RIGHT_LINE_SENSOR_VALUE 600
+
 #include <stdint.h>
 #include <stdarg.h>
 
 extern uint16_t wheelEncoderTicksCount[2];
+extern uint32_t buffer[6];
+
+typedef enum {
+    RIGHT = 0,
+    LEFT = 1,
+    MIDDLE = 3
+} Side;
 
 /**
  * @brief Print a message to the serial port.
@@ -52,14 +63,14 @@ void initMotors();
  * @param direction the direction in which the motor should turn
  * @param speed the speed at which the motor should turn (in %)
  */
-void turnMotor(int motor, int direction, int speed);
+void turnMotor(Side motor, int direction, int speed);
 
 /**
  * @brief Stop the motor
  * 
  * @param motor the motor to stop
  */
-void stopMotor(int motor);
+void stopMotor(Side motor);
 
 /**
  * @brief Turn the led on the side on and off
@@ -67,7 +78,7 @@ void stopMotor(int motor);
  * @param led the side on which the led should be controlled
  * @param state the state of the LED (HIGH or LOW)
  */
-void setLED(int led, int state);
+void setLED(Side led, int state);
 
 /**
  * @brief Set the rear LED on or off
@@ -96,7 +107,7 @@ void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue);
  * 
  * @param wheel the wheel for which the angle measurement should be reset
  */
-void resetAngleMeasurement(int wheel);
+void resetAngleMeasurement(Side wheel);
 
 /**
  * @brief et the Angle (in degrees) for the wheel
@@ -104,7 +115,7 @@ void resetAngleMeasurement(int wheel);
  * @param wheel the wheel for which the angle should be returned
  * @return the angle of the wheel in degrees
  */
-int getAngleForWheel(int wheel);
+int getAngleForWheel(Side wheel);
 
 /**
  * @brief Get the Angle (in degrees) for the wheels
@@ -113,6 +124,24 @@ int getAngleForWheel(int wheel);
  * @param rightAngle a pointer to a variable in which the right angle should be stored
  */
 void getAngleForWheels(int* leftAngle, int* rightAngle);
+
+/**
+ * @brief Get the raw readings of the line sensors
+ * 
+ * @param left a pointer to a variable in which the left sensor reading should be stored 
+ * @param middle a pointer to a variable in which the middle sensor reading should be stored
+ * @param right a pointer to a variable in which the right sensor reading should be stored
+ */
+void getRawLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right);
+
+/**
+ * @brief Get the readings of the line sensors mapped to their typical range (0 - 1023)
+ * 
+ * @param left a pointer to a variable in which the left sensor reading should be stored
+ * @param middle a pointer to a variable in which the middle sensor reading should be stored
+ * @param right a pointer to a variable in which the right sensor reading should be stored
+ */
+void getLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right);
 
 /**
  * @brief Translate a distance (in cm) to an angle (in degrees)

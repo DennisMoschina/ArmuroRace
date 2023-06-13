@@ -34,7 +34,7 @@ void initMotors() {
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
 }
 
-void turnMotor(int motor, int direction, int speed) {
+void turnMotor(Side motor, int direction, int speed) {
     if (speed > 100) { speed = 100; }
     else if (speed < -100) { speed = -100; }
     if (speed < 0) {
@@ -76,7 +76,7 @@ void turnMotor(int motor, int direction, int speed) {
     }
 }
 
-void stopMotor(int motor) {
+void stopMotor(Side motor) {
     switch (motor) {
         case RIGHT:
             turnMotor(RIGHT, FORWARD, 0);
@@ -89,7 +89,7 @@ void stopMotor(int motor) {
     }
 }
 
-void setLED(int led, int state) {
+void setLED(Side led, int state) {
     switch (led) {
         case RIGHT:
             HAL_GPIO_WritePin(LED_right_GPIO_Port, LED_right_Pin, state);
@@ -117,7 +117,7 @@ void didReadSensors(uint32_t* values) {
  * @param value 
  * @return 1 for HIGH, 0 for LOW, -1 for invalid
  */
-int schmittTrigger(int side, u_int32_t value) {
+int schmittTrigger(Side side, u_int32_t value) {
     if (side == LEFT) {
         if (value > LEFT_ENCODER_HIGH_THRESHOLD) {
             return HIGH;
@@ -152,17 +152,29 @@ void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue) {
     }
 }
 
-void resetAngleMeasurement(int wheel) {
+void resetAngleMeasurement(Side wheel) {
     wheelEncoderTicksCount[wheel] = 0;
 }
 
-int getAngleForWheel(int wheel) {
+int getAngleForWheel(Side wheel) {
     return wheelEncoderTicksCount[wheel] * MIN_ANGLE;
 }
 
 void getAngleForWheels(int* leftAngle, int* rightAngle) {
     *leftAngle = getAngleForWheel(LEFT);
     *rightAngle = getAngleForWheel(RIGHT);
+}
+
+void getRawLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right) {
+    *left = buffer[5];
+    *middle = buffer[0];
+    *right = buffer[2];
+}
+
+void getLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right) {
+    *left = map(buffer[5], MIN_LEFT_LINE_SENSOR_VALUE, MAX_LEFT_LINE_SENSOR_VALUE, 0, 1023);
+    *middle = map(buffer[0], MIN_MIDDLE_LINE_SENSOR_VALUE, MAX_MIDDLE_LINE_SENSOR_VALUE, 0, 1023);
+    *right = map(buffer[2], MIN_RIGHT_LINE_SENSOR_VALUE, MAX_RIGHT_LINE_SENSOR_VALUE, 0, 1023);
 }
 
 int distanceToAngle(double distance) {

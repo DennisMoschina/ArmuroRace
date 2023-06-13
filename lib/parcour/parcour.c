@@ -2,6 +2,7 @@
 
 #include "wheels.h"
 #include "armuro.h"
+#include "lineFollow.h"
 
 typedef enum State {
     READY = 0,
@@ -15,11 +16,12 @@ typedef enum StateMachine {
     DRIVE_SECOND_TRAJECTORY_PART = 2,
     TURN_TO_THIRD_TRAJECTORY_PART = 3,
     DRIVE_THIRD_TRAJECTORY_PART = 4,
-    IDLE = 5
+    FOLLOW_LINE = 5,
+    IDLE = 6
 } StateMachine;
 
-
 StateMachine currentState = DRIVE_FIRST_TRAJECTORY_PART;
+StateMachine nextState = DRIVE_FIRST_TRAJECTORY_PART;
 State state = READY;
 
 //MARK: - First Trajectory Part
@@ -28,6 +30,7 @@ void driveFirstTrajectoryPart() {
     if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50));
         state = RUNNING;
+        nextState = TURN_TO_SECOND_TRAJECTORY_PART;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -43,6 +46,7 @@ void turnToSecondTrajectoryPart() {
         print("setting up turn to second trajectory part\n");
         turnArmuro(-150);
         state = RUNNING;
+        nextState = DRIVE_SECOND_TRAJECTORY_PART;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -57,6 +61,7 @@ void driveSecondTrajectoryPart() {
     if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5));
         state = RUNNING;
+        nextState = TURN_TO_THIRD_TRAJECTORY_PART;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -71,6 +76,7 @@ void turnToThirdTrajectoryPart() {
     if (state == READY) {
         turnArmuro(90);
         state = RUNNING;
+        nextState = DRIVE_THIRD_TRAJECTORY_PART;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -85,6 +91,7 @@ void driveThirdTrajectoryPart() {
     if (state == READY) {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8));
         state = RUNNING;
+        nextState = FOLLOW_LINE;
     } else {
         TurnWheelsTaskType* wheelsState = turnWheelsTask();
         if (wheelsState[LEFT] == NONE && wheelsState[RIGHT] == NONE) {
@@ -93,6 +100,17 @@ void driveThirdTrajectoryPart() {
     }
 }
 
+//MARK: - Follow Line
+
+void lineFollow() {
+    if (state == READY) {
+        print("setting up follow line\n");
+        followLine(70);
+        state = RUNNING;
+    } else {
+        followLineTask();
+    }
+}
 
 void startParcour() {
     currentState = DRIVE_FIRST_TRAJECTORY_PART;
@@ -102,7 +120,7 @@ void startParcour() {
 void driveParcour() {
     if (state == FINISHED) {
         print("finished state %d\n", currentState);
-        currentState++;
+        currentState = nextState;
         print("new state %d\n", currentState);
         state = READY;
     }
@@ -121,6 +139,9 @@ void driveParcour() {
             break;
         case DRIVE_THIRD_TRAJECTORY_PART:
             driveThirdTrajectoryPart();
+            break;
+        case FOLLOW_LINE:
+            lineFollow();
             break;
         case IDLE:
             break;

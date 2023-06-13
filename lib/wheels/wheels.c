@@ -76,7 +76,7 @@ void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
 
-    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
+    synchronizeWheelsPID = initPID(0.1, 0.02, 0.02, 100, 0.9);
     synchronizeWheelsTimeout = HAL_GetTick() + 100;
 
     turnMotor(LEFT, FORWARD, leftSpeed);
