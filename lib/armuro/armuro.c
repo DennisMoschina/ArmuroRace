@@ -16,6 +16,10 @@
 uint16_t wheelEncoderTicksCount[2];
 int wheelEncoderOldValues[2];
 
+WheelAngle* wheelAngles;
+size_t wheelAnglesCount = 0;
+size_t wheelAnglesCapacity = 0;
+
 inline void print(char* format, ...) {
     va_list args;
     va_start(args, format);
@@ -142,18 +146,60 @@ void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue) {
         if (wheelEncoderOldValues[LEFT] != left) {
             wheelEncoderOldValues[LEFT] = left;
             wheelEncoderTicksCount[LEFT]++;
+            for (int i = 0; i < wheelAnglesCount; i++) {
+                wheelAngles[i].leftTicks++;
+                wheelAngles[i].left = wheelAngles[i].leftTicks * MIN_ANGLE;
+            }
         }
     }
     if (right != -1) {
         if (wheelEncoderOldValues[RIGHT] != right) {
             wheelEncoderOldValues[RIGHT] = right;
             wheelEncoderTicksCount[RIGHT]++;
+            for (int i = 0; i < wheelAnglesCount; i++) {
+                wheelAngles[i].rightTicks++;
+                wheelAngles[i].right = wheelAngles[i].rightTicks * MIN_ANGLE;
+            }
         }
     }
 }
 
 void resetAngleMeasurement(Side wheel) {
     wheelEncoderTicksCount[wheel] = 0;
+}
+
+WheelAngle* startAngleMeasurement() {
+    if (wheelAnglesCapacity == wheelAnglesCount) {
+        wheelAnglesCapacity *= 2;
+        wheelAngles = realloc(wheelAngles, wheelAnglesCapacity * sizeof(WheelAngle));
+    }
+    wheelAnglesCount++;
+    wheelAngles[wheelAnglesCount] = (WheelAngle) {
+        .left = 0,
+        .right = 0,
+        .leftTicks = 0,
+        .rightTicks = 0
+    };
+    return &wheelAngles[wheelAnglesCount];
+}
+
+void stopAngleMeasurement(WheelAngle* angle) {
+    for (int i = 0; i < wheelAnglesCount; i++) {
+        if (&wheelAngles[i] == angle) {
+            for (int j = i; j < wheelAnglesCount - 1; j++) {
+                wheelAngles[j] = wheelAngles[j + 1];
+            }
+            wheelAnglesCount--;
+            break;
+        }
+    }
+
+    free(angle);
+
+    if (wheelAnglesCount < 0.25 * wheelAnglesCapacity) {
+        wheelAnglesCapacity /= 2;
+        wheelAngles = realloc(wheelAngles, wheelAnglesCapacity * sizeof(WheelAngle));
+    }
 }
 
 int getAngleForWheel(Side wheel) {

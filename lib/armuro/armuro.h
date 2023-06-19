@@ -31,6 +31,14 @@ typedef enum {
     MIDDLE = 3
 } Side;
 
+typedef struct {
+    int left;
+    int right;
+    
+    int leftTicks;
+    int rightTicks;
+} WheelAngle;
+
 /**
  * @brief Print a message to the serial port.
  * 
@@ -108,6 +116,20 @@ void didReadWheelEncoder(uint32_t leftValue, uint32_t rightValue);
  * @param wheel the wheel for which the angle measurement should be reset
  */
 void resetAngleMeasurement(Side wheel);
+
+/**
+ * @brief Start measuring the angle for the wheels.
+ * 
+ * @return a pointer to a struct keeping the angle of the wheels
+ */
+WheelAngle* startAngleMeasurement();
+
+/**
+ * @brief Stop measuring the angle for the wheels.
+ * 
+ * @param angle the angle struct to stop measuring for
+ */
+void stopAngleMeasurement(WheelAngle* angle);
 
 /**
  * @brief et the Angle (in degrees) for the wheel
