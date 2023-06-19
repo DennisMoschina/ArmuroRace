@@ -4,6 +4,7 @@
 #include "usart.h"
 #include "string.h"
 #include "stdio.h"
+#include "stdlib.h"
 
 #define RIGHT_ENCODER_HIGH_THRESHOLD 2000
 #define RIGHT_ENCODER_LOW_THRESHOLD 1000    
