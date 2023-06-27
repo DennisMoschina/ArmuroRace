@@ -22,7 +22,7 @@ State trajectoryStateState = READY;
 
 void driveFirstTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50));
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TURN_TO_SECOND_TRAJECTORY_PART;
     } else {
@@ -53,7 +53,7 @@ void turnToSecondTrajectoryPart() {
 
 void driveSecondTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5));
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TURN_TO_THIRD_TRAJECTORY_PART;
     } else {
@@ -83,7 +83,7 @@ void turnToThirdTrajectoryPart() {
 
 void driveThirdTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8));
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TRAJECTORY_DONE;
     } else {

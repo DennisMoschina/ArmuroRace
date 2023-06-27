@@ -55,8 +55,9 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed);
  * @param leftSpeed the speed of the left wheel
  * @param rightSpeed the speed of the right wheel
  * @param rightAngle the angle the right wheel should be turned by
+ * @param softStart whether the wheels should be started slowly
  */
-void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle);
+void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle, uint8_t softStart);
 
 /**
  * @brief Turn the armuro by a certain angle in a certain time.

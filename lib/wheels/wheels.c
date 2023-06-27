@@ -10,6 +10,7 @@
 TurnWheelsTaskType turningWheels[] = {NONE, NONE};
 int angleSetpoint[] = {0, 0};
 int speedSetpoint[] = {0, 0};
+int currentSpeedSetpoint[] = {0, 0};
 int rotationRateSetpoint[] = {0, 0};
 
 int oldAngle[] = {0, 0};
@@ -69,7 +70,7 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
     turnMotor(RIGHT, FORWARD, rightSpeed);
 }
 
-void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle) {
+void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle, uint8_t softStart) {
     turningWheels[LEFT] = SYNCHRONIZED_ANGLE;
     turningWheels[RIGHT] = SYNCHRONIZED_ANGLE;
 
@@ -77,14 +78,22 @@ void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle
     speedSetpoint[RIGHT] = rightSpeed;
     angleSetpoint[RIGHT] = rightAngle;
 
+    if (softStart) {
+        currentSpeedSetpoint[LEFT] = 0.1 * leftSpeed;
+        currentSpeedSetpoint[RIGHT] = 0.1 * rightSpeed;
+    } else {
+        currentSpeedSetpoint[LEFT] = leftSpeed;
+        currentSpeedSetpoint[RIGHT] = rightSpeed;
+    }
+
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
 
     setupSynchronizedPID();
     synchronizeWheelsTimeout = HAL_GetTick() + 100;
 
-    turnMotor(LEFT, FORWARD, leftSpeed);
-    turnMotor(RIGHT, FORWARD, rightSpeed);
+    turnMotor(LEFT, FORWARD, currentSpeedSetpoint[LEFT]);
+    turnMotor(RIGHT, FORWARD, currentSpeedSetpoint[RIGHT]);
 }
 
 void turnArmuroInTime(int angle, int time) {
@@ -142,6 +151,9 @@ TurnWheelsTaskType* turnWheelsTask() {
                 break;
             case SYNCHRONIZED_ANGLE:
                 turnWheelsSynchronizedByAngleTask();
+                break;
+            case TURN:
+                turnArmuroTask(i);
                 break;
             default:
                 break;
@@ -220,12 +232,22 @@ void turnWheelsSynchronizedByAngleTask() {
     int rightAngle = getAngleForWheel(RIGHT);
 
     int angleDifference = leftAngle - rightAngle;
-    int speedDifference = abs(speedSetpoint[LEFT]) - abs(speedSetpoint[RIGHT]);
+    int speedDifference = abs(currentSpeedSetpoint[LEFT]) - abs(currentSpeedSetpoint[RIGHT]);
 
     int output = calculatePIDOutput(speedDifference, angleDifference, &synchronizeWheelsPID);
-    int speedOutput = speedSetpoint[RIGHT] - output;
+    int speedOutput = currentSpeedSetpoint[RIGHT] - output;
 
     turnMotor(RIGHT, FORWARD, speedOutput);
+    turnMotor(LEFT, FORWARD, currentSpeedSetpoint[LEFT]);
+
+    for (int i = 0; i < 2; i++) {
+        if (currentSpeedSetpoint[i] != speedSetpoint[i]) {
+            currentSpeedSetpoint[i] *= 1.5;
+        }
+        if (abs(currentSpeedSetpoint[i]) > abs(speedSetpoint[i])) {
+            currentSpeedSetpoint[i] = speedSetpoint[i];
+        }
+    }
 
     angleSetpoint[RIGHT] -= rightAngle;
     resetAngleMeasurement(RIGHT);
