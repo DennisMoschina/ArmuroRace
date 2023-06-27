@@ -6,8 +6,8 @@
 #include "wheels.h"
 #include "stdlib.h"
 
-#define BLACK_THRESHOLD 900
-#define WHITE_THRESHOLD 200
+#define BLACK_THRESHOLD 800
+#define WHITE_THRESHOLD 400
 
 PIDConfig followLinePID;
 
@@ -35,11 +35,11 @@ FollowLineResult followLineTask() {
     uint32_t middle;
     getLineSensorReadings(&left, &middle, &right);
 
-    int checkForLineResult = checkForLine();
+    CheckLineResult checkForLineResult = checkForLine();
 
-    if (!checkForLineResult) {
+    if (checkForLineResult == OFF_LINE) {
         lastState = checkForLineResult;
-        return checkForLineResult;
+        return LOST_LINE;
     }
 
     int error = right - left;
@@ -62,13 +62,17 @@ CheckLineResult checkForLine() {
     lastLineValues[1] = middle;
     lastLineValues[2] = right;
 
+    print("left: %d, middle: %d, right: %d\n", left, middle, right);
+
     if (left < WHITE_THRESHOLD && right < WHITE_THRESHOLD && middle < WHITE_THRESHOLD) {
-        return -1;
+        print("all white\n");
+        return OFF_LINE;
     } else if (left > BLACK_THRESHOLD && right > BLACK_THRESHOLD && middle > BLACK_THRESHOLD) {
-        return 1;
+        print("all black\n");
+        return ALL_BLACK;
     }
 
-    return 0;
+    return ON_LINE;
 }
 
 void searchLine() {
@@ -84,16 +88,19 @@ SearchLineResult searchLineTask() {
     turnWheelsSynchronized(-50, 50);
 
     CheckLineResult checkForLineResult = checkForLine();
-    int armuroAngle = 360 * TURN_CIRCUMFERENCE / angleToDistance(wheelAngle->right);
+    int armuroAngle = 360 * angleToDistance(wheelAngle->right) / TURN_CIRCUMFERENCE;
+    print("armuro angle: %d, rightWheelAngle: %d\n", armuroAngle, wheelAngle->right);
     switch (checkForLineResult) {
         case ON_LINE:
         case ALL_BLACK:
+            print("detected line at angle: %d\n", armuroAngle);
             if (abs(armuroAngle - 180) < MIN_ANGLE) {
                 return SEARCHING;
             } else {
                 stopMotor(RIGHT);
                 stopMotor(LEFT);
                 lastState = FOUND;
+                stopAngleMeasurement(wheelAngle);
                 return FOUND;
             }
         case OFF_LINE:
@@ -105,4 +112,5 @@ SearchLineResult searchLineTask() {
             lastState = SEARCHING;
             return SEARCHING;
     }
+    return SEARCHING;
 }

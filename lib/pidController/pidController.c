@@ -31,14 +31,14 @@ double calculatePIDOutput(double setpoint, double input, PIDConfig* config) {
     }
 
     double output = p_term + i_term + d_term;
-    print("setpoint: %d.%d, input: %d.%d, error: %d.%d, p_term: %d.%d, i_term: %d.%d, d_term: %d.%d, output: %d.%d\n",
-        (int) setpoint, (int) (abs(setpoint) * 1000) % 1000,
-        (int) input, (int) (abs(input) * 1000) % 1000,
-        (int) error, (int) (abs(error) * 1000) % 1000,
-        (int) p_term, (int) (abs(p_term) * 1000) % 1000,
-        (int) i_term, (int) (abs(i_term) * 1000) % 1000,
-        (int) d_term, (int) (abs(d_term) * 1000) % 1000,
-        (int) output, (int) (abs(output) * 1000) % 1000
-    );
+    // print("setpoint: %d.%d, input: %d.%d, error: %d.%d, p_term: %d.%d, i_term: %d.%d, d_term: %d.%d, output: %d.%d\n",
+    //     (int) setpoint, (int) (abs(setpoint) * 1000) % 1000,
+    //     (int) input, (int) (abs(input) * 1000) % 1000,
+    //     (int) error, (int) (abs(error) * 1000) % 1000,
+    //     (int) p_term, (int) (abs(p_term) * 1000) % 1000,
+    //     (int) i_term, (int) (abs(i_term) * 1000) % 1000,
+    //     (int) d_term, (int) (abs(d_term) * 1000) % 1000,
+    //     (int) output, (int) (abs(output) * 1000) % 1000
+    // );
     return output;
 }
