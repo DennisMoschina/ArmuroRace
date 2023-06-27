@@ -19,14 +19,14 @@ PIDConfig wheelsPID[2];
 PIDConfig synchronizeWheelsPID;
 uint32_t synchronizeWheelsTimeout = 0;
 
-void turnWheelByAngle(int wheel, int angle, int speed) {
+void turnWheelByAngle(Side wheel, int angle, int speed) {
     angleSetpoint[wheel] = angle;
     turningWheels[wheel] = ANGLE;
     speedSetpoint[wheel] = speed;
     resetAngleMeasurement(wheel);
 }
 
-void turnWheelByAngleInTime(int wheel, int angle, int time) {
+void turnWheelByAngleInTime(Side wheel, int angle, int time) {
     angleSetpoint[wheel] = angle;
     turningWheels[wheel] = TIMED_ANGLE;
     rotationRateSetpoint[wheel] = (int) (angle / (time / 1000.0));
@@ -43,7 +43,7 @@ void turnWheelByAngleInTime(int wheel, int angle, int time) {
     angleTimeout[wheel] = HAL_GetTick();
 }
 
-void turnWheelWithSpeed(int wheel, int speed) {
+void turnWheelWithSpeed(Side wheel, int speed) {
     turningWheels[wheel] = SPEED;
     speedSetpoint[wheel] = speed;
 }

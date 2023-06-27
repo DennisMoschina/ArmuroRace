@@ -20,7 +20,7 @@ typedef enum {
  * @param angle the angle to turn the wheel by (positive for forward, negative for backward)
  * @param speed the speed at which the wheel should turn (0-100)
  */
-void turnWheelByAngle(int wheel, int angle, int speed);
+void turnWheelByAngle(Side wheel, int angle, int speed);
 
 /**
  * @brief Start to turn the wheel by a certain angle in a certain time
@@ -29,7 +29,7 @@ void turnWheelByAngle(int wheel, int angle, int speed);
  * @param angle the angle to turn the wheel by (positive for forward, negative for backward)
  * @param time the time in which the wheel should complete the turn (in ms)
  */
-void turnWheelByAngleInTime(int wheel, int angle, int time);
+void turnWheelByAngleInTime(Side wheel, int angle, int time);
 
 /**
  * @brief Start to turn the wheel with a certain speed
@@ -37,7 +37,7 @@ void turnWheelByAngleInTime(int wheel, int angle, int time);
  * @param wheel the wheel to turn
  * @param speed the speed at which the wheel should turn (0-100)
  */
-void turnWheelWithSpeed(int wheel, int speed);
+void turnWheelWithSpeed(Side wheel, int speed);
 
 /**
  * @brief Turn the wheels with a certain speed
