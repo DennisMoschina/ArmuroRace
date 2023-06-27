@@ -121,6 +121,8 @@ int main(void)
 
   setupLED();
 
+  HAL_Delay(1000);
+  
   startParcour();
   // followLine(30);
 
