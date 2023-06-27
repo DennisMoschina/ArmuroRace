@@ -48,6 +48,10 @@ void turnWheelWithSpeed(int wheel, int speed) {
     speedSetpoint[wheel] = speed;
 }
 
+void setupSynchronizedPID() {
+    synchronizeWheelsPID = initPID(0.05, 0.02, 0.03, 100, 1);
+}
+
 void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
     turningWheels[LEFT] = SYNCHRONIZED;
     turningWheels[RIGHT] = SYNCHRONIZED;
@@ -58,7 +62,7 @@ void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
 
-    synchronizeWheelsPID = initPID(0.05, 0.02, 0.02, 100, 0.9);
+    setupSynchronizedPID();
     synchronizeWheelsTimeout = HAL_GetTick() + 500;
 
     turnMotor(LEFT, FORWARD, leftSpeed);
@@ -76,7 +80,7 @@ void turnWheelsSynchronizedByAngle(int leftSpeed, int rightSpeed, int rightAngle
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
 
-    synchronizeWheelsPID = initPID(0.1, 0.02, 0.02, 100, 0.9);
+    setupSynchronizedPID();
     synchronizeWheelsTimeout = HAL_GetTick() + 100;
 
     turnMotor(LEFT, FORWARD, leftSpeed);
@@ -139,9 +143,6 @@ TurnWheelsTaskType* turnWheelsTask() {
             case SYNCHRONIZED_ANGLE:
                 turnWheelsSynchronizedByAngleTask();
                 break;
-            case TURN:
-                turnArmuroTask(i);
-                break;
             default:
                 break;
         }
@@ -150,7 +151,7 @@ TurnWheelsTaskType* turnWheelsTask() {
     return turningWheels;
 }
 
-void turnWheelByAngleTask(int wheel) {
+void turnWheelByAngleTask(Side wheel) {
     int currentAngle = getAngleForWheel(wheel);
 
     print("Current angle for %s: %d; setpoint: %d\n", wheel == LEFT ? "LEFT" : "RIGHT", currentAngle, angleSetpoint[wheel]);
@@ -231,7 +232,7 @@ void turnWheelsSynchronizedByAngleTask() {
     resetAngleMeasurement(LEFT);
 }
 
-void turnWheelByAngleInTimeTask(int wheel) {
+void turnWheelByAngleInTimeTask(Side wheel) {
     if (HAL_GetTick() < angleTimeout[wheel]) { return; }
     angleTimeout[wheel] = angleTimeout[wheel] + 100;
 
@@ -254,7 +255,7 @@ void turnWheelByAngleInTimeTask(int wheel) {
     turnWheelByAngleTask(wheel);
 }
 
-void turnArmuroTask(int wheel) {
+void turnArmuroTask(Side wheel) {
     if (abs(abs(angleSetpoint[wheel]) - abs(getAngleForWheel(wheel))) <= 0.5 * MIN_ANGLE) {
         print("finished turning wheel %s with angle %d\n", wheel == LEFT ? "LEFT" : "RIGHT", getAngleForWheel(wheel));
         turningWheels[wheel] = NONE;

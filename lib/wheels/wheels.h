@@ -81,14 +81,14 @@ void turnArmuro(int angle);
  */
 TurnWheelsTaskType* turnWheelsTask();
 
-void turnWheelByAngleTask(int wheel);
+void turnWheelByAngleTask(Side wheel);
 
 void turnWheelsSynchronizedTask();
 
 void turnWheelsSynchronizedByAngleTask();
 
-void turnWheelByAngleInTimeTask(int wheel);
+void turnWheelByAngleInTimeTask(Side wheel);
 
-void turnArmuroTask(int wheel);
+void turnArmuroTask(Side wheel);
 
 #endif
