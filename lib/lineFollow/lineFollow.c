@@ -23,6 +23,7 @@ CheckLineResult lastLineValues[3] = {OFF_LINE, OFF_LINE, OFF_LINE};
 WheelAngle* wheelAngle;
 
 typedef enum SearchLineState {
+    DRIVE,
     TURNING_LEFT,
     TURNING_RIGHT,
     TURN_LEFT_TO_RIGHT,
@@ -99,7 +100,8 @@ void searchLine() {
     lineFollowTimeout = HAL_GetTick();
     lastState = 0;
     wheelAngle = startAngleMeasurement();
-    searchLineState = lastLineValues[LEFT] == ALL_BLACK ? TURNING_LEFT : TURNING_RIGHT;
+    nextSearchState = lastLineValues[LEFT] == ALL_BLACK ? TURNING_LEFT : TURNING_RIGHT;
+    searchLineState = DRIVE;
     searchLineStateState = READY;
 }
 
@@ -118,6 +120,12 @@ SearchLineResult searchLineTask() {
     }
     if (searchLineStateState == READY) {
         switch (searchLineState) {
+            case DRIVE:
+                print("driving\n");
+                turnWheelsSynchronizedByAngle(30, 30, distanceToAngle(2), 0);
+                setLED(RIGHT, LOW);
+                setLED(LEFT, LOW);
+                break;
             case TURNING_LEFT:
                 print("turning left\n");
                 turnArmuro(90);
