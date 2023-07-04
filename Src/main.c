@@ -124,7 +124,6 @@ int main(void)
   HAL_Delay(1000);
   
   startParcour();
-  // followLine(30);
 
   /* USER CODE END 2 */
 
@@ -139,7 +138,6 @@ int main(void)
     }
 
     driveParcour();
-    // followLineTask();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */

@@ -15,8 +15,8 @@ typedef enum StateMachine {
     IDLE = -1
 } StateMachine;
 
-StateMachine currentState = SEARCH_LINE;
-StateMachine nextState = IDLE;
+StateMachine currentState = DRIVE_TRAJECTORY;
+StateMachine nextState = SEARCH_LINE;
 State state = READY;
 
 //MARK: - Drive Trajectory
@@ -24,7 +24,7 @@ State state = READY;
 void driveTrajectory() {
     if (state == READY) {
         startTrajectory();
-        nextState = IDLE;
+        nextState = SEARCH_LINE;
         state = RUNNING;
     } else {
         if (driveTrajectoryTask() == FINISHED) {
@@ -119,7 +119,7 @@ void avoidObstacle() {
 }
 
 void startParcour() {
-    currentState = FOLLOW_LINE;
+    currentState = DRIVE_TRAJECTORY;
     state = READY;
 }
 
