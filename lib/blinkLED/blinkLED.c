@@ -8,29 +8,33 @@ enum LEDState {
     OFF
 };
 
-enum LEDState ledState = OFF;
-int taskLED_timeout = 0;
+uint16_t ledTimeInterval[] = {0, 0};
+uint32_t taskLEDTimeout[] = {0, 0};
 
-void setupLED() {
-    taskLED_timeout = HAL_GetTick() + 500;
+enum LEDState ledState[] = {OFF, OFF};
+
+void blinkLED(Side side, uint16_t timeInterval) {
+    ledTimeInterval[side] = timeInterval;
+    taskLEDTimeout[side] = HAL_GetTick() + timeInterval;
+    ledState[side] = ON;
 }
 
-void blinkLED() {
-    int now = HAL_GetTick();
-    if (now < taskLED_timeout) {
-        return;
+void blinkLEDTask() {
+    for (uint8_t i = 0; i < 2; i++) {
+        int now = HAL_GetTick();
+        if (now < taskLEDTimeout[i]) { return; }
+        taskLEDTimeout[i] = now + ledTimeInterval[i];
+        switch (ledState[i]) {
+        case OFF:
+            setLED(i, ON);
+            ledState[i] = ON;
+            break;
+        case ON:
+            setLED(i, OFF);
+            ledState[i] = OFF;
+            break;
+        default:
+            break;
+        }
     }
-    switch (ledState) {
-    case OFF:
-        HAL_GPIO_WritePin(LED_left_GPIO_Port, LED_left_Pin, GPIO_PIN_SET);
-        ledState = ON;
-        break;
-    case ON:
-        HAL_GPIO_WritePin(LED_left_GPIO_Port, LED_left_Pin, GPIO_PIN_RESET);
-        ledState = OFF;
-        break;
-    default:
-        break;
-    }
-    setupLED();
 }

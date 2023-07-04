@@ -6,7 +6,9 @@
 #include "wheels.h"
 #include "stdlib.h"
 
-#define BLACK_THRESHOLD 800
+#include "stateMachine.h"
+
+#define BLACK_THRESHOLD 850
 #define WHITE_THRESHOLD 400
 
 PIDConfig followLinePID;
@@ -16,13 +18,28 @@ int baseLineSpeed = 0;
 
 int lastState = 0;
 
-uint32_t lastLineValues[3] = {0, 0, 0};
+CheckLineResult lastLineValues[3] = {OFF_LINE, OFF_LINE, OFF_LINE};
 
 WheelAngle* wheelAngle;
 
+typedef enum SearchLineState {
+    TURNING_LEFT,
+    TURNING_RIGHT,
+    TURN_LEFT_TO_RIGHT,
+    TURN_RIGHT_TO_LEFT,
+    TURN_RIGHT_TO_MIDDLE,
+    TURN_LEFT_TO_MIDDLE,
+    DONE
+} SearchLineState;
+
+SearchLineState searchLineState = TURNING_LEFT;
+SearchLineState nextSearchState = TURNING_LEFT;
+State searchLineStateState = READY;
+
+
 void followLine(int speed) {
     baseLineSpeed = speed;
-    followLinePID = initPID(0.001 * speed, 0, 0, 0, 0);
+    followLinePID = initPID(0.0005 * speed, 0, 0, 0, 0);
     lineFollowTimeout = HAL_GetTick();
 }
 
@@ -34,6 +51,9 @@ FollowLineResult followLineTask() {
     uint32_t right;
     uint32_t middle;
     getLineSensorReadings(&left, &middle, &right);
+    lastLineValues[0] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
+    // lastLineValues[1] = ;
+    lastLineValues[2] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
 
     CheckLineResult checkForLineResult = checkForLine();
 
@@ -58,11 +78,11 @@ CheckLineResult checkForLine() {
     uint32_t middle;
     getLineSensorReadings(&left, &middle, &right);
 
-    lastLineValues[0] = left;
-    lastLineValues[1] = middle;
-    lastLineValues[2] = right;
+    lastLineValues[0] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
+    // lastLineValues[1] = ;
+    lastLineValues[2] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
 
-    print("left: %d, middle: %d, right: %d\n", left, middle, right);
+    print("left: %lu, middle: %lu, right: %lu\n", left, middle, right);
 
     if (left < WHITE_THRESHOLD && right < WHITE_THRESHOLD && middle < WHITE_THRESHOLD) {
         print("all white\n");
@@ -79,37 +99,88 @@ void searchLine() {
     lineFollowTimeout = HAL_GetTick();
     lastState = 0;
     wheelAngle = startAngleMeasurement();
+    searchLineState = lastLineValues[LEFT] == ALL_BLACK ? TURNING_LEFT : TURNING_RIGHT;
+    searchLineStateState = READY;
 }
 
 SearchLineResult searchLineTask() {
+    TurnWheelsTaskType* turnWheelsTaskType = turnWheelsTask();
+    if (turnWheelsTaskType[0] == NONE && turnWheelsTaskType[1] == NONE) {
+        searchLineStateState = FINISHED;
+    }
+
     if (HAL_GetTick() < lineFollowTimeout) { return lastState; }
     lineFollowTimeout = HAL_GetTick() + 100;
 
-    turnWheelsSynchronized(-50, 50);
+    if (searchLineStateState == FINISHED) {
+        searchLineState = nextSearchState;
+        searchLineStateState = READY;
+    }
+    if (searchLineStateState == READY) {
+        switch (searchLineState) {
+            case TURNING_LEFT:
+                print("turning left\n");
+                turnArmuro(90);
+                setLED(RIGHT, LOW);
+                setLED(LEFT, HIGH);
+                nextSearchState = TURN_LEFT_TO_RIGHT;
+                break;
+            case TURN_RIGHT_TO_LEFT:
+                print("turning right to left\n");
+                turnArmuro(180);
+                setLED(RIGHT, LOW);
+                setLED(LEFT, HIGH);
+                nextSearchState = TURN_LEFT_TO_MIDDLE;
+                break;
+            case TURN_LEFT_TO_MIDDLE:
+                print("turning left to middle\n");
+                turnArmuro(-90);
+                setLED(RIGHT, HIGH);
+                setLED(LEFT, LOW);
+                nextSearchState = DONE;
+                break;
+            case TURNING_RIGHT:
+                print("turning right\n");
+                turnArmuro(-90);
+                setLED(RIGHT, HIGH);
+                setLED(LEFT, LOW);
+                nextSearchState = TURN_RIGHT_TO_LEFT;
+                break;
+            case TURN_LEFT_TO_RIGHT:
+                print("turning left to right\n");
+                turnArmuro(-180);
+                setLED(RIGHT, HIGH);
+                setLED(LEFT, LOW);
+                nextSearchState = TURN_RIGHT_TO_MIDDLE;
+                break;
+            case TURN_RIGHT_TO_MIDDLE:
+                print("turning right to middle\n");
+                turnArmuro(90);
+                setLED(RIGHT, LOW);
+                setLED(LEFT, HIGH);
+                nextSearchState = DONE;
+                break;
+            case DONE:
+                print("done lost line\n");
+                setLED(RIGHT, LOW);
+                setLED(LEFT, LOW);
+                return END_OF_LINE;
+        }
+        searchLineStateState = RUNNING;
+    }
 
     CheckLineResult checkForLineResult = checkForLine();
-    int armuroAngle = 360 * angleToDistance(wheelAngle->right) / TURN_CIRCUMFERENCE;
-    print("armuro angle: %d, rightWheelAngle: %d\n", armuroAngle, wheelAngle->right);
     switch (checkForLineResult) {
         case ON_LINE:
         case ALL_BLACK:
-            print("detected line at angle: %d\n", armuroAngle);
-            if (abs(armuroAngle - 180) < MIN_ANGLE) {
-                return SEARCHING;
-            } else {
-                stopMotor(RIGHT);
-                stopMotor(LEFT);
-                lastState = FOUND;
-                stopAngleMeasurement(wheelAngle);
-                return FOUND;
-            }
+            stopMotor(RIGHT);
+            stopMotor(LEFT);
+            lastState = FOUND;
+            stopAngleMeasurement(wheelAngle);
+            setLED(RIGHT, HIGH);
+            setLED(LEFT, HIGH);
+            return FOUND;
         case OFF_LINE:
-            if (abs(armuroAngle - 360) < MIN_ANGLE) {
-                stopMotor(RIGHT);
-                stopMotor(LEFT);
-                return END_OF_LINE;
-            }
-            lastState = SEARCHING;
             return SEARCHING;
     }
     return SEARCHING;

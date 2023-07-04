@@ -119,8 +119,6 @@ int main(void)
 
   initMotors();
 
-  setupLED();
-
   HAL_Delay(1000);
   
   startParcour();

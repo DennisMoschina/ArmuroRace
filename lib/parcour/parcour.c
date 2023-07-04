@@ -38,25 +38,19 @@ void driveTrajectory() {
 void lineFollow() {
     if (state == READY) {
         print("setting up follow line\n");
-        followLine(30);
+        followLine(50);
         state = RUNNING;
     } else {
         FollowLineResult result = followLineTask();
         switch (result) {
             case ALL_LINE:
-                setLED(LEFT, HIGH);
-                setLED(RIGHT, HIGH);
                 break;
             case FOLLOWING:
-                setLED(LEFT, LOW);
-                setLED(RIGHT, HIGH);
                 break;
             case LOST_LINE:
                 print("lost line while following\n");
                 stopMotor(LEFT);
                 stopMotor(RIGHT);
-                setLED(LEFT, HIGH);
-                setLED(RIGHT, LOW);
                 state = FINISHED;
                 nextState = SEARCH_LINE;
                 break;
@@ -119,7 +113,7 @@ void avoidObstacle() {
 }
 
 void startParcour() {
-    currentState = DRIVE_TRAJECTORY;
+    currentState = SEARCH_LINE;
     state = READY;
 }
 

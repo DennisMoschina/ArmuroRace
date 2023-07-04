@@ -50,7 +50,7 @@ void turnWheelWithSpeed(Side wheel, int speed) {
 }
 
 void setupSynchronizedPID() {
-    synchronizeWheelsPID = initPID(0.05, 0.02, 0.03, 100, 1);
+    synchronizeWheelsPID = initPID(0.7, 0.2, 0.05, 100, 1);
 }
 
 void turnWheelsSynchronized(int leftSpeed, int rightSpeed) {
@@ -289,7 +289,6 @@ void turnArmuroTask(Side wheel) {
     angleTimeout[wheel] = angleTimeout[wheel] + 100;
 
     int8_t angleSign = speedSetpoint[wheel] > 0 ? 1 : -1;
-    print("calculating pid for wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
     int speed = calculatePIDOutput(angleSetpoint[wheel], angleSign * getAngleForWheel(wheel), &wheelsPID[wheel]);
 
     speedSetpoint[wheel] = speed;
