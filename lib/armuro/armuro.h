@@ -22,6 +22,9 @@
 #include <stdint.h>
 #include <stdarg.h>
 
+extern uint32_t minLineSensorValues[3];
+extern uint32_t maxLineSensorValues[3];
+
 extern uint16_t wheelEncoderTicksCount[2];
 extern uint32_t buffer[6];
 
@@ -189,5 +192,13 @@ int distanceToAngle(double distance);
  * @return the distance for the angle
  */
 double angleToDistance(int angle);
+
+/**
+ * @brief Check if a switch is pressed.
+ * 
+ * @param side a pointer to store the pressed switch in
+ * @return true if a switch is pressed, false otherwise
+ */
+uint8_t checkSwitchesPressed(Side* side);
 
 #endif

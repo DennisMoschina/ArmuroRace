@@ -14,6 +14,17 @@
 
 #define MAX_PWM (1 << 16) - 1
 
+uint32_t minLineSensorValues[3] = {
+    MIN_LEFT_LINE_SENSOR_VALUE,
+    MIN_MIDDLE_LINE_SENSOR_VALUE,
+    MIN_RIGHT_LINE_SENSOR_VALUE
+};
+uint32_t maxLineSensorValues[3] = {
+    MAX_LEFT_LINE_SENSOR_VALUE,
+    MAX_MIDDLE_LINE_SENSOR_VALUE,
+    MAX_RIGHT_LINE_SENSOR_VALUE
+};
+
 uint16_t wheelEncoderTicksCount[2];
 int wheelEncoderOldValues[2];
 
@@ -260,4 +271,24 @@ int distanceToAngle(double distance) {
 
 double angleToDistance(int angle) {
     return (angle * WHEEL_CIRCUMFERENCE) / 360;
+}
+
+uint8_t checkSwitchesPressed(Side* side) {
+    uint8_t switches = 0;
+    if (HAL_GPIO_ReadPin(switch_left_GPIO_Port, switch_left_Pin) == GPIO_PIN_RESET) {
+        switches |= 1 << 0;
+        *side = LEFT;
+        print("LEFT pressed\n");
+    }
+    if (HAL_GPIO_ReadPin(switch_middle_GPIO_Port, switch_middle_Pin) == GPIO_PIN_RESET) {
+        switches |= 1 << 1;
+        *side = MIDDLE;
+        print("MIDDLE pressed\n");
+    }
+    if (HAL_GPIO_ReadPin(switch_right_GPIO_Port, switch_right_Pin) == GPIO_PIN_RESET) {
+        switches |= 1 << 2;
+        *side = RIGHT;
+        print("RIGHT pressed\n");
+    }
+    return switches;
 }

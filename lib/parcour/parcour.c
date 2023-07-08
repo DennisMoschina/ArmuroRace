@@ -6,6 +6,7 @@
 #include "trajectory.h"
 #include "stateMachine.h"
 #include "blinkLED.h"
+#include "calibrate.h"
 
 typedef enum StateMachine {
     DRIVE_TRAJECTORY = 0,
@@ -13,6 +14,7 @@ typedef enum StateMachine {
     SEARCH_LINE = 2,
     OVERCOME_GAP = 3,
     AVOID_OBSTACLE = 4,
+    CALIBRATE = 5,
     IDLE = -1
 } StateMachine;
 
@@ -108,6 +110,22 @@ void overcomeGap() {
     }
 }
 
+// MARK: - Calibrate
+
+void calibrateArmuro() {
+    if (state == READY) {
+        print("setting up calibrate\n");
+        calibrate();
+        state = RUNNING;
+        nextState = DRIVE_TRAJECTORY;
+    } else {
+        if (calibrateTask() == FINISHED) {
+            state = FINISHED;
+            print("done calibrating\n");
+        }
+    }
+}
+
 // MARK: - Avoid Obstacle
 
 void avoidObstacle() {
@@ -115,7 +133,7 @@ void avoidObstacle() {
 }
 
 void startParcour() {
-    currentState = SEARCH_LINE;
+    currentState = CALIBRATE;
     state = READY;
 }
 
@@ -136,6 +154,12 @@ void driveParcour() {
             break;
         case OVERCOME_GAP:
             overcomeGap();
+            break;
+        case AVOID_OBSTACLE:
+            avoidObstacle();
+            break;
+        case CALIBRATE:
+            calibrateArmuro();
             break;
         case IDLE:
             break;
