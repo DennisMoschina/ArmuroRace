@@ -3,7 +3,7 @@
 
 #include <armuro.h>
 
-typedef enum {
+typedef enum TurnWheelsTaskType {
     NONE = 0,
     ANGLE = 1,
     SPEED = 2,

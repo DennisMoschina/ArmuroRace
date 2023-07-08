@@ -5,6 +5,7 @@
 #include "lineFollow.h"
 #include "trajectory.h"
 #include "stateMachine.h"
+#include "blinkLED.h"
 
 typedef enum StateMachine {
     DRIVE_TRAJECTORY = 0,
@@ -79,6 +80,7 @@ void searchTheLine() {
                 break;
             case LOST:
                 print("line is unrecoverably lost\n");
+                blinkLED(LEFT, 100);
                 state = FINISHED;
                 nextState = IDLE;
                 break;
@@ -93,18 +95,18 @@ void searchTheLine() {
 
 // MARK: - Overcome Gap
 
-// void overcomeGap() {
-//     if (state == READY) {
-//         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(10));
-//         state = RUNNING;
-//     } else {
-//         TurnWheelsTaskType result[2] = turnWheelsTask();
-//         if (result[LEFT] == NONE && result[RIGHT] == NONE) {
-//             state = FINISHED;
-//             nextState = SEARCH_LINE;
-//         }
-//     }
-// }
+void overcomeGap() {
+    if (state == READY) {
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(10), 0);
+        nextState = SEARCH_LINE;
+        state = RUNNING;
+    } else {
+        TurnWheelsTaskType* result = turnWheelsTask();
+        if (result[LEFT] == NONE && result[RIGHT] == NONE) {
+            state = FINISHED;
+        }
+    }
+}
 
 // MARK: - Avoid Obstacle
 
@@ -131,6 +133,9 @@ void driveParcour() {
             break;
         case FOLLOW_LINE:
             lineFollow();
+            break;
+        case OVERCOME_GAP:
+            overcomeGap();
             break;
         case IDLE:
             break;

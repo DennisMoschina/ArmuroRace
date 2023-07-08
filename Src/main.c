@@ -136,6 +136,7 @@ int main(void)
     }
 
     driveParcour();
+    blinkLEDTask();
 
     /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */

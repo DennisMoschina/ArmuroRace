@@ -4,6 +4,7 @@
 #include "armuro.h"
 
 void blinkLED(Side side, uint16_t timeInterval);
+void stopBlinkingLED(Side side);
 
 void blinkLEDTask();
 
