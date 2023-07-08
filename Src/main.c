@@ -118,8 +118,6 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   initMotors();
-
-  HAL_Delay(1000);
   
   startParcour();
 

@@ -253,16 +253,7 @@ void getLineSensorReadings(uint32_t* left, uint32_t* middle, uint32_t* right) {
 }
 
 uint32_t mapLineSensorReadingToRange(uint32_t value, Side side) {
-    switch (side) {
-        case LEFT:
-            return map(value, MIN_LEFT_LINE_SENSOR_VALUE, MAX_LEFT_LINE_SENSOR_VALUE, 0, 1023);
-        case MIDDLE:
-            return map(value, MIN_MIDDLE_LINE_SENSOR_VALUE, MAX_MIDDLE_LINE_SENSOR_VALUE, 0, 1023);
-        case RIGHT:
-            return map(value, MIN_RIGHT_LINE_SENSOR_VALUE, MAX_RIGHT_LINE_SENSOR_VALUE, 0, 1023);
-        default:
-            return 0;
-    }
+    return map(value, minLineSensorValues[side], maxLineSensorValues[side], 0, 1023);
 }
 
 int distanceToAngle(double distance) {

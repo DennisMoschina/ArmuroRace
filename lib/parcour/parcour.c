@@ -141,6 +141,10 @@ void driveParcour() {
     if (state == FINISHED) {
         currentState = nextState;
         state = READY;
+        if (currentState != IDLE) {
+            stopBlinkingLED(LEFT);
+            stopBlinkingLED(RIGHT);
+        }
     }
     switch (currentState) {
         case DRIVE_TRAJECTORY:

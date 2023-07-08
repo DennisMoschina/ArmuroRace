@@ -23,6 +23,7 @@ void stopBlinkingLED(Side side) {
     ledTimeInterval[side] = 0;
     taskLEDTimeout[side] = -1;
     ledState[side] = OFF;
+    setLED(side, OFF);
 }
 
 void blinkLEDTask() {

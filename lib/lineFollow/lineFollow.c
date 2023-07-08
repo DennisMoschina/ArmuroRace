@@ -4,11 +4,12 @@
 #include "pidController.h"
 #include "tim.h"
 #include "wheels.h"
+#include "blinkLED.h"
 #include "stdlib.h"
 
 #include "stateMachine.h"
 
-#define BLACK_THRESHOLD 850
+#define BLACK_THRESHOLD 900
 #define WHITE_THRESHOLD 400
 
 PIDConfig followLinePID;
@@ -52,9 +53,8 @@ FollowLineResult followLineTask() {
     uint32_t right;
     uint32_t middle;
     getLineSensorReadings(&left, &middle, &right);
-    lastLineValues[0] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
-    // lastLineValues[1] = ;
-    lastLineValues[2] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
+    lastLineValues[LEFT] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
+    lastLineValues[RIGHT] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
 
     CheckLineResult checkForLineResult = checkForLine();
 
@@ -79,9 +79,9 @@ CheckLineResult checkForLine() {
     uint32_t middle;
     getLineSensorReadings(&left, &middle, &right);
 
-    lastLineValues[0] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
+    lastLineValues[LEFT] = left < WHITE_THRESHOLD ? OFF_LINE : (left > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);
     // lastLineValues[1] = ;
-    lastLineValues[2] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
+    lastLineValues[RIGHT] = right < WHITE_THRESHOLD ? OFF_LINE : (right > BLACK_THRESHOLD ? ALL_BLACK : ON_LINE);;
 
     print("left: %lu, middle: %lu, right: %lu\n", left, middle, right);
 
@@ -100,7 +100,15 @@ void searchLine() {
     lineFollowTimeout = HAL_GetTick();
     lastState = 0;
     wheelAngle = startAngleMeasurement();
-    nextSearchState = lastLineValues[LEFT] == ALL_BLACK ? TURNING_LEFT : TURNING_RIGHT;
+    if (lastLineValues[LEFT] == ALL_BLACK) {
+        nextSearchState = TURNING_LEFT;
+    } else if (lastLineValues[RIGHT] == ALL_BLACK) {
+        nextSearchState = TURNING_RIGHT;
+    } else if (lastLineValues[LEFT] == ON_LINE) {
+        nextSearchState = TURNING_LEFT;
+    } else {
+        nextSearchState = TURNING_RIGHT;
+    }
     searchLineState = DRIVE;
     searchLineStateState = READY;
 }
