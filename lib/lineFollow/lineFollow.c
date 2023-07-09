@@ -21,8 +21,6 @@ int lastState = 0;
 
 CheckLineResult lastLineValues[3] = {OFF_LINE, OFF_LINE, OFF_LINE};
 
-WheelAngle* wheelAngle;
-
 typedef enum SearchLineState {
     DRIVE,
     TURNING_LEFT,
@@ -69,8 +67,8 @@ FollowLineResult followLineTask() {
     turnMotor(RIGHT, FORWARD, baseLineSpeed + speedAdjustement);
     turnMotor(LEFT, FORWARD, baseLineSpeed - speedAdjustement);
 
-    lastState = 0;
-    return 0;
+    lastState = FOLLOWING;
+    return FOLLOWING;
 }
 
 CheckLineResult checkForLine() {
@@ -93,13 +91,13 @@ CheckLineResult checkForLine() {
         return ALL_BLACK;
     }
 
+    print("on line\n");
     return ON_LINE;
 }
 
 void searchLine() {
     lineFollowTimeout = HAL_GetTick();
     lastState = 0;
-    wheelAngle = startAngleMeasurement();
     if (lastLineValues[LEFT] == ALL_BLACK) {
         nextSearchState = TURNING_LEFT;
     } else if (lastLineValues[RIGHT] == ALL_BLACK) {
@@ -189,10 +187,10 @@ SearchLineResult searchLineTask() {
     switch (checkForLineResult) {
         case ON_LINE:
         case ALL_BLACK:
+            print("found line after search\n");
             stopMotor(RIGHT);
             stopMotor(LEFT);
             lastState = FOUND;
-            stopAngleMeasurement(wheelAngle);
             setLED(RIGHT, HIGH);
             setLED(LEFT, HIGH);
             return FOUND;

@@ -79,14 +79,19 @@ void searchTheLine() {
                 print("found line\n");
                 state = FINISHED;
                 nextState = FOLLOW_LINE;
+                setLED(LEFT, LOW);
+                setLED(RIGHT, LOW);
                 break;
             case LOST:
                 print("line is unrecoverably lost\n");
-                blinkLED(LEFT, 100);
+                setLED(LEFT, HIGH);
+                setLED(RIGHT, HIGH);
                 state = FINISHED;
                 nextState = IDLE;
                 break;
             case END_OF_LINE:
+                setLED(LEFT, HIGH);
+                setLED(RIGHT, HIGH);
                 print("end of line\n");
                 state = FINISHED;
                 nextState = OVERCOME_GAP;
@@ -102,7 +107,10 @@ void overcomeGap() {
         turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(10), 0);
         nextState = SEARCH_LINE;
         state = RUNNING;
+        setLED(LEFT, LOW);
+        setLED(RIGHT, LOW);
     } else {
+        print("overcoming gap\n");
         TurnWheelsTaskType* result = turnWheelsTask();
         if (result[LEFT] == NONE && result[RIGHT] == NONE) {
             state = FINISHED;
@@ -133,7 +141,7 @@ void avoidObstacle() {
 }
 
 void startParcour() {
-    currentState = CALIBRATE;
+    currentState = SEARCH_LINE;
     state = READY;
 }
 
@@ -141,10 +149,6 @@ void driveParcour() {
     if (state == FINISHED) {
         currentState = nextState;
         state = READY;
-        if (currentState != IDLE) {
-            stopBlinkingLED(LEFT);
-            stopBlinkingLED(RIGHT);
-        }
     }
     switch (currentState) {
         case DRIVE_TRAJECTORY:

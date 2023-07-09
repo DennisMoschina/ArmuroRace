@@ -214,13 +214,16 @@ WheelAngle* startAngleMeasurement() {
 void stopAngleMeasurement(WheelAngle* angle) {
     WheelAngleListItem* itemToRemove = NULL;
     if (&wheelAngleList->angle == angle) {
+        print("Removing first angle measurement item\n");
         itemToRemove = wheelAngleList;
         wheelAngleList = wheelAngleList->next;
         wheelAngleList->prev = NULL;
     } else {
         WheelAngleListItem* current = wheelAngleList->next;
         while (current != NULL) {
+            print("Checking if %p == %p\n", &current->angle, angle);
             if (&wheelAngleList->angle == angle) {
+                print("Removing angle measurement item\n");
                 itemToRemove = current;
                 current->prev->next = current->next;
                 current->next->prev = current->prev;
@@ -228,7 +231,9 @@ void stopAngleMeasurement(WheelAngle* angle) {
             }
         }
     }
-    free(itemToRemove);
+    if (itemToRemove != NULL) {
+        free(itemToRemove);
+    }
 }
 
 int getAngleForWheel(Side wheel) {
