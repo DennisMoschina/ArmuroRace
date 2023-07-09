@@ -6,7 +6,7 @@
 #include "math.h"
 
 #define OBSTACLE_RADIUS 4
-#define SAFETY_DISTANCE 2
+#define SAFETY_DISTANCE 3
 #define ATTACK_ANGLE 60
 
 typedef enum ObstacleAvoidanceState {
@@ -24,6 +24,7 @@ typedef struct ObstacleAvoidanceConfig {
     double circleRadius;
     double backOffDistance;
     double attackAngle;
+    double distanceToDrive;
 } ObstacleAvoidanceConfig;
 
 ObstacleAvoidanceConfig obstacleAvoidanceConfig;
@@ -35,6 +36,7 @@ ObstacleAvoidanceConfig configureObstacleAvoidance(double obstacleRadius, int at
     config.circleRadius = 1.0 / (1 - sin(betaRad)) * (obstacleRadius + SAFETY_DISTANCE + 0.5 * WHEEL_DISTANCE);
     config.backOffDistance = cos(betaRad) * config.circleRadius;
     config.attackAngle = attackAngle;
+    config.distanceToDrive = config.circleRadius * (M_PI - 2 * betaRad);
     return config;
 }
 
@@ -72,7 +74,8 @@ State avoidObstacleTask() {
             case DRIVE_CIRCLE:
                 print("driving circle\n");
                 double wheelSpeedDifferenceFactor = speedDifferenceForRadius(obstacleAvoidanceConfig.circleRadius);
-                turnWheelsSynchronized(wheelSpeedDifferenceFactor * 50, 50);
+                turnWheelsSynchronizedByAngle(wheelSpeedDifferenceFactor * 50, 50, distanceToAngle(obstacleAvoidanceConfig.distanceToDrive), 0);
+                nextObstacleAvoidanceState = OBSTACLE_AVOIDANCE_DONE;
                 break;
             case OBSTACLE_AVOIDANCE_DONE:
                 print("obstacle avoidance done\n");
@@ -82,17 +85,10 @@ State avoidObstacleTask() {
     }
     switch (obstacleAvoidanceState) {
         case BACK_OFF:
-        case TURN_FROM_OBSTACLE: ;
+        case TURN_FROM_OBSTACLE:
+        case DRIVE_CIRCLE: ;
             TurnWheelsTaskType* turnWheelsResult = turnWheelsTask();
             if (turnWheelsResult[LEFT] == NONE && turnWheelsResult[RIGHT] == NONE) {
-                obstacleAvoidanceStateState = FINISHED;
-            }
-            break;
-        case DRIVE_CIRCLE:
-            turnWheelsTask();
-            CheckLineResult checkLineResult = checkForLine();
-            if (checkLineResult != OFF_LINE) {
-                nextObstacleAvoidanceState = OBSTACLE_AVOIDANCE_DONE;
                 obstacleAvoidanceStateState = FINISHED;
             }
             break;

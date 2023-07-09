@@ -39,7 +39,7 @@ State searchLineStateState = READY;
 
 void followLine(int speed) {
     baseLineSpeed = speed;
-    followLinePID = initPID(0.0005 * speed, 0, 0, 0, 0);
+    followLinePID = initPID(0.0006 * speed, 0, 0, 0, 0);
     lineFollowTimeout = HAL_GetTick();
 }
 
