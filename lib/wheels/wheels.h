@@ -14,6 +14,13 @@ typedef enum TurnWheelsTaskType {
 } TurnWheelsTaskType;
 
 /**
+ * @brief Stop the wheel.
+ * 
+ * @param wheel the wheel to stop
+ */
+void stopWheel(Side wheel);
+
+/**
  * @brief Start to turn the wheel by a certain angle
  * 
  * @param wheel the wheel to turn

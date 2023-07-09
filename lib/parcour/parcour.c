@@ -7,6 +7,7 @@
 #include "stateMachine.h"
 #include "blinkLED.h"
 #include "calibrate.h"
+#include "obstacleAvoidance.h"
 
 typedef enum StateMachine {
     DRIVE_TRAJECTORY = 0,
@@ -44,6 +45,12 @@ void lineFollow() {
         followLine(50);
         state = RUNNING;
     } else {
+        if (checkForObstacle()) {
+            print("obstacle detected\n");
+            state = FINISHED;
+            nextState = AVOID_OBSTACLE;
+            return;
+        }
         FollowLineResult result = followLineTask();
         switch (result) {
             case ALL_LINE:
@@ -52,8 +59,8 @@ void lineFollow() {
                 break;
             case LOST_LINE:
                 print("lost line while following\n");
-                stopMotor(LEFT);
-                stopMotor(RIGHT);
+                stopWheel(LEFT);
+                stopWheel(RIGHT);
                 state = FINISHED;
                 nextState = SEARCH_LINE;
                 break;
@@ -136,12 +143,22 @@ void calibrateArmuro() {
 
 // MARK: - Avoid Obstacle
 
-void avoidObstacle() {
-
+void avoidingObstacle() {
+    if (state == READY) {
+        print("setting up avoid obstacle\n");
+        avoidObstacle();
+        state = RUNNING;
+    } else {
+        if (avoidObstacleTask() == FINISHED) {
+            nextState = FOLLOW_LINE;
+            state = FINISHED;
+            print("done avoiding obstacle\n");
+        }
+    }
 }
 
 void startParcour() {
-    currentState = SEARCH_LINE;
+    currentState = CALIBRATE;
     state = READY;
 }
 
@@ -164,7 +181,7 @@ void driveParcour() {
             overcomeGap();
             break;
         case AVOID_OBSTACLE:
-            avoidObstacle();
+            avoidingObstacle();
             break;
         case CALIBRATE:
             calibrateArmuro();

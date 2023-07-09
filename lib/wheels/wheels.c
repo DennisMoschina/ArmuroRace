@@ -20,6 +20,11 @@ PIDConfig wheelsPID[2];
 PIDConfig synchronizeWheelsPID;
 uint32_t synchronizeWheelsTimeout = 0;
 
+void stopWheel(Side wheel) {
+    turningWheels[wheel] = NONE;
+    stopMotor(wheel);
+}
+
 void turnWheelByAngle(Side wheel, int angle, int speed) {
     angleSetpoint[wheel] = angle;
     turningWheels[wheel] = ANGLE;
@@ -174,8 +179,7 @@ void turnWheelByAngleTask(Side wheel) {
         turnMotor(wheel, BACKWARD, speedSetpoint[wheel]);
     } else {
         print("finished turning wheel %s\n", wheel == LEFT ? "LEFT" : "RIGHT");
-        stopMotor(wheel);
-        turningWheels[wheel] = NONE;
+        stopWheel(wheel);
     }
 }
 
@@ -215,11 +219,8 @@ void turnWheelsSynchronizedTask() {
 
 void turnWheelsSynchronizedByAngleTask() {
     if (angleSetpoint[RIGHT] - getAngleForWheel(RIGHT) <= 0) {
-        turningWheels[RIGHT] = NONE;
-        turningWheels[LEFT] = NONE;
-
-        stopMotor(RIGHT);
-        stopMotor(LEFT);
+        stopWheel(RIGHT);
+        stopWheel(LEFT);
 
         return;
     }
@@ -280,8 +281,7 @@ void turnWheelByAngleInTimeTask(Side wheel) {
 void turnArmuroTask(Side wheel) {
     if (abs(abs(angleSetpoint[wheel]) - abs(getAngleForWheel(wheel))) <= 0.5 * MIN_ANGLE) {
         print("finished turning wheel %s with angle %d\n", wheel == LEFT ? "LEFT" : "RIGHT", getAngleForWheel(wheel));
-        turningWheels[wheel] = NONE;
-        stopMotor(wheel);
+        stopWheel(wheel);
         return;
     }
 

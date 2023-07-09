@@ -8,7 +8,9 @@
 #define LOW 0
 
 #define WHEEL_CIRCUMFERENCE 12.566
-#define TURN_CIRCUMFERENCE 24.1902634326
+#define TURN_CIRCUMFERENCE 24.504422698
+#define WHEEL_DISTANCE 7.8
+#define ARMURO_LENGTH 9
 
 #define MIN_ANGLE 15
 
@@ -192,6 +194,14 @@ int distanceToAngle(double distance);
  * @return the distance for the angle
  */
 double angleToDistance(int angle);
+
+/**
+ * @brief Calculate the speed difference for the wheels to drive a circle with the given radius
+ * 
+ * @param radius the radius (in cm) of the circle to drive (to the middle of the robot)
+ * @return the factor by which the speed of the outer wheel should be multiplied to get the speed for the inner wheel
+ */
+double speedDifferenceForRadius(double radius);
 
 /**
  * @brief Check if a switch is pressed.

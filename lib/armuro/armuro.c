@@ -269,6 +269,10 @@ double angleToDistance(int angle) {
     return (angle * WHEEL_CIRCUMFERENCE) / 360;
 }
 
+double speedDifferenceForRadius(double radius) {
+    return (2 * radius - WHEEL_DISTANCE) / (2 * radius + WHEEL_DISTANCE);
+}
+
 uint8_t checkSwitchesPressed(Side* side) {
     uint8_t switches = 0;
     if (HAL_GPIO_ReadPin(switch_left_GPIO_Port, switch_left_Pin) == GPIO_PIN_RESET) {

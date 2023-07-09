@@ -188,8 +188,8 @@ SearchLineResult searchLineTask() {
         case ON_LINE:
         case ALL_BLACK:
             print("found line after search\n");
-            stopMotor(RIGHT);
-            stopMotor(LEFT);
+            stopWheel(RIGHT);
+            stopWheel(LEFT);
             lastState = FOUND;
             setLED(RIGHT, HIGH);
             setLED(LEFT, HIGH);
