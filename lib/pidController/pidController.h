@@ -13,7 +13,16 @@ typedef struct PIDConfig {
     double integral;
 } PIDConfig;
 
-
+/**
+ * @brief Configure the PID controller
+ * 
+ * @param p_gain the gain for the proportional part
+ * @param i_gain the gain for the integral part
+ * @param d_gain the gain for the derivative part
+ * @param max_i the maximum value for the integral part
+ * @param i_relax the relaxation value for the integral part
+ * @return a configuration for the PID controller
+ */
 PIDConfig initPID(double p_gain, double i_gain, double d_gain, double max_i, double i_relax);
 
 /**
