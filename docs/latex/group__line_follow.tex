@@ -1,0 +1,310 @@
+\hypertarget{group__line_follow}{}\doxysection{Line Follow}
+\label{group__line_follow}\index{Line Follow@{Line Follow}}
+
+
+Let the robot follow the line.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \mbox{\hyperlink{group__line_follow_ga61a57a7c36d2a2eccf034abeb2d0e756}{Search\+Line\+State}}
+\begin{DoxyCompactList}\small\item\em The state of the line following state machine. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_gaa4c66df19bd73e7a2c285e206e3ae24e}{Search\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of the search line task. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga1f28fd2a5c987221f6ecee73975156c6}{Check\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of performing a line check. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga2b0c9ed242c0f62364500113ce6e69a3}{Follow\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of following the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \{ \newline
+\mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf7b6d6d8e5e14633d388ef9cc7a941b7}{DRIVE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faeb378d79c82921b6927bc7123b0bf76c}{TURNING\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa5debe6c441a488f531f3314809ff38ce}{TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+RIGHT}}
+, \newline
+\mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa09b11a16f947d7e95729ada9e6d3ec13}{TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+LEFT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf5da91eb12f0d4a008adf66048fa9c5e}{TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fad5e916fa73b2edc384d17aa93597a4c3}{TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa9c954bcf443428c80b0f107b3bc48749}{DONE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The state of the line following state machine. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470aa0c0f46a51df7452ca25be1d4594e8ba}{SEARCHING}} = 0
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a3fe5ffe68b10eb48b4a8b17eefe60154}{FOUND}} = 1
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a339435bd0d4a842c6107333c908a5317}{LOST}} = -\/1
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a9cf23bed2fc1273a8124124fb53bd01d}{END\+\_\+\+OF\+\_\+\+LINE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em The result of the search line task. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa315cfb9fb52108a0b61be1c5228d63a8}{ON\+\_\+\+LINE}} = 0
+, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}} = -\/1
+, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa4e4bb06a708a870bafec30d283c7369d}{ALL\+\_\+\+BLACK}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em The result of performing a line check. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3ac241aecbe2e3eba2f42ce28777f6ab65}{FOLLOWING}} = 0
+, \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a0646b39cab9db1de846f829fe958f165}{LOST\+\_\+\+LINE}} = -\/1
+, \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a97840dfad76cadb83f9254ec80b310ca}{ALL\+\_\+\+LINE}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em The result of following the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__line_follow_gadb8e123ed67714679311906eaf1c3677}{follow\+Line}} (int speed)
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}{follow\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}{check\+For\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the line is lost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}{search\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}{search\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Let the robot follow the line. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__line_follow_ga1f28fd2a5c987221f6ecee73975156c6}\label{group__line_follow_ga1f28fd2a5c987221f6ecee73975156c6}} 
+\index{Line Follow@{Line Follow}!CheckLineResult@{CheckLineResult}}
+\index{CheckLineResult@{CheckLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{CheckLineResult}{CheckLineResult}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}}}
+
+
+
+The result of performing a line check. 
+
+\mbox{\Hypertarget{group__line_follow_ga2b0c9ed242c0f62364500113ce6e69a3}\label{group__line_follow_ga2b0c9ed242c0f62364500113ce6e69a3}} 
+\index{Line Follow@{Line Follow}!FollowLineResult@{FollowLineResult}}
+\index{FollowLineResult@{FollowLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{FollowLineResult}{FollowLineResult}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}}}
+
+
+
+The result of following the line. 
+
+\mbox{\Hypertarget{group__line_follow_gaa4c66df19bd73e7a2c285e206e3ae24e}\label{group__line_follow_gaa4c66df19bd73e7a2c285e206e3ae24e}} 
+\index{Line Follow@{Line Follow}!SearchLineResult@{SearchLineResult}}
+\index{SearchLineResult@{SearchLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{SearchLineResult}{SearchLineResult}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}}}
+
+
+
+The result of the search line task. 
+
+\mbox{\Hypertarget{group__line_follow_ga61a57a7c36d2a2eccf034abeb2d0e756}\label{group__line_follow_ga61a57a7c36d2a2eccf034abeb2d0e756}} 
+\index{Line Follow@{Line Follow}!SearchLineState@{SearchLineState}}
+\index{SearchLineState@{SearchLineState}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{SearchLineState}{SearchLineState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}}}
+
+
+
+The state of the line following state machine. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}\label{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}} 
+\index{Line Follow@{Line Follow}!CheckLineResult@{CheckLineResult}}
+\index{CheckLineResult@{CheckLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{CheckLineResult}{CheckLineResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}}}
+
+
+
+The result of performing a line check. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ON\_LINE@{ON\_LINE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!ON\_LINE@{ON\_LINE}}}\mbox{\Hypertarget{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa315cfb9fb52108a0b61be1c5228d63a8}\label{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa315cfb9fb52108a0b61be1c5228d63a8}} 
+ON\+\_\+\+LINE&The robot is partly on the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OFF\_LINE@{OFF\_LINE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!OFF\_LINE@{OFF\_LINE}}}\mbox{\Hypertarget{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}\label{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}} 
+OFF\+\_\+\+LINE&The robot is not on the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL\_BLACK@{ALL\_BLACK}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!ALL\_BLACK@{ALL\_BLACK}}}\mbox{\Hypertarget{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa4e4bb06a708a870bafec30d283c7369d}\label{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa4e4bb06a708a870bafec30d283c7369d}} 
+ALL\+\_\+\+BLACK&The robot is completely on the line. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}\label{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}} 
+\index{Line Follow@{Line Follow}!FollowLineResult@{FollowLineResult}}
+\index{FollowLineResult@{FollowLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{FollowLineResult}{FollowLineResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}}}
+
+
+
+The result of following the line. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOLLOWING@{FOLLOWING}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!FOLLOWING@{FOLLOWING}}}\mbox{\Hypertarget{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3ac241aecbe2e3eba2f42ce28777f6ab65}\label{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3ac241aecbe2e3eba2f42ce28777f6ab65}} 
+FOLLOWING&The robot is currently following the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOST\_LINE@{LOST\_LINE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!LOST\_LINE@{LOST\_LINE}}}\mbox{\Hypertarget{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a0646b39cab9db1de846f829fe958f165}\label{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a0646b39cab9db1de846f829fe958f165}} 
+LOST\+\_\+\+LINE&The robot lost the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL\_LINE@{ALL\_LINE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!ALL\_LINE@{ALL\_LINE}}}\mbox{\Hypertarget{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a97840dfad76cadb83f9254ec80b310ca}\label{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a97840dfad76cadb83f9254ec80b310ca}} 
+ALL\+\_\+\+LINE&The robot is fully on the line. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}\label{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}} 
+\index{Line Follow@{Line Follow}!SearchLineResult@{SearchLineResult}}
+\index{SearchLineResult@{SearchLineResult}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{SearchLineResult}{SearchLineResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}}}
+
+
+
+The result of the search line task. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEARCHING@{SEARCHING}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!SEARCHING@{SEARCHING}}}\mbox{\Hypertarget{group__line_follow_gga6dc7e98a64b32c30d34000a524531470aa0c0f46a51df7452ca25be1d4594e8ba}\label{group__line_follow_gga6dc7e98a64b32c30d34000a524531470aa0c0f46a51df7452ca25be1d4594e8ba}} 
+SEARCHING&The robot is currently searching the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOUND@{FOUND}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!FOUND@{FOUND}}}\mbox{\Hypertarget{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a3fe5ffe68b10eb48b4a8b17eefe60154}\label{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a3fe5ffe68b10eb48b4a8b17eefe60154}} 
+FOUND&The robot found the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOST@{LOST}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!LOST@{LOST}}}\mbox{\Hypertarget{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a339435bd0d4a842c6107333c908a5317}\label{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a339435bd0d4a842c6107333c908a5317}} 
+LOST&The robot lost the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{END\_OF\_LINE@{END\_OF\_LINE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!END\_OF\_LINE@{END\_OF\_LINE}}}\mbox{\Hypertarget{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a9cf23bed2fc1273a8124124fb53bd01d}\label{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a9cf23bed2fc1273a8124124fb53bd01d}} 
+END\+\_\+\+OF\+\_\+\+LINE&The robot reached the end of the line. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}\label{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}} 
+\index{Line Follow@{Line Follow}!SearchLineState@{SearchLineState}}
+\index{SearchLineState@{SearchLineState}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{SearchLineState}{SearchLineState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}}}
+
+
+
+The state of the line following state machine. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE@{DRIVE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!DRIVE@{DRIVE}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf7b6d6d8e5e14633d388ef9cc7a941b7}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf7b6d6d8e5e14633d388ef9cc7a941b7}} 
+DRIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURNING\_LEFT@{TURNING\_LEFT}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURNING\_LEFT@{TURNING\_LEFT}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}} 
+TURNING\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURNING\_RIGHT@{TURNING\_RIGHT}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURNING\_RIGHT@{TURNING\_RIGHT}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faeb378d79c82921b6927bc7123b0bf76c}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faeb378d79c82921b6927bc7123b0bf76c}} 
+TURNING\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_LEFT\_TO\_RIGHT@{TURN\_LEFT\_TO\_RIGHT}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURN\_LEFT\_TO\_RIGHT@{TURN\_LEFT\_TO\_RIGHT}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa5debe6c441a488f531f3314809ff38ce}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa5debe6c441a488f531f3314809ff38ce}} 
+TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_RIGHT\_TO\_LEFT@{TURN\_RIGHT\_TO\_LEFT}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURN\_RIGHT\_TO\_LEFT@{TURN\_RIGHT\_TO\_LEFT}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa09b11a16f947d7e95729ada9e6d3ec13}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa09b11a16f947d7e95729ada9e6d3ec13}} 
+TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_RIGHT\_TO\_MIDDLE@{TURN\_RIGHT\_TO\_MIDDLE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURN\_RIGHT\_TO\_MIDDLE@{TURN\_RIGHT\_TO\_MIDDLE}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf5da91eb12f0d4a008adf66048fa9c5e}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf5da91eb12f0d4a008adf66048fa9c5e}} 
+TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+MIDDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_LEFT\_TO\_MIDDLE@{TURN\_LEFT\_TO\_MIDDLE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!TURN\_LEFT\_TO\_MIDDLE@{TURN\_LEFT\_TO\_MIDDLE}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fad5e916fa73b2edc384d17aa93597a4c3}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fad5e916fa73b2edc384d17aa93597a4c3}} 
+TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+MIDDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DONE@{DONE}!Line Follow@{Line Follow}}\index{Line Follow@{Line Follow}!DONE@{DONE}}}\mbox{\Hypertarget{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa9c954bcf443428c80b0f107b3bc48749}\label{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa9c954bcf443428c80b0f107b3bc48749}} 
+DONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}\label{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}} 
+\index{Line Follow@{Line Follow}!checkForLine@{checkForLine}}
+\index{checkForLine@{checkForLine}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{checkForLine()}{checkForLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} check\+For\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the line is lost. 
+
+\begin{DoxyReturn}{Returns}
+0 if partly on line, -\/1 if line is lost, 1 if all is black 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__line_follow_gadb8e123ed67714679311906eaf1c3677}\label{group__line_follow_gadb8e123ed67714679311906eaf1c3677}} 
+\index{Line Follow@{Line Follow}!followLine@{followLine}}
+\index{followLine@{followLine}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{followLine()}{followLine()}}
+{\footnotesize\ttfamily void follow\+Line (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Follows the line until the end of the line is reached. 
+
+A \mbox{\hyperlink{group__pid_controller}{PID Controller}} is used to follow the line. The error is the difference between the left and right line sensor, which should be corrected to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & the speed at which the robot should follow the line (0-\/100) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}\label{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}} 
+\index{Line Follow@{Line Follow}!followLineTask@{followLineTask}}
+\index{followLineTask@{followLineTask}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{followLineTask()}{followLineTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} follow\+Line\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Follows the line until the end of the line is reached. 
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if currently following the line, -\/1 if line is lost, 1 if all is black 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}\label{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}} 
+\index{Line Follow@{Line Follow}!searchLine@{searchLine}}
+\index{searchLine@{searchLine}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{searchLine()}{searchLine()}}
+{\footnotesize\ttfamily void search\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Searches for the line. 
+
+\mbox{\Hypertarget{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}\label{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}} 
+\index{Line Follow@{Line Follow}!searchLineTask@{searchLineTask}}
+\index{searchLineTask@{searchLineTask}!Line Follow@{Line Follow}}
+\doxysubsubsection{\texorpdfstring{searchLineTask()}{searchLineTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} search\+Line\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Searches for the line. 
+
+Turn to each side for 90 degrees and check if the line is found. This behaviour is implemented in a state machine in \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}}.
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if currently searching for the line, 1 if line is found, -\/1 if line is lost, 2 if end of line is reached 
+\end{DoxyReturn}

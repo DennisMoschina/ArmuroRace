@@ -1,0 +1,50 @@
+\hypertarget{wheels_8h_source}{}\doxysection{wheels.\+h}
+\label{wheels_8h_source}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h}}
+\mbox{\hyperlink{wheels_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_WHEELS\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_WHEELS\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{armuro_8h}{armuro.h}}>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{TurnWheelsTaskType}} \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}} = 0,}
+\DoxyCodeLine{19     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a0361b31f1fea060374e017af17d84435}{ANGLE}} = 1,}
+\DoxyCodeLine{21     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a1fb3554200c1173d24e97e9d32283ead}{SPEED}} = 2,}
+\DoxyCodeLine{23     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2aa3f0c8ae421223ecbd38fed5d36f73d2}{SYNCHRONIZED}} = 3,}
+\DoxyCodeLine{25     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a777c918a1458ff31da172a7ba36be15f}{TIMED\_ANGLE}} = 4,}
+\DoxyCodeLine{27     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a4b270523c7b89ab97d3869206cb783a6}{SYNCHRONIZED\_ANGLE}} = 5,}
+\DoxyCodeLine{29     \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a4e5add805436f8349199498326cf43d1}{TURN}} = 6}
+\DoxyCodeLine{30 \} \mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{TurnWheelsTaskType}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{38 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_gaf7fc31f69ac072d2164305039d9d8c07}{stopWheel}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{48 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_gaac05a2e703af327032d0a0d43ff26d5e}{turnWheelByAngle}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, \textcolor{keywordtype}{int} angle, \textcolor{keywordtype}{int} speed);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{58 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_ga07dfcfe49045cc92cc85f2a3c04e7b8e}{turnWheelByAngleInTime}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, \textcolor{keywordtype}{int} angle, \textcolor{keywordtype}{int} time);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_gafe73b13925e1f145a98cdefc2e54c0cb}{turnWheelWithSpeed}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, \textcolor{keywordtype}{int} speed);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_gaef6b2e65ff2dfdc6e090c860f7df9b35}{turnWheelsSynchronized}}(\textcolor{keywordtype}{int} leftSpeed, \textcolor{keywordtype}{int} rightSpeed);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{89 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_ga7b161656d5b81a4bbeba3b9a757256b4}{turnWheelsSynchronizedByAngle}}(\textcolor{keywordtype}{int} leftSpeed, \textcolor{keywordtype}{int} rightSpeed, \textcolor{keywordtype}{int} rightAngle, uint8\_t softStart);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_ga7d99d7a357b68582068f2f8c6ff2235d}{turnArmuroInTime}}(\textcolor{keywordtype}{int} angle, \textcolor{keywordtype}{int} time);}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{106 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__wheels_ga3fe2e43458785a47cfd77aaaf196561c}{turnArmuro}}(\textcolor{keywordtype}{int} angle);}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{116 \mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{TurnWheelsTaskType}}* \mbox{\hyperlink{group__wheels_ga7722da80cb60575de0841fe5aff9e47f}{turnWheelsTask}}();}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} \mbox{\hyperlink{wheels_8h_abc7742c1addf260169c6bb3e521caa6b}{turnWheelByAngleTask}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{wheels_8h_a89703ca660e2c9ecac9d60476b03b9b0}{turnWheelsSynchronizedTask}}();}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{wheels_8h_ac4a8c191d5418d5ef7da253c66a735b1}{turnWheelsSynchronizedByAngleTask}}();}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{wheels_8h_a2f01bb8643c3040116905b82a2184cce}{turnWheelByAngleInTimeTask}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} \mbox{\hyperlink{wheels_8h_abcb6d3f66ac0dc3b987c6dc0acd9431a}{turnArmuroTask}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

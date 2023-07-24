@@ -1,0 +1,239 @@
+\hypertarget{armuro_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/armuro/armuro.c File Reference}
+\label{armuro_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.c}}
+{\ttfamily \#include \char`\"{}armuro.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{armuro_8c_a5af803c62aa7bceab6ef957dc3621d31}{RIGHT\+\_\+\+ENCODER\+\_\+\+HIGH\+\_\+\+THRESHOLD}}~2000
+\item 
+\#define \mbox{\hyperlink{armuro_8c_aceab1db700aba212b48d044e1b922762}{RIGHT\+\_\+\+ENCODER\+\_\+\+LOW\+\_\+\+THRESHOLD}}~1000
+\item 
+\#define \mbox{\hyperlink{armuro_8c_a6944e4b6901b026a40a92044efeb59aa}{LEFT\+\_\+\+ENCODER\+\_\+\+HIGH\+\_\+\+THRESHOLD}}~3300
+\item 
+\#define \mbox{\hyperlink{armuro_8c_a770d4efb0e7dcaa3377f2e60bc433ee5}{LEFT\+\_\+\+ENCODER\+\_\+\+LOW\+\_\+\+THRESHOLD}}~3000
+\item 
+\#define \mbox{\hyperlink{armuro_8c_a1df990f1a1fc97b95e8d53f719968026}{MAX\+\_\+\+PWM}}~(1 $<$$<$ 16) -\/ 1
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}} \mbox{\hyperlink{armuro_8c_a7d08280e74a4764d13f664743a64e7de}{Wheel\+Angle\+List\+Item}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__armuro_gaaa243895d9759ee3e3ef401c142ee17a}{print}} (char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Print a message to the serial port. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__armuro_ga723a7566bee8647143479ade219e8814}{map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{armuro_8c_a984b662dbcf5b55b90fc02e2f866a206}{init\+Motors}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the motors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga878c0a8823e11617b6b8f7192807bafa}{turn\+Motor}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor, int direction, int speed)
+\begin{DoxyCompactList}\small\item\em Activate the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga5d104fdb4976b0f57b1fed60a335bdba}{stop\+Motor}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor)
+\begin{DoxyCompactList}\small\item\em Stop the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_gabff02d95cbc134c0ac694758ff6961e3}{set\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} led, int \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}})
+\begin{DoxyCompactList}\small\item\em Turn the led on the side on and off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga1aa84bcd500ca4114bc89710357f1c48}{set\+Rear\+LED}} (int \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}})
+\begin{DoxyCompactList}\small\item\em Set the rear LED on or off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga8b626121b9ce251e41486740f5f76356}{did\+Read\+Sensors}} (uint32\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Handle a new value from the sensors. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{armuro_8c_ae240a5faacd45710c3184568f7f7ae1f}{schmitt\+Trigger}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side, u\+\_\+int32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Check if the value is above the high threshold or below the low threshold. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga4c151a7c1ee7f60b1080ce8c198beb53}{did\+Read\+Wheel\+Encoder}} (uint32\+\_\+t left\+Value, uint32\+\_\+t right\+Value)
+\begin{DoxyCompactList}\small\item\em Handle a new value from the wheel encoders. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga988b6cc75281ebdac3130eb04108bec4}{reset\+Angle\+Measurement}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\begin{DoxyCompactList}\small\item\em Reset the angle measurement for the wheels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_wheel_angle}{Wheel\+Angle}} $\ast$ \mbox{\hyperlink{armuro_8c_a211c5cc06a9b16ff0b76fbd4b5507192}{start\+Angle\+Measurement}} ()
+\begin{DoxyCompactList}\small\item\em Start measuring the angle for the wheels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga44b34ea8943304233fd99b81d6b25f6c}{stop\+Angle\+Measurement}} (\mbox{\hyperlink{struct_wheel_angle}{Wheel\+Angle}} $\ast$angle)
+\begin{DoxyCompactList}\small\item\em Stop measuring the angle for the wheels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__armuro_gafe1c4888aa9ba01a919d28eec18847fa}{get\+Angle\+For\+Wheel}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\begin{DoxyCompactList}\small\item\em et the Angle (in degrees) for the wheel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga724c58b78a7093d7bac96cdd4eb47453}{get\+Angle\+For\+Wheels}} (int $\ast$left\+Angle, int $\ast$right\+Angle)
+\begin{DoxyCompactList}\small\item\em Get the Angle (in degrees) for the wheels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga962d993161668beac5e5d4647af1e9ce}{get\+Raw\+Line\+Sensor\+Readings}} (uint32\+\_\+t $\ast$left, uint32\+\_\+t $\ast$middle, uint32\+\_\+t $\ast$right)
+\begin{DoxyCompactList}\small\item\em Get the raw readings of the line sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga7e9b4a2ece50e9599410c20a63be6a3f}{get\+Line\+Sensor\+Readings}} (uint32\+\_\+t $\ast$left, uint32\+\_\+t $\ast$middle, uint32\+\_\+t $\ast$right)
+\begin{DoxyCompactList}\small\item\em Get the readings of the line sensors mapped to their typical range (0 -\/ 1023) \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__armuro_ga1020aad5750784b2b465cc5a5748af5c}{map\+Line\+Sensor\+Reading\+To\+Range}} (uint32\+\_\+t value, \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side)
+\begin{DoxyCompactList}\small\item\em Map a line sensor reading to its typical range (0 -\/ 1023) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__armuro_gaadb1acbbedc62f22c4a6daf7122d5c89}{distance\+To\+Angle}} (double distance)
+\begin{DoxyCompactList}\small\item\em Translate a distance (in cm) to an angle (in degrees) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__armuro_gadf67d54477e61cf75999e0da96dc9986}{angle\+To\+Distance}} (int angle)
+\begin{DoxyCompactList}\small\item\em Get the Distance (in cm) for an angle (in degrees) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__armuro_ga87bc0d1098809563b89238736d915a8d}{speed\+Difference\+For\+Radius}} (double radius)
+\begin{DoxyCompactList}\small\item\em Calculate the speed difference for the wheels to drive a circle with the given radius. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__armuro_ga082783e97b1b19d4cd3a8da051daa985}{check\+Switches\+Pressed}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} $\ast$side)
+\begin{DoxyCompactList}\small\item\em Check if a switch is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{armuro_8c_abf0f857f7e7bc4d0ab7f4d1ff63bec22}{min\+Line\+Sensor\+Values}} \mbox{[}3\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{armuro_8c_ad2e792f64c824c5201ee3ffdba2f5183}{max\+Line\+Sensor\+Values}} \mbox{[}3\mbox{]}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{armuro_8c_abed556648db33e08fcbfdc5a83ab48d0}{wheel\+Encoder\+Ticks\+Count}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{armuro_8c_a77cad2341075f8512fd5e5d2c9dbed3a}{wheel\+Encoder\+Old\+Values}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}} $\ast$ \mbox{\hyperlink{armuro_8c_acc40aecd9d7676b138fc59641e9f194b}{wheel\+Angle\+List}} = NULL
+\item 
+\mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}} $\ast$ \mbox{\hyperlink{armuro_8c_a635a5364226e4e205787d4c13f722236}{wheel\+Angle\+List\+End}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{armuro_8c_a6944e4b6901b026a40a92044efeb59aa}\label{armuro_8c_a6944e4b6901b026a40a92044efeb59aa}} 
+\index{armuro.c@{armuro.c}!LEFT\_ENCODER\_HIGH\_THRESHOLD@{LEFT\_ENCODER\_HIGH\_THRESHOLD}}
+\index{LEFT\_ENCODER\_HIGH\_THRESHOLD@{LEFT\_ENCODER\_HIGH\_THRESHOLD}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{LEFT\_ENCODER\_HIGH\_THRESHOLD}{LEFT\_ENCODER\_HIGH\_THRESHOLD}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+ENCODER\+\_\+\+HIGH\+\_\+\+THRESHOLD~3300}
+
+\mbox{\Hypertarget{armuro_8c_a770d4efb0e7dcaa3377f2e60bc433ee5}\label{armuro_8c_a770d4efb0e7dcaa3377f2e60bc433ee5}} 
+\index{armuro.c@{armuro.c}!LEFT\_ENCODER\_LOW\_THRESHOLD@{LEFT\_ENCODER\_LOW\_THRESHOLD}}
+\index{LEFT\_ENCODER\_LOW\_THRESHOLD@{LEFT\_ENCODER\_LOW\_THRESHOLD}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{LEFT\_ENCODER\_LOW\_THRESHOLD}{LEFT\_ENCODER\_LOW\_THRESHOLD}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+ENCODER\+\_\+\+LOW\+\_\+\+THRESHOLD~3000}
+
+\mbox{\Hypertarget{armuro_8c_a1df990f1a1fc97b95e8d53f719968026}\label{armuro_8c_a1df990f1a1fc97b95e8d53f719968026}} 
+\index{armuro.c@{armuro.c}!MAX\_PWM@{MAX\_PWM}}
+\index{MAX\_PWM@{MAX\_PWM}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_PWM}{MAX\_PWM}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PWM~(1 $<$$<$ 16) -\/ 1}
+
+\mbox{\Hypertarget{armuro_8c_a5af803c62aa7bceab6ef957dc3621d31}\label{armuro_8c_a5af803c62aa7bceab6ef957dc3621d31}} 
+\index{armuro.c@{armuro.c}!RIGHT\_ENCODER\_HIGH\_THRESHOLD@{RIGHT\_ENCODER\_HIGH\_THRESHOLD}}
+\index{RIGHT\_ENCODER\_HIGH\_THRESHOLD@{RIGHT\_ENCODER\_HIGH\_THRESHOLD}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_ENCODER\_HIGH\_THRESHOLD}{RIGHT\_ENCODER\_HIGH\_THRESHOLD}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+ENCODER\+\_\+\+HIGH\+\_\+\+THRESHOLD~2000}
+
+\mbox{\Hypertarget{armuro_8c_aceab1db700aba212b48d044e1b922762}\label{armuro_8c_aceab1db700aba212b48d044e1b922762}} 
+\index{armuro.c@{armuro.c}!RIGHT\_ENCODER\_LOW\_THRESHOLD@{RIGHT\_ENCODER\_LOW\_THRESHOLD}}
+\index{RIGHT\_ENCODER\_LOW\_THRESHOLD@{RIGHT\_ENCODER\_LOW\_THRESHOLD}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_ENCODER\_LOW\_THRESHOLD}{RIGHT\_ENCODER\_LOW\_THRESHOLD}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+ENCODER\+\_\+\+LOW\+\_\+\+THRESHOLD~1000}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{armuro_8c_a7d08280e74a4764d13f664743a64e7de}\label{armuro_8c_a7d08280e74a4764d13f664743a64e7de}} 
+\index{armuro.c@{armuro.c}!WheelAngleListItem@{WheelAngleListItem}}
+\index{WheelAngleListItem@{WheelAngleListItem}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{WheelAngleListItem}{WheelAngleListItem}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}} \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{armuro_8c_a984b662dbcf5b55b90fc02e2f866a206}\label{armuro_8c_a984b662dbcf5b55b90fc02e2f866a206}} 
+\index{armuro.c@{armuro.c}!initMotors@{initMotors}}
+\index{initMotors@{initMotors}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{initMotors()}{initMotors()}}
+{\footnotesize\ttfamily void init\+Motors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the motors. 
+
+\mbox{\Hypertarget{armuro_8c_ae240a5faacd45710c3184568f7f7ae1f}\label{armuro_8c_ae240a5faacd45710c3184568f7f7ae1f}} 
+\index{armuro.c@{armuro.c}!schmittTrigger@{schmittTrigger}}
+\index{schmittTrigger@{schmittTrigger}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{schmittTrigger()}{schmittTrigger()}}
+{\footnotesize\ttfamily int schmitt\+Trigger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{side,  }\item[{u\+\_\+int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Check if the value is above the high threshold or below the low threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for HIGH, 0 for LOW, -\/1 for invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{armuro_8c_a211c5cc06a9b16ff0b76fbd4b5507192}\label{armuro_8c_a211c5cc06a9b16ff0b76fbd4b5507192}} 
+\index{armuro.c@{armuro.c}!startAngleMeasurement@{startAngleMeasurement}}
+\index{startAngleMeasurement@{startAngleMeasurement}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{startAngleMeasurement()}{startAngleMeasurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wheel_angle}{Wheel\+Angle}} $\ast$ start\+Angle\+Measurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start measuring the angle for the wheels. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to a struct keeping the angle of the wheels 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{armuro_8c_ad2e792f64c824c5201ee3ffdba2f5183}\label{armuro_8c_ad2e792f64c824c5201ee3ffdba2f5183}} 
+\index{armuro.c@{armuro.c}!maxLineSensorValues@{maxLineSensorValues}}
+\index{maxLineSensorValues@{maxLineSensorValues}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{maxLineSensorValues}{maxLineSensorValues}}
+{\footnotesize\ttfamily uint32\+\_\+t max\+Line\+Sensor\+Values\mbox{[}3\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_a78f825bf2aee6e0b19d20098f98ec469}{MAX\_LEFT\_LINE\_SENSOR\_VALUE}},}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_a990e573ad55003b2e41f52c40be9ac2a}{MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}},}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_ae1973acb718387ca60be5fba1575c914}{MAX\_RIGHT\_LINE\_SENSOR\_VALUE}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{armuro_8c_abf0f857f7e7bc4d0ab7f4d1ff63bec22}\label{armuro_8c_abf0f857f7e7bc4d0ab7f4d1ff63bec22}} 
+\index{armuro.c@{armuro.c}!minLineSensorValues@{minLineSensorValues}}
+\index{minLineSensorValues@{minLineSensorValues}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{minLineSensorValues}{minLineSensorValues}}
+{\footnotesize\ttfamily uint32\+\_\+t min\+Line\+Sensor\+Values\mbox{[}3\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_a97ad524d2a1ff2d99730e6a4982bdc18}{MIN\_LEFT\_LINE\_SENSOR\_VALUE}},}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_a4357e76cd55ec774e1120fdad1f50351}{MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}},}
+\DoxyCodeLine{    \mbox{\hyperlink{armuro_8h_a07d9dc9df261e15df122529c04f9ea43}{MIN\_RIGHT\_LINE\_SENSOR\_VALUE}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{armuro_8c_acc40aecd9d7676b138fc59641e9f194b}\label{armuro_8c_acc40aecd9d7676b138fc59641e9f194b}} 
+\index{armuro.c@{armuro.c}!wheelAngleList@{wheelAngleList}}
+\index{wheelAngleList@{wheelAngleList}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{wheelAngleList}{wheelAngleList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}}$\ast$ wheel\+Angle\+List = NULL}
+
+\mbox{\Hypertarget{armuro_8c_a635a5364226e4e205787d4c13f722236}\label{armuro_8c_a635a5364226e4e205787d4c13f722236}} 
+\index{armuro.c@{armuro.c}!wheelAngleListEnd@{wheelAngleListEnd}}
+\index{wheelAngleListEnd@{wheelAngleListEnd}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{wheelAngleListEnd}{wheelAngleListEnd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_wheel_angle_list_item}{Wheel\+Angle\+List\+Item}}$\ast$ wheel\+Angle\+List\+End = NULL}
+
+\mbox{\Hypertarget{armuro_8c_a77cad2341075f8512fd5e5d2c9dbed3a}\label{armuro_8c_a77cad2341075f8512fd5e5d2c9dbed3a}} 
+\index{armuro.c@{armuro.c}!wheelEncoderOldValues@{wheelEncoderOldValues}}
+\index{wheelEncoderOldValues@{wheelEncoderOldValues}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{wheelEncoderOldValues}{wheelEncoderOldValues}}
+{\footnotesize\ttfamily int wheel\+Encoder\+Old\+Values\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{armuro_8c_abed556648db33e08fcbfdc5a83ab48d0}\label{armuro_8c_abed556648db33e08fcbfdc5a83ab48d0}} 
+\index{armuro.c@{armuro.c}!wheelEncoderTicksCount@{wheelEncoderTicksCount}}
+\index{wheelEncoderTicksCount@{wheelEncoderTicksCount}!armuro.c@{armuro.c}}
+\doxysubsubsection{\texorpdfstring{wheelEncoderTicksCount}{wheelEncoderTicksCount}}
+{\footnotesize\ttfamily uint16\+\_\+t wheel\+Encoder\+Ticks\+Count\mbox{[}2\mbox{]}}
+

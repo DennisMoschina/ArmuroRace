@@ -9,10 +9,18 @@
 #define SAFETY_DISTANCE 3
 #define ATTACK_ANGLE 60
 
+/**
+ * @brief The state machine for the obstacle avoidance
+ * @ingroup obstacleAvoidance
+ */
 typedef enum ObstacleAvoidanceState {
+    /// @brief Backing off from the obstacle
     BACK_OFF,
+    /// @brief Turning from the obstacle
     TURN_FROM_OBSTACLE,
+    /// @brief Driving a circle around the obstacle
     DRIVE_CIRCLE,
+    /// @brief Finished driving around the obstacle
     OBSTACLE_AVOIDANCE_DONE
 } ObstacleAvoidanceState;
 
@@ -20,15 +28,63 @@ ObstacleAvoidanceState obstacleAvoidanceState = TURN_FROM_OBSTACLE;
 ObstacleAvoidanceState nextObstacleAvoidanceState = TURN_FROM_OBSTACLE;
 State obstacleAvoidanceStateState = READY;
 
+/**
+ * @brief The configuration for the obstacle avoidance.
+ * @ingroup obstacleAvoidance
+ */
 typedef struct ObstacleAvoidanceConfig {
+    /// @brief The radius of the circle to drive around the obstacle
     double circleRadius;
+    /// @brief The distance to back off from the obstacle
     double backOffDistance;
+    /// @brief The angle to start the circle drive
     double attackAngle;
+    /// @brief The distance to drive around the obstacle
     double distanceToDrive;
 } ObstacleAvoidanceConfig;
 
 ObstacleAvoidanceConfig obstacleAvoidanceConfig;
 
+/**
+ * @brief Configure the obstacle avoidance task with the given parameters.
+ * @details Calculate the distance to back off from the obstacle,
+ *          the radius of the circle to drive around the obstacle,
+ *          and the distance to drive around the obstacle
+ *          based on the desired angel of attack and the radius of the obstacle.
+ *          The minimum distance to the obstacle is always the same, no matter the parameters.
+ *          @image html ObstacleAvoidance.png
+ *          @image latex ObstacleAvoidance.png
+ *          \f[
+ *              \beta = 90 - \alpha
+ *          \f]
+ *          \f[
+ *              s = sin(\beta) \cdot r
+ *          \f]
+ *          \f[
+ *              h = r - s = r_o + \delta + \frac{1}{2} w
+ *          \f]
+ *          \f[
+ *              r = \frac{1}{1 - sin(\beta)} \cdot h
+ *          \f]
+ *          \f[
+ *              d = cos(\beta) \cdot r
+ *          \f]
+ *          \f[
+ *              b = r \cdot (\pi - 2 \cdot sin(\beta))
+ *          \f]
+ *          where \f$\alpha\f$ is the attack angle, \n
+ *          \f$\delta\f$ is the safety distance, \n
+ *          \f$w\f$ is the wheel distance, \n
+ *          \f$d\f$ is the distance to back off from the obstacle, \n
+ *          \f$r\f$ is the radius of the circle to drive around the obstacle, \n
+ *          \f$b\f$ is the distance to drive around the obstacle
+ * 
+ * @ingroup obstacleAvoidance
+ * 
+ * @param obstacleRadius the radius of the obstacle
+ * @param attackAngle the angle to start the circle drive
+ * @return ObstacleAvoidanceConfig 
+ */
 ObstacleAvoidanceConfig configureObstacleAvoidance(double obstacleRadius, int attackAngle) {
     ObstacleAvoidanceConfig config;
     int beta = 90 - attackAngle;

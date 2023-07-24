@@ -1,0 +1,86 @@
+\hypertarget{wheels_8h}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/wheels/wheels.h File Reference}
+\label{wheels_8h}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h}}
+{\ttfamily \#include $<$armuro.\+h$>$}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{Turn\+Wheels\+Task\+Type}} \mbox{\hyperlink{group__wheels_gad3f463aea965aeac63eb49dbcc3675db}{Turn\+Wheels\+Task\+Type}}
+\begin{DoxyCompactList}\small\item\em The type of tasks the wheels are currently executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{Turn\+Wheels\+Task\+Type}} \{ \newline
+\mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}} = 0
+, \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a0361b31f1fea060374e017af17d84435}{ANGLE}} = 1
+, \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a1fb3554200c1173d24e97e9d32283ead}{SPEED}} = 2
+, \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2aa3f0c8ae421223ecbd38fed5d36f73d2}{SYNCHRONIZED}} = 3
+, \newline
+\mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a777c918a1458ff31da172a7ba36be15f}{TIMED\+\_\+\+ANGLE}} = 4
+, \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a4b270523c7b89ab97d3869206cb783a6}{SYNCHRONIZED\+\_\+\+ANGLE}} = 5
+, \mbox{\hyperlink{group__wheels_ggabfb71c84fbb54722a92ac51818fd3dc2a4e5add805436f8349199498326cf43d1}{TURN}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em The type of tasks the wheels are currently executing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__wheels_gaf7fc31f69ac072d2164305039d9d8c07}{stop\+Wheel}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\begin{DoxyCompactList}\small\item\em Stop the wheel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_gaac05a2e703af327032d0a0d43ff26d5e}{turn\+Wheel\+By\+Angle}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, int angle, int speed)
+\begin{DoxyCompactList}\small\item\em Start to turn the wheel by a certain angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_ga07dfcfe49045cc92cc85f2a3c04e7b8e}{turn\+Wheel\+By\+Angle\+In\+Time}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, int angle, int time)
+\begin{DoxyCompactList}\small\item\em Start to turn the wheel by a certain angle in a certain time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_gafe73b13925e1f145a98cdefc2e54c0cb}{turn\+Wheel\+With\+Speed}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel, int speed)
+\begin{DoxyCompactList}\small\item\em Start to turn the wheel with a certain speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_gaef6b2e65ff2dfdc6e090c860f7df9b35}{turn\+Wheels\+Synchronized}} (int left\+Speed, int right\+Speed)
+\begin{DoxyCompactList}\small\item\em Turn the wheels with a certain speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_ga7b161656d5b81a4bbeba3b9a757256b4}{turn\+Wheels\+Synchronized\+By\+Angle}} (int left\+Speed, int right\+Speed, int right\+Angle, uint8\+\_\+t soft\+Start)
+\begin{DoxyCompactList}\small\item\em Turn the wheels with a certain speed and a certain angle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_ga7d99d7a357b68582068f2f8c6ff2235d}{turn\+Armuro\+In\+Time}} (int angle, int time)
+\begin{DoxyCompactList}\small\item\em Turn the armuro by a certain angle in a certain time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wheels_ga3fe2e43458785a47cfd77aaaf196561c}{turn\+Armuro}} (int angle)
+\begin{DoxyCompactList}\small\item\em Turn the armuro by a certain angle with a certain speed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__wheels_gabfb71c84fbb54722a92ac51818fd3dc2}{Turn\+Wheels\+Task\+Type}} $\ast$ \mbox{\hyperlink{group__wheels_ga7722da80cb60575de0841fe5aff9e47f}{turn\+Wheels\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Manage the turning of the wheels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wheels_8h_abc7742c1addf260169c6bb3e521caa6b}{turn\+Wheel\+By\+Angle\+Task}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\item 
+void \mbox{\hyperlink{wheels_8h_a89703ca660e2c9ecac9d60476b03b9b0}{turn\+Wheels\+Synchronized\+Task}} ()
+\item 
+void \mbox{\hyperlink{wheels_8h_ac4a8c191d5418d5ef7da253c66a735b1}{turn\+Wheels\+Synchronized\+By\+Angle\+Task}} ()
+\item 
+void \mbox{\hyperlink{wheels_8h_a2f01bb8643c3040116905b82a2184cce}{turn\+Wheel\+By\+Angle\+In\+Time\+Task}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\item 
+void \mbox{\hyperlink{wheels_8h_abcb6d3f66ac0dc3b987c6dc0acd9431a}{turn\+Armuro\+Task}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{wheels_8h_abcb6d3f66ac0dc3b987c6dc0acd9431a}\label{wheels_8h_abcb6d3f66ac0dc3b987c6dc0acd9431a}} 
+\index{wheels.h@{wheels.h}!turnArmuroTask@{turnArmuroTask}}
+\index{turnArmuroTask@{turnArmuroTask}!wheels.h@{wheels.h}}
+\doxysubsubsection{\texorpdfstring{turnArmuroTask()}{turnArmuroTask()}}
+{\footnotesize\ttfamily void turn\+Armuro\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{wheel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{wheels_8h_a2f01bb8643c3040116905b82a2184cce}\label{wheels_8h_a2f01bb8643c3040116905b82a2184cce}} 
+\index{wheels.h@{wheels.h}!turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}}
+\index{turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}!wheels.h@{wheels.h}}
+\doxysubsubsection{\texorpdfstring{turnWheelByAngleInTimeTask()}{turnWheelByAngleInTimeTask()}}
+{\footnotesize\ttfamily void turn\+Wheel\+By\+Angle\+In\+Time\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{wheel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{wheels_8h_abc7742c1addf260169c6bb3e521caa6b}\label{wheels_8h_abc7742c1addf260169c6bb3e521caa6b}} 
+\index{wheels.h@{wheels.h}!turnWheelByAngleTask@{turnWheelByAngleTask}}
+\index{turnWheelByAngleTask@{turnWheelByAngleTask}!wheels.h@{wheels.h}}
+\doxysubsubsection{\texorpdfstring{turnWheelByAngleTask()}{turnWheelByAngleTask()}}
+{\footnotesize\ttfamily void turn\+Wheel\+By\+Angle\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{wheel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{wheels_8h_ac4a8c191d5418d5ef7da253c66a735b1}\label{wheels_8h_ac4a8c191d5418d5ef7da253c66a735b1}} 
+\index{wheels.h@{wheels.h}!turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}}
+\index{turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}!wheels.h@{wheels.h}}
+\doxysubsubsection{\texorpdfstring{turnWheelsSynchronizedByAngleTask()}{turnWheelsSynchronizedByAngleTask()}}
+{\footnotesize\ttfamily void turn\+Wheels\+Synchronized\+By\+Angle\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{wheels_8h_a89703ca660e2c9ecac9d60476b03b9b0}\label{wheels_8h_a89703ca660e2c9ecac9d60476b03b9b0}} 
+\index{wheels.h@{wheels.h}!turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}}
+\index{turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}!wheels.h@{wheels.h}}
+\doxysubsubsection{\texorpdfstring{turnWheelsSynchronizedTask()}{turnWheelsSynchronizedTask()}}
+{\footnotesize\ttfamily void turn\+Wheels\+Synchronized\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

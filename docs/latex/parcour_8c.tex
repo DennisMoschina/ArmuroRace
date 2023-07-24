@@ -1,0 +1,97 @@
+\hypertarget{parcour_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/parcour/parcour.c File Reference}
+\label{parcour_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.c}}
+{\ttfamily \#include \char`\"{}parcour.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wheels.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}armuro.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}line\+Follow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+Machine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blink\+LED.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}calibrate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}obstacle\+Avoidance.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga8c98d70f8288820465bb3fd3f59cd4ca}{State\+Machine}}
+\begin{DoxyCompactList}\small\item\em The state machine of the parcour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \{ \newline
+\mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}{DRIVE\+\_\+\+TRAJECTORY}} = 0
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}} = 1
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}{SEARCH\+\_\+\+LINE}} = 2
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebac9c0846624df37f0edddf0491424a7d1}{OVERCOME\+\_\+\+GAP}} = 3
+, \newline
+\mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193eba662efcb45444c1e715f8715c03a25efc}{AVOID\+\_\+\+OBSTACLE}} = 4
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaaab5a2bcea860b4f52557e01cb37c66f}{CALIBRATE}} = 5
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebafd6a0e4343048b10646dd2976cc5ad18}{IDLE}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine of the parcour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{parcour_8c_af6ff2e451f97a87b532545b33951ee45}{drive\+Trajectory}} ()
+\item 
+void \mbox{\hyperlink{parcour_8c_a880228a982f96474d08f58b817e2fe1f}{line\+Follow}} ()
+\item 
+void \mbox{\hyperlink{parcour_8c_ad2cf48c7515ffd7cc4a33d1b68baab93}{search\+The\+Line}} ()
+\item 
+void \mbox{\hyperlink{parcour_8c_a65e5938c0ec4ff7bcffe50d02f079764}{overcome\+Gap}} ()
+\item 
+void \mbox{\hyperlink{parcour_8c_a2971475907a6dbeefcd50346c0557e72}{calibrate\+Armuro}} ()
+\item 
+void \mbox{\hyperlink{parcour_8c_a717a30df2441939e859cbeffd5e148dc}{avoiding\+Obstacle}} ()
+\item 
+void \mbox{\hyperlink{group__parcour_gad10559e529a136be5bc3de127aa4b353}{start\+Parcour}} ()
+\begin{DoxyCompactList}\small\item\em Configure the parcour task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__parcour_ga964127a3f70269ae7e49eb56efe8b833}{drive\+Parcour}} ()
+\begin{DoxyCompactList}\small\item\em Run the parcour task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga1dd4fcf1bc3719c3adfb57cd694387f6}{current\+State}} = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}{DRIVE\+\_\+\+TRAJECTORY}}
+\begin{DoxyCompactList}\small\item\em The current state of the parcour state machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga21f5ac9613bd154bc9be65c741f635ec}{next\+State}} = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}{SEARCH\+\_\+\+LINE}}
+\begin{DoxyCompactList}\small\item\em The next state of the parcour state machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\begin{DoxyCompactList}\small\item\em The status of the parcour state machine\textquotesingle{}s state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{parcour_8c_a717a30df2441939e859cbeffd5e148dc}\label{parcour_8c_a717a30df2441939e859cbeffd5e148dc}} 
+\index{parcour.c@{parcour.c}!avoidingObstacle@{avoidingObstacle}}
+\index{avoidingObstacle@{avoidingObstacle}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{avoidingObstacle()}{avoidingObstacle()}}
+{\footnotesize\ttfamily void avoiding\+Obstacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parcour_8c_a2971475907a6dbeefcd50346c0557e72}\label{parcour_8c_a2971475907a6dbeefcd50346c0557e72}} 
+\index{parcour.c@{parcour.c}!calibrateArmuro@{calibrateArmuro}}
+\index{calibrateArmuro@{calibrateArmuro}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{calibrateArmuro()}{calibrateArmuro()}}
+{\footnotesize\ttfamily void calibrate\+Armuro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parcour_8c_af6ff2e451f97a87b532545b33951ee45}\label{parcour_8c_af6ff2e451f97a87b532545b33951ee45}} 
+\index{parcour.c@{parcour.c}!driveTrajectory@{driveTrajectory}}
+\index{driveTrajectory@{driveTrajectory}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{driveTrajectory()}{driveTrajectory()}}
+{\footnotesize\ttfamily void drive\+Trajectory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parcour_8c_a880228a982f96474d08f58b817e2fe1f}\label{parcour_8c_a880228a982f96474d08f58b817e2fe1f}} 
+\index{parcour.c@{parcour.c}!lineFollow@{lineFollow}}
+\index{lineFollow@{lineFollow}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{lineFollow()}{lineFollow()}}
+{\footnotesize\ttfamily void line\+Follow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parcour_8c_a65e5938c0ec4ff7bcffe50d02f079764}\label{parcour_8c_a65e5938c0ec4ff7bcffe50d02f079764}} 
+\index{parcour.c@{parcour.c}!overcomeGap@{overcomeGap}}
+\index{overcomeGap@{overcomeGap}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{overcomeGap()}{overcomeGap()}}
+{\footnotesize\ttfamily void overcome\+Gap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parcour_8c_ad2cf48c7515ffd7cc4a33d1b68baab93}\label{parcour_8c_ad2cf48c7515ffd7cc4a33d1b68baab93}} 
+\index{parcour.c@{parcour.c}!searchTheLine@{searchTheLine}}
+\index{searchTheLine@{searchTheLine}!parcour.c@{parcour.c}}
+\doxysubsubsection{\texorpdfstring{searchTheLine()}{searchTheLine()}}
+{\footnotesize\ttfamily void search\+The\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

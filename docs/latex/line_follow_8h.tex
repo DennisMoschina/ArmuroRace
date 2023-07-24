@@ -1,0 +1,43 @@
+\hypertarget{line_follow_8h}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/line\+Follow/line\+Follow.h File Reference}
+\label{line_follow_8h}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_gaa4c66df19bd73e7a2c285e206e3ae24e}{Search\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of the search line task. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga1f28fd2a5c987221f6ecee73975156c6}{Check\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of performing a line check. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga2b0c9ed242c0f62364500113ce6e69a3}{Follow\+Line\+Result}}
+\begin{DoxyCompactList}\small\item\em The result of following the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470aa0c0f46a51df7452ca25be1d4594e8ba}{SEARCHING}} = 0
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a3fe5ffe68b10eb48b4a8b17eefe60154}{FOUND}} = 1
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a339435bd0d4a842c6107333c908a5317}{LOST}} = -\/1
+, \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a9cf23bed2fc1273a8124124fb53bd01d}{END\+\_\+\+OF\+\_\+\+LINE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em The result of the search line task. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa315cfb9fb52108a0b61be1c5228d63a8}{ON\+\_\+\+LINE}} = 0
+, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}} = -\/1
+, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa4e4bb06a708a870bafec30d283c7369d}{ALL\+\_\+\+BLACK}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em The result of performing a line check. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \{ \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3ac241aecbe2e3eba2f42ce28777f6ab65}{FOLLOWING}} = 0
+, \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a0646b39cab9db1de846f829fe958f165}{LOST\+\_\+\+LINE}} = -\/1
+, \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a97840dfad76cadb83f9254ec80b310ca}{ALL\+\_\+\+LINE}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em The result of following the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__line_follow_gadb8e123ed67714679311906eaf1c3677}{follow\+Line}} (int speed)
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}{follow\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}{check\+For\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the line is lost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}{search\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}{search\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\end{DoxyCompactItemize}

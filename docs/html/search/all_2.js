@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['calculatepidoutput_0',['calculatePIDOutput',['../group__pid_controller.html#ga7fdbce8328ecaba39d84c6facf1b3c57',1,'calculatePIDOutput(double setpoint, double input, PIDConfig *config):&#160;pidController.c'],['../group__pid_controller.html#ga7fdbce8328ecaba39d84c6facf1b3c57',1,'calculatePIDOutput(double setpoint, double input, PIDConfig *config):&#160;pidController.c']]],
+  ['calibrate_1',['calibrate',['../group__calibrate.html#gad4a7316a51b17d0f691bb3e33b95a5ad',1,'calibrate():&#160;calibrate.c'],['../group__calibrate.html#gad4a7316a51b17d0f691bb3e33b95a5ad',1,'calibrate():&#160;calibrate.c']]],
+  ['calibrate_2',['CALIBRATE',['../group__parcour.html#gga8e8a2ea6199f95a4595785d3e9e193ebaaab5a2bcea860b4f52557e01cb37c66f',1,'parcour.c']]],
+  ['calibrate_20robot_3',['Calibrate Robot',['../group__calibrate.html',1,'']]],
+  ['calibrate_2ec_4',['calibrate.c',['../calibrate_8c.html',1,'']]],
+  ['calibrate_2eh_5',['calibrate.h',['../calibrate_8h.html',1,'']]],
+  ['calibrate_5fblack_6',['CALIBRATE_BLACK',['../calibrate_8c.html#aadde0dd873f09b90440fb25f5ddb3116a97c015bb69b82e3b7be44466cbde8e6b',1,'calibrate.c']]],
+  ['calibrate_5fdone_7',['CALIBRATE_DONE',['../calibrate_8c.html#aadde0dd873f09b90440fb25f5ddb3116ac5996238f2068da03fe63626d9a793e9',1,'calibrate.c']]],
+  ['calibrate_5fstart_8',['CALIBRATE_START',['../calibrate_8c.html#aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a',1,'calibrate.c']]],
+  ['calibrate_5fwhite_9',['CALIBRATE_WHITE',['../calibrate_8c.html#aadde0dd873f09b90440fb25f5ddb3116a231a3b7cba300ac9cae11d6005f37ad4',1,'calibrate.c']]],
+  ['calibratearmuro_10',['calibrateArmuro',['../parcour_8c.html#a2971475907a6dbeefcd50346c0557e72',1,'parcour.c']]],
+  ['calibratestate_11',['calibrateState',['../calibrate_8c.html#af053be7781175134c6f8f2e81c02e2fa',1,'calibrate.c']]],
+  ['calibratestate_12',['CalibrateState',['../calibrate_8c.html#aadde0dd873f09b90440fb25f5ddb3116',1,'calibrate.c']]],
+  ['calibratestatestate_13',['calibrateStateState',['../calibrate_8c.html#a2c9e55e053742478743cc093fd712229',1,'calibrate.c']]],
+  ['calibratetask_14',['calibrateTask',['../group__calibrate.html#ga4d970918949f9f7655f018a8e39f8440',1,'calibrateTask():&#160;calibrate.c'],['../group__calibrate.html#ga4d970918949f9f7655f018a8e39f8440',1,'calibrateTask():&#160;calibrate.c']]],
+  ['checkforline_15',['checkForLine',['../group__line_follow.html#ga6adcd63936dd9327f98426c2188bf71d',1,'checkForLine():&#160;lineFollow.c'],['../group__line_follow.html#ga6adcd63936dd9327f98426c2188bf71d',1,'checkForLine():&#160;lineFollow.c']]],
+  ['checkforobstacle_16',['checkForObstacle',['../group__obstacle_avoidance.html#ga73f1f2c9532b66f8163750b82e01c04f',1,'checkForObstacle():&#160;obstacleAvoidance.c'],['../group__obstacle_avoidance.html#ga73f1f2c9532b66f8163750b82e01c04f',1,'checkForObstacle():&#160;obstacleAvoidance.c']]],
+  ['checklineresult_17',['CheckLineResult',['../group__line_follow.html#gaeb5e4e7da0454d14c5b034dc0c1cce7f',1,'CheckLineResult():&#160;lineFollow.h'],['../group__line_follow.html#ga1f28fd2a5c987221f6ecee73975156c6',1,'CheckLineResult():&#160;lineFollow.h']]],
+  ['checkswitchespressed_18',['checkSwitchesPressed',['../group__armuro.html#ga082783e97b1b19d4cd3a8da051daa985',1,'checkSwitchesPressed(Side *side):&#160;armuro.c'],['../group__armuro.html#ga082783e97b1b19d4cd3a8da051daa985',1,'checkSwitchesPressed(Side *side):&#160;armuro.c']]],
+  ['circleradius_19',['circleRadius',['../struct_obstacle_avoidance_config.html#ae9bbcf5599042f2f1010df0adf18bb34',1,'ObstacleAvoidanceConfig']]],
+  ['configureobstacleavoidance_20',['configureObstacleAvoidance',['../group__obstacle_avoidance.html#gae5228fb93fea5488c6af948f499e1c32',1,'obstacleAvoidance.c']]],
+  ['currentspeedsetpoint_21',['currentSpeedSetpoint',['../wheels_8c.html#a246fa151e57a352da99f859859901723',1,'wheels.c']]],
+  ['currentstate_22',['currentState',['../group__parcour.html#ga1dd4fcf1bc3719c3adfb57cd694387f6',1,'parcour.c']]],
+  ['currenttrajectorystate_23',['currentTrajectoryState',['../trajectory_8c.html#ae56539972a825e1a3696c1d8a782ecdd',1,'trajectory.c']]]
+];

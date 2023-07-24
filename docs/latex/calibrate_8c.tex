@@ -1,0 +1,91 @@
+\hypertarget{calibrate_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/calibrate/calibrate.c File Reference}
+\label{calibrate_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.c}}
+{\ttfamily \#include \char`\"{}calibrate.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}} \{ \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}{CALIBRATE\+\_\+\+START}}
+, \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a231a3b7cba300ac9cae11d6005f37ad4}{CALIBRATE\+\_\+\+WHITE}}
+, \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a97c015bb69b82e3b7be44466cbde8e6b}{CALIBRATE\+\_\+\+BLACK}}
+, \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116ac5996238f2068da03fe63626d9a793e9}{CALIBRATE\+\_\+\+DONE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{calibrate_8c_aff05b3e1570ca016e12ba2e5b57f7092}{start\+Calibrate}} ()
+\item 
+void \mbox{\hyperlink{group__calibrate_gad4a7316a51b17d0f691bb3e33b95a5ad}{calibrate}} ()
+\begin{DoxyCompactList}\small\item\em Configure the calibration task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__calibrate_ga4d970918949f9f7655f018a8e39f8440}{calibrate\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Run the calibration task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__calibrate_gaf49fe893b123e801b3939395ee75a9b1}{read\+White\+Line\+Sensors}} ()
+\begin{DoxyCompactList}\small\item\em Calibrate the white value for the line sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__calibrate_ga5ea19d0695c0105bf06e4d8f102e5f77}{read\+Black\+Line\+Sensors}} ()
+\begin{DoxyCompactList}\small\item\em Calibrate the black value for the line sensors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}} \mbox{\hyperlink{calibrate_8c_af053be7781175134c6f8f2e81c02e2fa}{calibrate\+State}} = \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}{CALIBRATE\+\_\+\+START}}
+\item 
+\mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}} \mbox{\hyperlink{calibrate_8c_afc94d57ddb2ff0b1cbf2a015aba9793f}{next\+Calibrate\+State}} = \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}{CALIBRATE\+\_\+\+START}}
+\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{calibrate_8c_a2c9e55e053742478743cc093fd712229}{calibrate\+State\+State}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}\label{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}} 
+\index{calibrate.c@{calibrate.c}!CalibrateState@{CalibrateState}}
+\index{CalibrateState@{CalibrateState}!calibrate.c@{calibrate.c}}
+\doxysubsubsection{\texorpdfstring{CalibrateState}{CalibrateState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATE\_START@{CALIBRATE\_START}!calibrate.c@{calibrate.c}}\index{calibrate.c@{calibrate.c}!CALIBRATE\_START@{CALIBRATE\_START}}}\mbox{\Hypertarget{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}\label{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}} 
+CALIBRATE\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATE\_WHITE@{CALIBRATE\_WHITE}!calibrate.c@{calibrate.c}}\index{calibrate.c@{calibrate.c}!CALIBRATE\_WHITE@{CALIBRATE\_WHITE}}}\mbox{\Hypertarget{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a231a3b7cba300ac9cae11d6005f37ad4}\label{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a231a3b7cba300ac9cae11d6005f37ad4}} 
+CALIBRATE\+\_\+\+WHITE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATE\_BLACK@{CALIBRATE\_BLACK}!calibrate.c@{calibrate.c}}\index{calibrate.c@{calibrate.c}!CALIBRATE\_BLACK@{CALIBRATE\_BLACK}}}\mbox{\Hypertarget{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a97c015bb69b82e3b7be44466cbde8e6b}\label{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a97c015bb69b82e3b7be44466cbde8e6b}} 
+CALIBRATE\+\_\+\+BLACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATE\_DONE@{CALIBRATE\_DONE}!calibrate.c@{calibrate.c}}\index{calibrate.c@{calibrate.c}!CALIBRATE\_DONE@{CALIBRATE\_DONE}}}\mbox{\Hypertarget{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116ac5996238f2068da03fe63626d9a793e9}\label{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116ac5996238f2068da03fe63626d9a793e9}} 
+CALIBRATE\+\_\+\+DONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{calibrate_8c_aff05b3e1570ca016e12ba2e5b57f7092}\label{calibrate_8c_aff05b3e1570ca016e12ba2e5b57f7092}} 
+\index{calibrate.c@{calibrate.c}!startCalibrate@{startCalibrate}}
+\index{startCalibrate@{startCalibrate}!calibrate.c@{calibrate.c}}
+\doxysubsubsection{\texorpdfstring{startCalibrate()}{startCalibrate()}}
+{\footnotesize\ttfamily void start\+Calibrate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{calibrate_8c_af053be7781175134c6f8f2e81c02e2fa}\label{calibrate_8c_af053be7781175134c6f8f2e81c02e2fa}} 
+\index{calibrate.c@{calibrate.c}!calibrateState@{calibrateState}}
+\index{calibrateState@{calibrateState}!calibrate.c@{calibrate.c}}
+\doxysubsubsection{\texorpdfstring{calibrateState}{calibrateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}} calibrate\+State = \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}{CALIBRATE\+\_\+\+START}}}
+
+\mbox{\Hypertarget{calibrate_8c_a2c9e55e053742478743cc093fd712229}\label{calibrate_8c_a2c9e55e053742478743cc093fd712229}} 
+\index{calibrate.c@{calibrate.c}!calibrateStateState@{calibrateStateState}}
+\index{calibrateStateState@{calibrateStateState}!calibrate.c@{calibrate.c}}
+\doxysubsubsection{\texorpdfstring{calibrateStateState}{calibrateStateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} calibrate\+State\+State = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}}
+
+\mbox{\Hypertarget{calibrate_8c_afc94d57ddb2ff0b1cbf2a015aba9793f}\label{calibrate_8c_afc94d57ddb2ff0b1cbf2a015aba9793f}} 
+\index{calibrate.c@{calibrate.c}!nextCalibrateState@{nextCalibrateState}}
+\index{nextCalibrateState@{nextCalibrateState}!calibrate.c@{calibrate.c}}
+\doxysubsubsection{\texorpdfstring{nextCalibrateState}{nextCalibrateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116}{Calibrate\+State}} next\+Calibrate\+State = \mbox{\hyperlink{calibrate_8c_aadde0dd873f09b90440fb25f5ddb3116a6ecdead7b241bfe616965c8cf3719b2a}{CALIBRATE\+\_\+\+START}}}
+

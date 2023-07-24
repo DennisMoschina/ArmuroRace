@@ -1,0 +1,532 @@
+\indexentry{Armuro Hardware@{Armuro Hardware}|hyperpage}{7}
+\indexentry{Armuro Hardware@{Armuro Hardware}!angleToDistance@{angleToDistance}|hyperpage}{8}
+\indexentry{angleToDistance@{angleToDistance}!Armuro Hardware@{Armuro Hardware}|hyperpage}{8}
+\indexentry{Armuro Hardware@{Armuro Hardware}!checkSwitchesPressed@{checkSwitchesPressed}|hyperpage}{8}
+\indexentry{checkSwitchesPressed@{checkSwitchesPressed}!Armuro Hardware@{Armuro Hardware}|hyperpage}{8}
+\indexentry{Armuro Hardware@{Armuro Hardware}!didReadSensors@{didReadSensors}|hyperpage}{9}
+\indexentry{didReadSensors@{didReadSensors}!Armuro Hardware@{Armuro Hardware}|hyperpage}{9}
+\indexentry{Armuro Hardware@{Armuro Hardware}!didReadWheelEncoder@{didReadWheelEncoder}|hyperpage}{9}
+\indexentry{didReadWheelEncoder@{didReadWheelEncoder}!Armuro Hardware@{Armuro Hardware}|hyperpage}{9}
+\indexentry{Armuro Hardware@{Armuro Hardware}!distanceToAngle@{distanceToAngle}|hyperpage}{9}
+\indexentry{distanceToAngle@{distanceToAngle}!Armuro Hardware@{Armuro Hardware}|hyperpage}{9}
+\indexentry{Armuro Hardware@{Armuro Hardware}!getAngleForWheel@{getAngleForWheel}|hyperpage}{10}
+\indexentry{getAngleForWheel@{getAngleForWheel}!Armuro Hardware@{Armuro Hardware}|hyperpage}{10}
+\indexentry{Armuro Hardware@{Armuro Hardware}!getAngleForWheels@{getAngleForWheels}|hyperpage}{10}
+\indexentry{getAngleForWheels@{getAngleForWheels}!Armuro Hardware@{Armuro Hardware}|hyperpage}{10}
+\indexentry{Armuro Hardware@{Armuro Hardware}!getLineSensorReadings@{getLineSensorReadings}|hyperpage}{10}
+\indexentry{getLineSensorReadings@{getLineSensorReadings}!Armuro Hardware@{Armuro Hardware}|hyperpage}{10}
+\indexentry{Armuro Hardware@{Armuro Hardware}!getRawLineSensorReadings@{getRawLineSensorReadings}|hyperpage}{11}
+\indexentry{getRawLineSensorReadings@{getRawLineSensorReadings}!Armuro Hardware@{Armuro Hardware}|hyperpage}{11}
+\indexentry{Armuro Hardware@{Armuro Hardware}!map@{map}|hyperpage}{11}
+\indexentry{map@{map}!Armuro Hardware@{Armuro Hardware}|hyperpage}{11}
+\indexentry{Armuro Hardware@{Armuro Hardware}!mapLineSensorReadingToRange@{mapLineSensorReadingToRange}|hyperpage}{11}
+\indexentry{mapLineSensorReadingToRange@{mapLineSensorReadingToRange}!Armuro Hardware@{Armuro Hardware}|hyperpage}{11}
+\indexentry{Armuro Hardware@{Armuro Hardware}!print@{print}|hyperpage}{12}
+\indexentry{print@{print}!Armuro Hardware@{Armuro Hardware}|hyperpage}{12}
+\indexentry{Armuro Hardware@{Armuro Hardware}!resetAngleMeasurement@{resetAngleMeasurement}|hyperpage}{12}
+\indexentry{resetAngleMeasurement@{resetAngleMeasurement}!Armuro Hardware@{Armuro Hardware}|hyperpage}{12}
+\indexentry{Armuro Hardware@{Armuro Hardware}!setLED@{setLED}|hyperpage}{12}
+\indexentry{setLED@{setLED}!Armuro Hardware@{Armuro Hardware}|hyperpage}{12}
+\indexentry{Armuro Hardware@{Armuro Hardware}!setRearLED@{setRearLED}|hyperpage}{13}
+\indexentry{setRearLED@{setRearLED}!Armuro Hardware@{Armuro Hardware}|hyperpage}{13}
+\indexentry{Armuro Hardware@{Armuro Hardware}!speedDifferenceForRadius@{speedDifferenceForRadius}|hyperpage}{13}
+\indexentry{speedDifferenceForRadius@{speedDifferenceForRadius}!Armuro Hardware@{Armuro Hardware}|hyperpage}{13}
+\indexentry{Armuro Hardware@{Armuro Hardware}!stopAngleMeasurement@{stopAngleMeasurement}|hyperpage}{13}
+\indexentry{stopAngleMeasurement@{stopAngleMeasurement}!Armuro Hardware@{Armuro Hardware}|hyperpage}{13}
+\indexentry{Armuro Hardware@{Armuro Hardware}!stopMotor@{stopMotor}|hyperpage}{14}
+\indexentry{stopMotor@{stopMotor}!Armuro Hardware@{Armuro Hardware}|hyperpage}{14}
+\indexentry{Armuro Hardware@{Armuro Hardware}!turnMotor@{turnMotor}|hyperpage}{14}
+\indexentry{turnMotor@{turnMotor}!Armuro Hardware@{Armuro Hardware}|hyperpage}{14}
+\indexentry{Blink LED@{Blink LED}|hyperpage}{14}
+\indexentry{Blink LED@{Blink LED}!blinkLED@{blinkLED}|hyperpage}{15}
+\indexentry{blinkLED@{blinkLED}!Blink LED@{Blink LED}|hyperpage}{15}
+\indexentry{Blink LED@{Blink LED}!blinkLEDTask@{blinkLEDTask}|hyperpage}{15}
+\indexentry{blinkLEDTask@{blinkLEDTask}!Blink LED@{Blink LED}|hyperpage}{15}
+\indexentry{Blink LED@{Blink LED}!stopBlinkingLED@{stopBlinkingLED}|hyperpage}{15}
+\indexentry{stopBlinkingLED@{stopBlinkingLED}!Blink LED@{Blink LED}|hyperpage}{15}
+\indexentry{Calibrate Robot@{Calibrate Robot}|hyperpage}{15}
+\indexentry{Calibrate Robot@{Calibrate Robot}!calibrate@{calibrate}|hyperpage}{16}
+\indexentry{calibrate@{calibrate}!Calibrate Robot@{Calibrate Robot}|hyperpage}{16}
+\indexentry{Calibrate Robot@{Calibrate Robot}!calibrateTask@{calibrateTask}|hyperpage}{16}
+\indexentry{calibrateTask@{calibrateTask}!Calibrate Robot@{Calibrate Robot}|hyperpage}{16}
+\indexentry{Calibrate Robot@{Calibrate Robot}!readBlackLineSensors@{readBlackLineSensors}|hyperpage}{16}
+\indexentry{readBlackLineSensors@{readBlackLineSensors}!Calibrate Robot@{Calibrate Robot}|hyperpage}{16}
+\indexentry{Calibrate Robot@{Calibrate Robot}!readWhiteLineSensors@{readWhiteLineSensors}|hyperpage}{16}
+\indexentry{readWhiteLineSensors@{readWhiteLineSensors}!Calibrate Robot@{Calibrate Robot}|hyperpage}{16}
+\indexentry{Line Follow@{Line Follow}|hyperpage}{17}
+\indexentry{Line Follow@{Line Follow}!CheckLineResult@{CheckLineResult}|hyperpage}{18}
+\indexentry{CheckLineResult@{CheckLineResult}!Line Follow@{Line Follow}|hyperpage}{18}
+\indexentry{Line Follow@{Line Follow}!FollowLineResult@{FollowLineResult}|hyperpage}{18}
+\indexentry{FollowLineResult@{FollowLineResult}!Line Follow@{Line Follow}|hyperpage}{18}
+\indexentry{Line Follow@{Line Follow}!SearchLineResult@{SearchLineResult}|hyperpage}{18}
+\indexentry{SearchLineResult@{SearchLineResult}!Line Follow@{Line Follow}|hyperpage}{18}
+\indexentry{Line Follow@{Line Follow}!SearchLineState@{SearchLineState}|hyperpage}{18}
+\indexentry{SearchLineState@{SearchLineState}!Line Follow@{Line Follow}|hyperpage}{18}
+\indexentry{Line Follow@{Line Follow}!CheckLineResult@{CheckLineResult}|hyperpage}{18}
+\indexentry{CheckLineResult@{CheckLineResult}!Line Follow@{Line Follow}|hyperpage}{18}
+\indexentry{ON\_LINE@{ON\_LINE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!ON\_LINE@{ON\_LINE}|hyperpage}{19}
+\indexentry{OFF\_LINE@{OFF\_LINE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!OFF\_LINE@{OFF\_LINE}|hyperpage}{19}
+\indexentry{ALL\_BLACK@{ALL\_BLACK}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!ALL\_BLACK@{ALL\_BLACK}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!FollowLineResult@{FollowLineResult}|hyperpage}{19}
+\indexentry{FollowLineResult@{FollowLineResult}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{FOLLOWING@{FOLLOWING}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!FOLLOWING@{FOLLOWING}|hyperpage}{19}
+\indexentry{LOST\_LINE@{LOST\_LINE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!LOST\_LINE@{LOST\_LINE}|hyperpage}{19}
+\indexentry{ALL\_LINE@{ALL\_LINE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!ALL\_LINE@{ALL\_LINE}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!SearchLineResult@{SearchLineResult}|hyperpage}{19}
+\indexentry{SearchLineResult@{SearchLineResult}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{SEARCHING@{SEARCHING}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!SEARCHING@{SEARCHING}|hyperpage}{19}
+\indexentry{FOUND@{FOUND}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!FOUND@{FOUND}|hyperpage}{19}
+\indexentry{LOST@{LOST}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!LOST@{LOST}|hyperpage}{19}
+\indexentry{END\_OF\_LINE@{END\_OF\_LINE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!END\_OF\_LINE@{END\_OF\_LINE}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!SearchLineState@{SearchLineState}|hyperpage}{19}
+\indexentry{SearchLineState@{SearchLineState}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{DRIVE@{DRIVE}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!DRIVE@{DRIVE}|hyperpage}{19}
+\indexentry{TURNING\_LEFT@{TURNING\_LEFT}!Line Follow@{Line Follow}|hyperpage}{19}
+\indexentry{Line Follow@{Line Follow}!TURNING\_LEFT@{TURNING\_LEFT}|hyperpage}{19}
+\indexentry{TURNING\_RIGHT@{TURNING\_RIGHT}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!TURNING\_RIGHT@{TURNING\_RIGHT}|hyperpage}{20}
+\indexentry{TURN\_LEFT\_TO\_RIGHT@{TURN\_LEFT\_TO\_RIGHT}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!TURN\_LEFT\_TO\_RIGHT@{TURN\_LEFT\_TO\_RIGHT}|hyperpage}{20}
+\indexentry{TURN\_RIGHT\_TO\_LEFT@{TURN\_RIGHT\_TO\_LEFT}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!TURN\_RIGHT\_TO\_LEFT@{TURN\_RIGHT\_TO\_LEFT}|hyperpage}{20}
+\indexentry{TURN\_RIGHT\_TO\_MIDDLE@{TURN\_RIGHT\_TO\_MIDDLE}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!TURN\_RIGHT\_TO\_MIDDLE@{TURN\_RIGHT\_TO\_MIDDLE}|hyperpage}{20}
+\indexentry{TURN\_LEFT\_TO\_MIDDLE@{TURN\_LEFT\_TO\_MIDDLE}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!TURN\_LEFT\_TO\_MIDDLE@{TURN\_LEFT\_TO\_MIDDLE}|hyperpage}{20}
+\indexentry{DONE@{DONE}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!DONE@{DONE}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!checkForLine@{checkForLine}|hyperpage}{20}
+\indexentry{checkForLine@{checkForLine}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!followLine@{followLine}|hyperpage}{20}
+\indexentry{followLine@{followLine}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!followLineTask@{followLineTask}|hyperpage}{20}
+\indexentry{followLineTask@{followLineTask}!Line Follow@{Line Follow}|hyperpage}{20}
+\indexentry{Line Follow@{Line Follow}!searchLine@{searchLine}|hyperpage}{21}
+\indexentry{searchLine@{searchLine}!Line Follow@{Line Follow}|hyperpage}{21}
+\indexentry{Line Follow@{Line Follow}!searchLineTask@{searchLineTask}|hyperpage}{21}
+\indexentry{searchLineTask@{searchLineTask}!Line Follow@{Line Follow}|hyperpage}{21}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{21}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{22}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{22}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceState@{ObstacleAvoidanceState}|hyperpage}{22}
+\indexentry{ObstacleAvoidanceState@{ObstacleAvoidanceState}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{22}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceState@{ObstacleAvoidanceState}|hyperpage}{22}
+\indexentry{ObstacleAvoidanceState@{ObstacleAvoidanceState}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{22}
+\indexentry{BACK\_OFF@{BACK\_OFF}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!BACK\_OFF@{BACK\_OFF}|hyperpage}{23}
+\indexentry{TURN\_FROM\_OBSTACLE@{TURN\_FROM\_OBSTACLE}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!TURN\_FROM\_OBSTACLE@{TURN\_FROM\_OBSTACLE}|hyperpage}{23}
+\indexentry{DRIVE\_CIRCLE@{DRIVE\_CIRCLE}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!DRIVE\_CIRCLE@{DRIVE\_CIRCLE}|hyperpage}{23}
+\indexentry{OBSTACLE\_AVOIDANCE\_DONE@{OBSTACLE\_AVOIDANCE\_DONE}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!OBSTACLE\_AVOIDANCE\_DONE@{OBSTACLE\_AVOIDANCE\_DONE}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!avoidObstacle@{avoidObstacle}|hyperpage}{23}
+\indexentry{avoidObstacle@{avoidObstacle}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!avoidObstacleTask@{avoidObstacleTask}|hyperpage}{23}
+\indexentry{avoidObstacleTask@{avoidObstacleTask}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!checkForObstacle@{checkForObstacle}|hyperpage}{23}
+\indexentry{checkForObstacle@{checkForObstacle}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Obstacle Avoidance@{Obstacle Avoidance}!configureObstacleAvoidance@{configureObstacleAvoidance}|hyperpage}{23}
+\indexentry{configureObstacleAvoidance@{configureObstacleAvoidance}!Obstacle Avoidance@{Obstacle Avoidance}|hyperpage}{23}
+\indexentry{Parcour@{Parcour}|hyperpage}{25}
+\indexentry{Parcour@{Parcour}!StateMachine@{StateMachine}|hyperpage}{26}
+\indexentry{StateMachine@{StateMachine}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!StateMachine@{StateMachine}|hyperpage}{26}
+\indexentry{StateMachine@{StateMachine}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{DRIVE\_TRAJECTORY@{DRIVE\_TRAJECTORY}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!DRIVE\_TRAJECTORY@{DRIVE\_TRAJECTORY}|hyperpage}{26}
+\indexentry{FOLLOW\_LINE@{FOLLOW\_LINE}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!FOLLOW\_LINE@{FOLLOW\_LINE}|hyperpage}{26}
+\indexentry{SEARCH\_LINE@{SEARCH\_LINE}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!SEARCH\_LINE@{SEARCH\_LINE}|hyperpage}{26}
+\indexentry{OVERCOME\_GAP@{OVERCOME\_GAP}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!OVERCOME\_GAP@{OVERCOME\_GAP}|hyperpage}{26}
+\indexentry{AVOID\_OBSTACLE@{AVOID\_OBSTACLE}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!AVOID\_OBSTACLE@{AVOID\_OBSTACLE}|hyperpage}{26}
+\indexentry{CALIBRATE@{CALIBRATE}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!CALIBRATE@{CALIBRATE}|hyperpage}{26}
+\indexentry{IDLE@{IDLE}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!IDLE@{IDLE}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!driveParcour@{driveParcour}|hyperpage}{26}
+\indexentry{driveParcour@{driveParcour}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!startParcour@{startParcour}|hyperpage}{26}
+\indexentry{startParcour@{startParcour}!Parcour@{Parcour}|hyperpage}{26}
+\indexentry{Parcour@{Parcour}!currentState@{currentState}|hyperpage}{27}
+\indexentry{currentState@{currentState}!Parcour@{Parcour}|hyperpage}{27}
+\indexentry{Parcour@{Parcour}!nextState@{nextState}|hyperpage}{27}
+\indexentry{nextState@{nextState}!Parcour@{Parcour}|hyperpage}{27}
+\indexentry{Parcour@{Parcour}!state@{state}|hyperpage}{27}
+\indexentry{state@{state}!Parcour@{Parcour}|hyperpage}{27}
+\indexentry{PID Controller@{PID Controller}|hyperpage}{27}
+\indexentry{PID Controller@{PID Controller}!PIDConfig@{PIDConfig}|hyperpage}{28}
+\indexentry{PIDConfig@{PIDConfig}!PID Controller@{PID Controller}|hyperpage}{28}
+\indexentry{PID Controller@{PID Controller}!calculatePIDOutput@{calculatePIDOutput}|hyperpage}{28}
+\indexentry{calculatePIDOutput@{calculatePIDOutput}!PID Controller@{PID Controller}|hyperpage}{28}
+\indexentry{PID Controller@{PID Controller}!initPID@{initPID}|hyperpage}{28}
+\indexentry{initPID@{initPID}!PID Controller@{PID Controller}|hyperpage}{28}
+\indexentry{Trajectory@{Trajectory}|hyperpage}{29}
+\indexentry{Trajectory@{Trajectory}!TrajectoryStateMachine@{TrajectoryStateMachine}|hyperpage}{30}
+\indexentry{TrajectoryStateMachine@{TrajectoryStateMachine}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!TrajectoryStateMachine@{TrajectoryStateMachine}|hyperpage}{30}
+\indexentry{TrajectoryStateMachine@{TrajectoryStateMachine}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{DRIVE\_FIRST\_TRAJECTORY\_PART@{DRIVE\_FIRST\_TRAJECTORY\_PART}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!DRIVE\_FIRST\_TRAJECTORY\_PART@{DRIVE\_FIRST\_TRAJECTORY\_PART}|hyperpage}{30}
+\indexentry{TURN\_TO\_SECOND\_TRAJECTORY\_PART@{TURN\_TO\_SECOND\_TRAJECTORY\_PART}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!TURN\_TO\_SECOND\_TRAJECTORY\_PART@{TURN\_TO\_SECOND\_TRAJECTORY\_PART}|hyperpage}{30}
+\indexentry{DRIVE\_SECOND\_TRAJECTORY\_PART@{DRIVE\_SECOND\_TRAJECTORY\_PART}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!DRIVE\_SECOND\_TRAJECTORY\_PART@{DRIVE\_SECOND\_TRAJECTORY\_PART}|hyperpage}{30}
+\indexentry{TURN\_TO\_THIRD\_TRAJECTORY\_PART@{TURN\_TO\_THIRD\_TRAJECTORY\_PART}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!TURN\_TO\_THIRD\_TRAJECTORY\_PART@{TURN\_TO\_THIRD\_TRAJECTORY\_PART}|hyperpage}{30}
+\indexentry{DRIVE\_THIRD\_TRAJECTORY\_PART@{DRIVE\_THIRD\_TRAJECTORY\_PART}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!DRIVE\_THIRD\_TRAJECTORY\_PART@{DRIVE\_THIRD\_TRAJECTORY\_PART}|hyperpage}{30}
+\indexentry{FOLLOW\_LINE@{FOLLOW\_LINE}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!FOLLOW\_LINE@{FOLLOW\_LINE}|hyperpage}{30}
+\indexentry{TRAJECTORY\_DONE@{TRAJECTORY\_DONE}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!TRAJECTORY\_DONE@{TRAJECTORY\_DONE}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!driveTrajectoryTask@{driveTrajectoryTask}|hyperpage}{30}
+\indexentry{driveTrajectoryTask@{driveTrajectoryTask}!Trajectory@{Trajectory}|hyperpage}{30}
+\indexentry{Trajectory@{Trajectory}!startTrajectory@{startTrajectory}|hyperpage}{31}
+\indexentry{startTrajectory@{startTrajectory}!Trajectory@{Trajectory}|hyperpage}{31}
+\indexentry{Wheels@{Wheels}|hyperpage}{31}
+\indexentry{Wheels@{Wheels}!TurnWheelsTaskType@{TurnWheelsTaskType}|hyperpage}{32}
+\indexentry{TurnWheelsTaskType@{TurnWheelsTaskType}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!TurnWheelsTaskType@{TurnWheelsTaskType}|hyperpage}{32}
+\indexentry{TurnWheelsTaskType@{TurnWheelsTaskType}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{NONE@{NONE}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!NONE@{NONE}|hyperpage}{32}
+\indexentry{ANGLE@{ANGLE}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!ANGLE@{ANGLE}|hyperpage}{32}
+\indexentry{SPEED@{SPEED}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!SPEED@{SPEED}|hyperpage}{32}
+\indexentry{SYNCHRONIZED@{SYNCHRONIZED}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!SYNCHRONIZED@{SYNCHRONIZED}|hyperpage}{32}
+\indexentry{TIMED\_ANGLE@{TIMED\_ANGLE}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!TIMED\_ANGLE@{TIMED\_ANGLE}|hyperpage}{32}
+\indexentry{SYNCHRONIZED\_ANGLE@{SYNCHRONIZED\_ANGLE}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!SYNCHRONIZED\_ANGLE@{SYNCHRONIZED\_ANGLE}|hyperpage}{32}
+\indexentry{TURN@{TURN}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!TURN@{TURN}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!stopWheel@{stopWheel}|hyperpage}{32}
+\indexentry{stopWheel@{stopWheel}!Wheels@{Wheels}|hyperpage}{32}
+\indexentry{Wheels@{Wheels}!turnArmuro@{turnArmuro}|hyperpage}{33}
+\indexentry{turnArmuro@{turnArmuro}!Wheels@{Wheels}|hyperpage}{33}
+\indexentry{Wheels@{Wheels}!turnArmuroInTime@{turnArmuroInTime}|hyperpage}{33}
+\indexentry{turnArmuroInTime@{turnArmuroInTime}!Wheels@{Wheels}|hyperpage}{33}
+\indexentry{Wheels@{Wheels}!turnWheelByAngle@{turnWheelByAngle}|hyperpage}{33}
+\indexentry{turnWheelByAngle@{turnWheelByAngle}!Wheels@{Wheels}|hyperpage}{33}
+\indexentry{Wheels@{Wheels}!turnWheelByAngleInTime@{turnWheelByAngleInTime}|hyperpage}{34}
+\indexentry{turnWheelByAngleInTime@{turnWheelByAngleInTime}!Wheels@{Wheels}|hyperpage}{34}
+\indexentry{Wheels@{Wheels}!turnWheelsSynchronized@{turnWheelsSynchronized}|hyperpage}{34}
+\indexentry{turnWheelsSynchronized@{turnWheelsSynchronized}!Wheels@{Wheels}|hyperpage}{34}
+\indexentry{Wheels@{Wheels}!turnWheelsSynchronizedByAngle@{turnWheelsSynchronizedByAngle}|hyperpage}{34}
+\indexentry{turnWheelsSynchronizedByAngle@{turnWheelsSynchronizedByAngle}!Wheels@{Wheels}|hyperpage}{34}
+\indexentry{Wheels@{Wheels}!turnWheelsTask@{turnWheelsTask}|hyperpage}{35}
+\indexentry{turnWheelsTask@{turnWheelsTask}!Wheels@{Wheels}|hyperpage}{35}
+\indexentry{Wheels@{Wheels}!turnWheelWithSpeed@{turnWheelWithSpeed}|hyperpage}{35}
+\indexentry{turnWheelWithSpeed@{turnWheelWithSpeed}!Wheels@{Wheels}|hyperpage}{35}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{37}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!attackAngle@{attackAngle}|hyperpage}{37}
+\indexentry{attackAngle@{attackAngle}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{37}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!backOffDistance@{backOffDistance}|hyperpage}{37}
+\indexentry{backOffDistance@{backOffDistance}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{37}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!circleRadius@{circleRadius}|hyperpage}{38}
+\indexentry{circleRadius@{circleRadius}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{38}
+\indexentry{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!distanceToDrive@{distanceToDrive}|hyperpage}{38}
+\indexentry{distanceToDrive@{distanceToDrive}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}|hyperpage}{38}
+\indexentry{PIDConfig@{PIDConfig}|hyperpage}{38}
+\indexentry{PIDConfig@{PIDConfig}!d\_gain@{d\_gain}|hyperpage}{39}
+\indexentry{d\_gain@{d\_gain}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!i\_gain@{i\_gain}|hyperpage}{39}
+\indexentry{i\_gain@{i\_gain}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!i\_relax@{i\_relax}|hyperpage}{39}
+\indexentry{i\_relax@{i\_relax}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!integral@{integral}|hyperpage}{39}
+\indexentry{integral@{integral}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!max\_i@{max\_i}|hyperpage}{39}
+\indexentry{max\_i@{max\_i}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!old\_input@{old\_input}|hyperpage}{39}
+\indexentry{old\_input@{old\_input}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{PIDConfig@{PIDConfig}!p\_gain@{p\_gain}|hyperpage}{39}
+\indexentry{p\_gain@{p\_gain}!PIDConfig@{PIDConfig}|hyperpage}{39}
+\indexentry{WheelAngle@{WheelAngle}|hyperpage}{40}
+\indexentry{WheelAngle@{WheelAngle}!left@{left}|hyperpage}{40}
+\indexentry{left@{left}!WheelAngle@{WheelAngle}|hyperpage}{40}
+\indexentry{WheelAngle@{WheelAngle}!leftTicks@{leftTicks}|hyperpage}{40}
+\indexentry{leftTicks@{leftTicks}!WheelAngle@{WheelAngle}|hyperpage}{40}
+\indexentry{WheelAngle@{WheelAngle}!right@{right}|hyperpage}{40}
+\indexentry{right@{right}!WheelAngle@{WheelAngle}|hyperpage}{40}
+\indexentry{WheelAngle@{WheelAngle}!rightTicks@{rightTicks}|hyperpage}{40}
+\indexentry{rightTicks@{rightTicks}!WheelAngle@{WheelAngle}|hyperpage}{40}
+\indexentry{WheelAngleListItem@{WheelAngleListItem}|hyperpage}{41}
+\indexentry{WheelAngleListItem@{WheelAngleListItem}!angle@{angle}|hyperpage}{41}
+\indexentry{angle@{angle}!WheelAngleListItem@{WheelAngleListItem}|hyperpage}{41}
+\indexentry{WheelAngleListItem@{WheelAngleListItem}!next@{next}|hyperpage}{41}
+\indexentry{next@{next}!WheelAngleListItem@{WheelAngleListItem}|hyperpage}{41}
+\indexentry{WheelAngleListItem@{WheelAngleListItem}!prev@{prev}|hyperpage}{41}
+\indexentry{prev@{prev}!WheelAngleListItem@{WheelAngleListItem}|hyperpage}{41}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.c}|hyperpage}{43}
+\indexentry{armuro.c@{armuro.c}!LEFT\_ENCODER\_HIGH\_THRESHOLD@{LEFT\_ENCODER\_HIGH\_THRESHOLD}|hyperpage}{45}
+\indexentry{LEFT\_ENCODER\_HIGH\_THRESHOLD@{LEFT\_ENCODER\_HIGH\_THRESHOLD}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!LEFT\_ENCODER\_LOW\_THRESHOLD@{LEFT\_ENCODER\_LOW\_THRESHOLD}|hyperpage}{45}
+\indexentry{LEFT\_ENCODER\_LOW\_THRESHOLD@{LEFT\_ENCODER\_LOW\_THRESHOLD}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!MAX\_PWM@{MAX\_PWM}|hyperpage}{45}
+\indexentry{MAX\_PWM@{MAX\_PWM}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!RIGHT\_ENCODER\_HIGH\_THRESHOLD@{RIGHT\_ENCODER\_HIGH\_THRESHOLD}|hyperpage}{45}
+\indexentry{RIGHT\_ENCODER\_HIGH\_THRESHOLD@{RIGHT\_ENCODER\_HIGH\_THRESHOLD}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!RIGHT\_ENCODER\_LOW\_THRESHOLD@{RIGHT\_ENCODER\_LOW\_THRESHOLD}|hyperpage}{45}
+\indexentry{RIGHT\_ENCODER\_LOW\_THRESHOLD@{RIGHT\_ENCODER\_LOW\_THRESHOLD}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!WheelAngleListItem@{WheelAngleListItem}|hyperpage}{45}
+\indexentry{WheelAngleListItem@{WheelAngleListItem}!armuro.c@{armuro.c}|hyperpage}{45}
+\indexentry{armuro.c@{armuro.c}!initMotors@{initMotors}|hyperpage}{46}
+\indexentry{initMotors@{initMotors}!armuro.c@{armuro.c}|hyperpage}{46}
+\indexentry{armuro.c@{armuro.c}!schmittTrigger@{schmittTrigger}|hyperpage}{46}
+\indexentry{schmittTrigger@{schmittTrigger}!armuro.c@{armuro.c}|hyperpage}{46}
+\indexentry{armuro.c@{armuro.c}!startAngleMeasurement@{startAngleMeasurement}|hyperpage}{46}
+\indexentry{startAngleMeasurement@{startAngleMeasurement}!armuro.c@{armuro.c}|hyperpage}{46}
+\indexentry{armuro.c@{armuro.c}!maxLineSensorValues@{maxLineSensorValues}|hyperpage}{46}
+\indexentry{maxLineSensorValues@{maxLineSensorValues}!armuro.c@{armuro.c}|hyperpage}{46}
+\indexentry{armuro.c@{armuro.c}!minLineSensorValues@{minLineSensorValues}|hyperpage}{47}
+\indexentry{minLineSensorValues@{minLineSensorValues}!armuro.c@{armuro.c}|hyperpage}{47}
+\indexentry{armuro.c@{armuro.c}!wheelAngleList@{wheelAngleList}|hyperpage}{47}
+\indexentry{wheelAngleList@{wheelAngleList}!armuro.c@{armuro.c}|hyperpage}{47}
+\indexentry{armuro.c@{armuro.c}!wheelAngleListEnd@{wheelAngleListEnd}|hyperpage}{47}
+\indexentry{wheelAngleListEnd@{wheelAngleListEnd}!armuro.c@{armuro.c}|hyperpage}{47}
+\indexentry{armuro.c@{armuro.c}!wheelEncoderOldValues@{wheelEncoderOldValues}|hyperpage}{47}
+\indexentry{wheelEncoderOldValues@{wheelEncoderOldValues}!armuro.c@{armuro.c}|hyperpage}{47}
+\indexentry{armuro.c@{armuro.c}!wheelEncoderTicksCount@{wheelEncoderTicksCount}|hyperpage}{47}
+\indexentry{wheelEncoderTicksCount@{wheelEncoderTicksCount}!armuro.c@{armuro.c}|hyperpage}{47}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h}|hyperpage}{48}
+\indexentry{armuro.h@{armuro.h}!ARMURO\_LENGTH@{ARMURO\_LENGTH}|hyperpage}{49}
+\indexentry{ARMURO\_LENGTH@{ARMURO\_LENGTH}!armuro.h@{armuro.h}|hyperpage}{49}
+\indexentry{armuro.h@{armuro.h}!BACKWARD@{BACKWARD}|hyperpage}{49}
+\indexentry{BACKWARD@{BACKWARD}!armuro.h@{armuro.h}|hyperpage}{49}
+\indexentry{armuro.h@{armuro.h}!FORWARD@{FORWARD}|hyperpage}{50}
+\indexentry{FORWARD@{FORWARD}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!HIGH@{HIGH}|hyperpage}{50}
+\indexentry{HIGH@{HIGH}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!LOW@{LOW}|hyperpage}{50}
+\indexentry{LOW@{LOW}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MAX\_LEFT\_LINE\_SENSOR\_VALUE@{MAX\_LEFT\_LINE\_SENSOR\_VALUE}|hyperpage}{50}
+\indexentry{MAX\_LEFT\_LINE\_SENSOR\_VALUE@{MAX\_LEFT\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MAX\_MIDDLE\_LINE\_SENSOR\_VALUE@{MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}|hyperpage}{50}
+\indexentry{MAX\_MIDDLE\_LINE\_SENSOR\_VALUE@{MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MAX\_RIGHT\_LINE\_SENSOR\_VALUE@{MAX\_RIGHT\_LINE\_SENSOR\_VALUE}|hyperpage}{50}
+\indexentry{MAX\_RIGHT\_LINE\_SENSOR\_VALUE@{MAX\_RIGHT\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MIN\_ANGLE@{MIN\_ANGLE}|hyperpage}{50}
+\indexentry{MIN\_ANGLE@{MIN\_ANGLE}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MIN\_LEFT\_LINE\_SENSOR\_VALUE@{MIN\_LEFT\_LINE\_SENSOR\_VALUE}|hyperpage}{50}
+\indexentry{MIN\_LEFT\_LINE\_SENSOR\_VALUE@{MIN\_LEFT\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{50}
+\indexentry{armuro.h@{armuro.h}!MIN\_MIDDLE\_LINE\_SENSOR\_VALUE@{MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}|hyperpage}{51}
+\indexentry{MIN\_MIDDLE\_LINE\_SENSOR\_VALUE@{MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{armuro.h@{armuro.h}!MIN\_RIGHT\_LINE\_SENSOR\_VALUE@{MIN\_RIGHT\_LINE\_SENSOR\_VALUE}|hyperpage}{51}
+\indexentry{MIN\_RIGHT\_LINE\_SENSOR\_VALUE@{MIN\_RIGHT\_LINE\_SENSOR\_VALUE}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{armuro.h@{armuro.h}!TURN\_CIRCUMFERENCE@{TURN\_CIRCUMFERENCE}|hyperpage}{51}
+\indexentry{TURN\_CIRCUMFERENCE@{TURN\_CIRCUMFERENCE}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{armuro.h@{armuro.h}!WHEEL\_CIRCUMFERENCE@{WHEEL\_CIRCUMFERENCE}|hyperpage}{51}
+\indexentry{WHEEL\_CIRCUMFERENCE@{WHEEL\_CIRCUMFERENCE}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{armuro.h@{armuro.h}!WHEEL\_DISTANCE@{WHEEL\_DISTANCE}|hyperpage}{51}
+\indexentry{WHEEL\_DISTANCE@{WHEEL\_DISTANCE}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{armuro.h@{armuro.h}!Side@{Side}|hyperpage}{51}
+\indexentry{Side@{Side}!armuro.h@{armuro.h}|hyperpage}{51}
+\indexentry{RIGHT@{RIGHT}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!RIGHT@{RIGHT}|hyperpage}{52}
+\indexentry{LEFT@{LEFT}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!LEFT@{LEFT}|hyperpage}{52}
+\indexentry{MIDDLE@{MIDDLE}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!MIDDLE@{MIDDLE}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!initMotors@{initMotors}|hyperpage}{52}
+\indexentry{initMotors@{initMotors}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!startAngleMeasurement@{startAngleMeasurement}|hyperpage}{52}
+\indexentry{startAngleMeasurement@{startAngleMeasurement}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!buffer@{buffer}|hyperpage}{52}
+\indexentry{buffer@{buffer}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!maxLineSensorValues@{maxLineSensorValues}|hyperpage}{52}
+\indexentry{maxLineSensorValues@{maxLineSensorValues}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!minLineSensorValues@{minLineSensorValues}|hyperpage}{52}
+\indexentry{minLineSensorValues@{minLineSensorValues}!armuro.h@{armuro.h}|hyperpage}{52}
+\indexentry{armuro.h@{armuro.h}!wheelEncoderTicksCount@{wheelEncoderTicksCount}|hyperpage}{53}
+\indexentry{wheelEncoderTicksCount@{wheelEncoderTicksCount}!armuro.h@{armuro.h}|hyperpage}{53}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h}|hyperpage}{53}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.c}|hyperpage}{54}
+\indexentry{blinkLED.c@{blinkLED.c}!LEDState@{LEDState}|hyperpage}{54}
+\indexentry{LEDState@{LEDState}!blinkLED.c@{blinkLED.c}|hyperpage}{54}
+\indexentry{ON@{ON}!blinkLED.c@{blinkLED.c}|hyperpage}{55}
+\indexentry{blinkLED.c@{blinkLED.c}!ON@{ON}|hyperpage}{55}
+\indexentry{OFF@{OFF}!blinkLED.c@{blinkLED.c}|hyperpage}{55}
+\indexentry{blinkLED.c@{blinkLED.c}!OFF@{OFF}|hyperpage}{55}
+\indexentry{blinkLED.c@{blinkLED.c}!ledState@{ledState}|hyperpage}{55}
+\indexentry{ledState@{ledState}!blinkLED.c@{blinkLED.c}|hyperpage}{55}
+\indexentry{blinkLED.c@{blinkLED.c}!ledTimeInterval@{ledTimeInterval}|hyperpage}{55}
+\indexentry{ledTimeInterval@{ledTimeInterval}!blinkLED.c@{blinkLED.c}|hyperpage}{55}
+\indexentry{blinkLED.c@{blinkLED.c}!taskLEDTimeout@{taskLEDTimeout}|hyperpage}{55}
+\indexentry{taskLEDTimeout@{taskLEDTimeout}!blinkLED.c@{blinkLED.c}|hyperpage}{55}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.h}|hyperpage}{55}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.h}|hyperpage}{56}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.c}|hyperpage}{56}
+\indexentry{calibrate.c@{calibrate.c}!CalibrateState@{CalibrateState}|hyperpage}{56}
+\indexentry{CalibrateState@{CalibrateState}!calibrate.c@{calibrate.c}|hyperpage}{56}
+\indexentry{CALIBRATE\_START@{CALIBRATE\_START}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!CALIBRATE\_START@{CALIBRATE\_START}|hyperpage}{57}
+\indexentry{CALIBRATE\_WHITE@{CALIBRATE\_WHITE}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!CALIBRATE\_WHITE@{CALIBRATE\_WHITE}|hyperpage}{57}
+\indexentry{CALIBRATE\_BLACK@{CALIBRATE\_BLACK}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!CALIBRATE\_BLACK@{CALIBRATE\_BLACK}|hyperpage}{57}
+\indexentry{CALIBRATE\_DONE@{CALIBRATE\_DONE}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!CALIBRATE\_DONE@{CALIBRATE\_DONE}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!startCalibrate@{startCalibrate}|hyperpage}{57}
+\indexentry{startCalibrate@{startCalibrate}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!calibrateState@{calibrateState}|hyperpage}{57}
+\indexentry{calibrateState@{calibrateState}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!calibrateStateState@{calibrateStateState}|hyperpage}{57}
+\indexentry{calibrateStateState@{calibrateStateState}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{calibrate.c@{calibrate.c}!nextCalibrateState@{nextCalibrateState}|hyperpage}{57}
+\indexentry{nextCalibrateState@{nextCalibrateState}!calibrate.c@{calibrate.c}|hyperpage}{57}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.h}|hyperpage}{57}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.h}|hyperpage}{58}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.c}|hyperpage}{58}
+\indexentry{lineFollow.c@{lineFollow.c}!BLACK\_THRESHOLD@{BLACK\_THRESHOLD}|hyperpage}{59}
+\indexentry{BLACK\_THRESHOLD@{BLACK\_THRESHOLD}!lineFollow.c@{lineFollow.c}|hyperpage}{59}
+\indexentry{lineFollow.c@{lineFollow.c}!WHITE\_THRESHOLD@{WHITE\_THRESHOLD}|hyperpage}{59}
+\indexentry{WHITE\_THRESHOLD@{WHITE\_THRESHOLD}!lineFollow.c@{lineFollow.c}|hyperpage}{59}
+\indexentry{lineFollow.c@{lineFollow.c}!baseLineSpeed@{baseLineSpeed}|hyperpage}{60}
+\indexentry{baseLineSpeed@{baseLineSpeed}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!followLinePID@{followLinePID}|hyperpage}{60}
+\indexentry{followLinePID@{followLinePID}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!lastLineValues@{lastLineValues}|hyperpage}{60}
+\indexentry{lastLineValues@{lastLineValues}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!lastState@{lastState}|hyperpage}{60}
+\indexentry{lastState@{lastState}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!lineFollowTimeout@{lineFollowTimeout}|hyperpage}{60}
+\indexentry{lineFollowTimeout@{lineFollowTimeout}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!nextSearchState@{nextSearchState}|hyperpage}{60}
+\indexentry{nextSearchState@{nextSearchState}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!searchLineState@{searchLineState}|hyperpage}{60}
+\indexentry{searchLineState@{searchLineState}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{lineFollow.c@{lineFollow.c}!searchLineStateState@{searchLineStateState}|hyperpage}{60}
+\indexentry{searchLineStateState@{searchLineStateState}!lineFollow.c@{lineFollow.c}|hyperpage}{60}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h}|hyperpage}{61}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h}|hyperpage}{62}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.c}|hyperpage}{62}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!ATTACK\_ANGLE@{ATTACK\_ANGLE}|hyperpage}{63}
+\indexentry{ATTACK\_ANGLE@{ATTACK\_ANGLE}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{63}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!OBSTACLE\_RADIUS@{OBSTACLE\_RADIUS}|hyperpage}{63}
+\indexentry{OBSTACLE\_RADIUS@{OBSTACLE\_RADIUS}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{63}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!SAFETY\_DISTANCE@{SAFETY\_DISTANCE}|hyperpage}{63}
+\indexentry{SAFETY\_DISTANCE@{SAFETY\_DISTANCE}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{63}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!nextObstacleAvoidanceState@{nextObstacleAvoidanceState}|hyperpage}{64}
+\indexentry{nextObstacleAvoidanceState@{nextObstacleAvoidanceState}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{64}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceConfig@{obstacleAvoidanceConfig}|hyperpage}{64}
+\indexentry{obstacleAvoidanceConfig@{obstacleAvoidanceConfig}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{64}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceState@{obstacleAvoidanceState}|hyperpage}{64}
+\indexentry{obstacleAvoidanceState@{obstacleAvoidanceState}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{64}
+\indexentry{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceStateState@{obstacleAvoidanceStateState}|hyperpage}{64}
+\indexentry{obstacleAvoidanceStateState@{obstacleAvoidanceStateState}!obstacleAvoidance.c@{obstacleAvoidance.c}|hyperpage}{64}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.h}|hyperpage}{64}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.h}|hyperpage}{65}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.c}|hyperpage}{65}
+\indexentry{parcour.c@{parcour.c}!avoidingObstacle@{avoidingObstacle}|hyperpage}{66}
+\indexentry{avoidingObstacle@{avoidingObstacle}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{parcour.c@{parcour.c}!calibrateArmuro@{calibrateArmuro}|hyperpage}{66}
+\indexentry{calibrateArmuro@{calibrateArmuro}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{parcour.c@{parcour.c}!driveTrajectory@{driveTrajectory}|hyperpage}{66}
+\indexentry{driveTrajectory@{driveTrajectory}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{parcour.c@{parcour.c}!lineFollow@{lineFollow}|hyperpage}{66}
+\indexentry{lineFollow@{lineFollow}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{parcour.c@{parcour.c}!overcomeGap@{overcomeGap}|hyperpage}{66}
+\indexentry{overcomeGap@{overcomeGap}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{parcour.c@{parcour.c}!searchTheLine@{searchTheLine}|hyperpage}{66}
+\indexentry{searchTheLine@{searchTheLine}!parcour.c@{parcour.c}|hyperpage}{66}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.h}|hyperpage}{67}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.h}|hyperpage}{67}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.c}|hyperpage}{67}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h}|hyperpage}{67}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h}|hyperpage}{68}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/stateMachine/stateMachine.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/stateMachine/stateMachine.h}|hyperpage}{68}
+\indexentry{stateMachine.h@{stateMachine.h}!State@{State}|hyperpage}{68}
+\indexentry{State@{State}!stateMachine.h@{stateMachine.h}|hyperpage}{68}
+\indexentry{stateMachine.h@{stateMachine.h}!State@{State}|hyperpage}{69}
+\indexentry{State@{State}!stateMachine.h@{stateMachine.h}|hyperpage}{69}
+\indexentry{READY@{READY}!stateMachine.h@{stateMachine.h}|hyperpage}{69}
+\indexentry{stateMachine.h@{stateMachine.h}!READY@{READY}|hyperpage}{69}
+\indexentry{RUNNING@{RUNNING}!stateMachine.h@{stateMachine.h}|hyperpage}{69}
+\indexentry{stateMachine.h@{stateMachine.h}!RUNNING@{RUNNING}|hyperpage}{69}
+\indexentry{FINISHED@{FINISHED}!stateMachine.h@{stateMachine.h}|hyperpage}{69}
+\indexentry{stateMachine.h@{stateMachine.h}!FINISHED@{FINISHED}|hyperpage}{69}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/stateMachine/stateMachine.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/stateMachine/stateMachine.h}|hyperpage}{69}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.c}|hyperpage}{69}
+\indexentry{trajectory.c@{trajectory.c}!driveFirstTrajectoryPart@{driveFirstTrajectoryPart}|hyperpage}{70}
+\indexentry{driveFirstTrajectoryPart@{driveFirstTrajectoryPart}!trajectory.c@{trajectory.c}|hyperpage}{70}
+\indexentry{trajectory.c@{trajectory.c}!driveSecondTrajectoryPart@{driveSecondTrajectoryPart}|hyperpage}{70}
+\indexentry{driveSecondTrajectoryPart@{driveSecondTrajectoryPart}!trajectory.c@{trajectory.c}|hyperpage}{70}
+\indexentry{trajectory.c@{trajectory.c}!driveThirdTrajectoryPart@{driveThirdTrajectoryPart}|hyperpage}{70}
+\indexentry{driveThirdTrajectoryPart@{driveThirdTrajectoryPart}!trajectory.c@{trajectory.c}|hyperpage}{70}
+\indexentry{trajectory.c@{trajectory.c}!turnToSecondTrajectoryPart@{turnToSecondTrajectoryPart}|hyperpage}{70}
+\indexentry{turnToSecondTrajectoryPart@{turnToSecondTrajectoryPart}!trajectory.c@{trajectory.c}|hyperpage}{70}
+\indexentry{trajectory.c@{trajectory.c}!turnToThirdTrajectoryPart@{turnToThirdTrajectoryPart}|hyperpage}{71}
+\indexentry{turnToThirdTrajectoryPart@{turnToThirdTrajectoryPart}!trajectory.c@{trajectory.c}|hyperpage}{71}
+\indexentry{trajectory.c@{trajectory.c}!currentTrajectoryState@{currentTrajectoryState}|hyperpage}{71}
+\indexentry{currentTrajectoryState@{currentTrajectoryState}!trajectory.c@{trajectory.c}|hyperpage}{71}
+\indexentry{trajectory.c@{trajectory.c}!nextTrajectoryState@{nextTrajectoryState}|hyperpage}{71}
+\indexentry{nextTrajectoryState@{nextTrajectoryState}!trajectory.c@{trajectory.c}|hyperpage}{71}
+\indexentry{trajectory.c@{trajectory.c}!trajectoryStateState@{trajectoryStateState}|hyperpage}{71}
+\indexentry{trajectoryStateState@{trajectoryStateState}!trajectory.c@{trajectory.c}|hyperpage}{71}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.h}|hyperpage}{71}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.h}|hyperpage}{72}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.c}|hyperpage}{72}
+\indexentry{wheels.c@{wheels.c}!MAX\_ROTATION\_RATE@{MAX\_ROTATION\_RATE}|hyperpage}{73}
+\indexentry{MAX\_ROTATION\_RATE@{MAX\_ROTATION\_RATE}!wheels.c@{wheels.c}|hyperpage}{73}
+\indexentry{wheels.c@{wheels.c}!setupSynchronizedPID@{setupSynchronizedPID}|hyperpage}{73}
+\indexentry{setupSynchronizedPID@{setupSynchronizedPID}!wheels.c@{wheels.c}|hyperpage}{73}
+\indexentry{wheels.c@{wheels.c}!turnArmuroTask@{turnArmuroTask}|hyperpage}{73}
+\indexentry{turnArmuroTask@{turnArmuroTask}!wheels.c@{wheels.c}|hyperpage}{73}
+\indexentry{wheels.c@{wheels.c}!turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}|hyperpage}{73}
+\indexentry{turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}!wheels.c@{wheels.c}|hyperpage}{73}
+\indexentry{wheels.c@{wheels.c}!turnWheelByAngleTask@{turnWheelByAngleTask}|hyperpage}{73}
+\indexentry{turnWheelByAngleTask@{turnWheelByAngleTask}!wheels.c@{wheels.c}|hyperpage}{73}
+\indexentry{wheels.c@{wheels.c}!turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}|hyperpage}{74}
+\indexentry{turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}|hyperpage}{74}
+\indexentry{turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!angleSetpoint@{angleSetpoint}|hyperpage}{74}
+\indexentry{angleSetpoint@{angleSetpoint}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!angleTimeout@{angleTimeout}|hyperpage}{74}
+\indexentry{angleTimeout@{angleTimeout}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!currentSpeedSetpoint@{currentSpeedSetpoint}|hyperpage}{74}
+\indexentry{currentSpeedSetpoint@{currentSpeedSetpoint}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!oldAngle@{oldAngle}|hyperpage}{74}
+\indexentry{oldAngle@{oldAngle}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!rotationRateSetpoint@{rotationRateSetpoint}|hyperpage}{74}
+\indexentry{rotationRateSetpoint@{rotationRateSetpoint}!wheels.c@{wheels.c}|hyperpage}{74}
+\indexentry{wheels.c@{wheels.c}!speedSetpoint@{speedSetpoint}|hyperpage}{75}
+\indexentry{speedSetpoint@{speedSetpoint}!wheels.c@{wheels.c}|hyperpage}{75}
+\indexentry{wheels.c@{wheels.c}!synchronizeWheelsPID@{synchronizeWheelsPID}|hyperpage}{75}
+\indexentry{synchronizeWheelsPID@{synchronizeWheelsPID}!wheels.c@{wheels.c}|hyperpage}{75}
+\indexentry{wheels.c@{wheels.c}!synchronizeWheelsTimeout@{synchronizeWheelsTimeout}|hyperpage}{75}
+\indexentry{synchronizeWheelsTimeout@{synchronizeWheelsTimeout}!wheels.c@{wheels.c}|hyperpage}{75}
+\indexentry{wheels.c@{wheels.c}!turningWheels@{turningWheels}|hyperpage}{75}
+\indexentry{turningWheels@{turningWheels}!wheels.c@{wheels.c}|hyperpage}{75}
+\indexentry{wheels.c@{wheels.c}!wheelsPID@{wheelsPID}|hyperpage}{75}
+\indexentry{wheelsPID@{wheelsPID}!wheels.c@{wheels.c}|hyperpage}{75}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h}|hyperpage}{75}
+\indexentry{wheels.h@{wheels.h}!turnArmuroTask@{turnArmuroTask}|hyperpage}{76}
+\indexentry{turnArmuroTask@{turnArmuroTask}!wheels.h@{wheels.h}|hyperpage}{76}
+\indexentry{wheels.h@{wheels.h}!turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}|hyperpage}{76}
+\indexentry{turnWheelByAngleInTimeTask@{turnWheelByAngleInTimeTask}!wheels.h@{wheels.h}|hyperpage}{76}
+\indexentry{wheels.h@{wheels.h}!turnWheelByAngleTask@{turnWheelByAngleTask}|hyperpage}{76}
+\indexentry{turnWheelByAngleTask@{turnWheelByAngleTask}!wheels.h@{wheels.h}|hyperpage}{76}
+\indexentry{wheels.h@{wheels.h}!turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}|hyperpage}{77}
+\indexentry{turnWheelsSynchronizedByAngleTask@{turnWheelsSynchronizedByAngleTask}!wheels.h@{wheels.h}|hyperpage}{77}
+\indexentry{wheels.h@{wheels.h}!turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}|hyperpage}{77}
+\indexentry{turnWheelsSynchronizedTask@{turnWheelsSynchronizedTask}!wheels.h@{wheels.h}|hyperpage}{77}
+\indexentry{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h}|hyperpage}{77}

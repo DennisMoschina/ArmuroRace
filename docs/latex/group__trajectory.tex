@@ -1,0 +1,123 @@
+\hypertarget{group__trajectory}{}\doxysection{Trajectory}
+\label{group__trajectory}\index{Trajectory@{Trajectory}}
+
+
+Drive a predefined trajectory.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \mbox{\hyperlink{group__trajectory_ga2b6d716db448b10fceb7d8d2898b70ba}{Trajectory\+State\+Machine}}
+\begin{DoxyCompactList}\small\item\em The state machine of the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \{ \newline
+\mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}{DRIVE\+\_\+\+FIRST\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 0
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a90ed266e770818f4bb2d9418b4e5e505}{TURN\+\_\+\+TO\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 1
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a1619558042816ca9406ed15e66cafe6c}{DRIVE\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 2
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a7e2fd27fb4be0eb2fe2ccd9d4dd4925f}{TURN\+\_\+\+TO\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 3
+, \newline
+\mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a6bd95f64f8493d87db7fe8502dab1460}{DRIVE\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 4
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3ada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}} = 5
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a759cfe25886c42adb69c8075e833378a}{TRAJECTORY\+\_\+\+DONE}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine of the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__trajectory_ga552790c87c87d9a29590fbfa702c0450}{start\+Trajectory}} ()
+\begin{DoxyCompactList}\small\item\em Configure the trajectory task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__trajectory_ga79f0c88505d9f9bb47c6a85a3fe42c4b}{drive\+Trajectory\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Run the trajectory task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Drive a predefined trajectory. 
+
+This module is implemented as a state machine in Trajectory\+State. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__trajectory_ga2b6d716db448b10fceb7d8d2898b70ba}\label{group__trajectory_ga2b6d716db448b10fceb7d8d2898b70ba}} 
+\index{Trajectory@{Trajectory}!TrajectoryStateMachine@{TrajectoryStateMachine}}
+\index{TrajectoryStateMachine@{TrajectoryStateMachine}!Trajectory@{Trajectory}}
+\doxysubsubsection{\texorpdfstring{TrajectoryStateMachine}{TrajectoryStateMachine}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}}}
+
+
+
+The state machine of the trajectory. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}\label{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}} 
+\index{Trajectory@{Trajectory}!TrajectoryStateMachine@{TrajectoryStateMachine}}
+\index{TrajectoryStateMachine@{TrajectoryStateMachine}!Trajectory@{Trajectory}}
+\doxysubsubsection{\texorpdfstring{TrajectoryStateMachine}{TrajectoryStateMachine}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}}}
+
+
+
+The state machine of the trajectory. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE\_FIRST\_TRAJECTORY\_PART@{DRIVE\_FIRST\_TRAJECTORY\_PART}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!DRIVE\_FIRST\_TRAJECTORY\_PART@{DRIVE\_FIRST\_TRAJECTORY\_PART}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}} 
+DRIVE\+\_\+\+FIRST\+\_\+\+TRAJECTORY\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_TO\_SECOND\_TRAJECTORY\_PART@{TURN\_TO\_SECOND\_TRAJECTORY\_PART}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!TURN\_TO\_SECOND\_TRAJECTORY\_PART@{TURN\_TO\_SECOND\_TRAJECTORY\_PART}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a90ed266e770818f4bb2d9418b4e5e505}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a90ed266e770818f4bb2d9418b4e5e505}} 
+TURN\+\_\+\+TO\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE\_SECOND\_TRAJECTORY\_PART@{DRIVE\_SECOND\_TRAJECTORY\_PART}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!DRIVE\_SECOND\_TRAJECTORY\_PART@{DRIVE\_SECOND\_TRAJECTORY\_PART}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a1619558042816ca9406ed15e66cafe6c}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a1619558042816ca9406ed15e66cafe6c}} 
+DRIVE\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_TO\_THIRD\_TRAJECTORY\_PART@{TURN\_TO\_THIRD\_TRAJECTORY\_PART}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!TURN\_TO\_THIRD\_TRAJECTORY\_PART@{TURN\_TO\_THIRD\_TRAJECTORY\_PART}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a7e2fd27fb4be0eb2fe2ccd9d4dd4925f}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a7e2fd27fb4be0eb2fe2ccd9d4dd4925f}} 
+TURN\+\_\+\+TO\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE\_THIRD\_TRAJECTORY\_PART@{DRIVE\_THIRD\_TRAJECTORY\_PART}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!DRIVE\_THIRD\_TRAJECTORY\_PART@{DRIVE\_THIRD\_TRAJECTORY\_PART}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a6bd95f64f8493d87db7fe8502dab1460}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a6bd95f64f8493d87db7fe8502dab1460}} 
+DRIVE\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOLLOW\_LINE@{FOLLOW\_LINE}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!FOLLOW\_LINE@{FOLLOW\_LINE}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3ada9bf40bddc6fcd34a63cacb19ca3641}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3ada9bf40bddc6fcd34a63cacb19ca3641}} 
+FOLLOW\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TRAJECTORY\_DONE@{TRAJECTORY\_DONE}!Trajectory@{Trajectory}}\index{Trajectory@{Trajectory}!TRAJECTORY\_DONE@{TRAJECTORY\_DONE}}}\mbox{\Hypertarget{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a759cfe25886c42adb69c8075e833378a}\label{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a759cfe25886c42adb69c8075e833378a}} 
+TRAJECTORY\+\_\+\+DONE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__trajectory_ga79f0c88505d9f9bb47c6a85a3fe42c4b}\label{group__trajectory_ga79f0c88505d9f9bb47c6a85a3fe42c4b}} 
+\index{Trajectory@{Trajectory}!driveTrajectoryTask@{driveTrajectoryTask}}
+\index{driveTrajectoryTask@{driveTrajectoryTask}!Trajectory@{Trajectory}}
+\doxysubsubsection{\texorpdfstring{driveTrajectoryTask()}{driveTrajectoryTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} drive\+Trajectory\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the trajectory task. 
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+RUNNING if task is still running, FINISHED if task is finished 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__trajectory_ga552790c87c87d9a29590fbfa702c0450}\label{group__trajectory_ga552790c87c87d9a29590fbfa702c0450}} 
+\index{Trajectory@{Trajectory}!startTrajectory@{startTrajectory}}
+\index{startTrajectory@{startTrajectory}!Trajectory@{Trajectory}}
+\doxysubsubsection{\texorpdfstring{startTrajectory()}{startTrajectory()}}
+{\footnotesize\ttfamily void start\+Trajectory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure the trajectory task. 
+

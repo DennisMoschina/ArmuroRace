@@ -1,0 +1,70 @@
+\hypertarget{blink_l_e_d_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/blink\+LED/blink\+LED.c File Reference}
+\label{blink_l_e_d_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.c}}
+{\ttfamily \#include \char`\"{}blink\+LED.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}{LEDState}} \{ \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0a977d478dacaae531f95695750d1e9d03}{ON}}
+, \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}{OFF}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__blink_l_e_d_ga9241c778ac42e7dbde0769e96738bec1}{blink\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side, uint16\+\_\+t time\+Interval)
+\begin{DoxyCompactList}\small\item\em Blink the LED on the given side with the given time interval. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__blink_l_e_d_gac5759c4dfaae6c8bd8ee90518616328f}{stop\+Blinking\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side)
+\begin{DoxyCompactList}\small\item\em Stop blinking the LED and turn it off on the given side. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__blink_l_e_d_gacdb86ba2ada451667298ccc32e52b836}{blink\+LEDTask}} ()
+\begin{DoxyCompactList}\small\item\em Run the blinking Task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{blink_l_e_d_8c_ae013f490ae5fa7dbfb968dd725347b19}{led\+Time\+Interval}} \mbox{[}$\,$\mbox{]} = \{0, 0\}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{blink_l_e_d_8c_a913dea1c302ca0ea52b537b513b7aabf}{task\+LEDTimeout}} \mbox{[}$\,$\mbox{]} = \{-\/1, -\/1\}
+\item 
+enum \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}{LEDState}} \mbox{\hyperlink{blink_l_e_d_8c_a963ba655082cc07374da616fbc8e023a}{led\+State}} \mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}{OFF}}, \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}{OFF}}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}\label{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}} 
+\index{blinkLED.c@{blinkLED.c}!LEDState@{LEDState}}
+\index{LEDState@{LEDState}!blinkLED.c@{blinkLED.c}}
+\doxysubsubsection{\texorpdfstring{LEDState}{LEDState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}{LEDState}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ON@{ON}!blinkLED.c@{blinkLED.c}}\index{blinkLED.c@{blinkLED.c}!ON@{ON}}}\mbox{\Hypertarget{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0a977d478dacaae531f95695750d1e9d03}\label{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0a977d478dacaae531f95695750d1e9d03}} 
+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OFF@{OFF}!blinkLED.c@{blinkLED.c}}\index{blinkLED.c@{blinkLED.c}!OFF@{OFF}}}\mbox{\Hypertarget{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}\label{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}} 
+OFF&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{blink_l_e_d_8c_a963ba655082cc07374da616fbc8e023a}\label{blink_l_e_d_8c_a963ba655082cc07374da616fbc8e023a}} 
+\index{blinkLED.c@{blinkLED.c}!ledState@{ledState}}
+\index{ledState@{ledState}!blinkLED.c@{blinkLED.c}}
+\doxysubsubsection{\texorpdfstring{ledState}{ledState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0}{LEDState}} led\+State\mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}{OFF}}, \mbox{\hyperlink{blink_l_e_d_8c_a51a69e0b98357e170e63bc843e2fd1c0aac132f2982b98bcaa3445e535a03ff75}{OFF}}\}}
+
+\mbox{\Hypertarget{blink_l_e_d_8c_ae013f490ae5fa7dbfb968dd725347b19}\label{blink_l_e_d_8c_ae013f490ae5fa7dbfb968dd725347b19}} 
+\index{blinkLED.c@{blinkLED.c}!ledTimeInterval@{ledTimeInterval}}
+\index{ledTimeInterval@{ledTimeInterval}!blinkLED.c@{blinkLED.c}}
+\doxysubsubsection{\texorpdfstring{ledTimeInterval}{ledTimeInterval}}
+{\footnotesize\ttfamily uint16\+\_\+t led\+Time\+Interval\mbox{[}$\,$\mbox{]} = \{0, 0\}}
+
+\mbox{\Hypertarget{blink_l_e_d_8c_a913dea1c302ca0ea52b537b513b7aabf}\label{blink_l_e_d_8c_a913dea1c302ca0ea52b537b513b7aabf}} 
+\index{blinkLED.c@{blinkLED.c}!taskLEDTimeout@{taskLEDTimeout}}
+\index{taskLEDTimeout@{taskLEDTimeout}!blinkLED.c@{blinkLED.c}}
+\doxysubsubsection{\texorpdfstring{taskLEDTimeout}{taskLEDTimeout}}
+{\footnotesize\ttfamily uint32\+\_\+t task\+LEDTimeout\mbox{[}$\,$\mbox{]} = \{-\/1, -\/1\}}
+

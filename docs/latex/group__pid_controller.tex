@@ -1,0 +1,93 @@
+\hypertarget{group__pid_controller}{}\doxysection{PID Controller}
+\label{group__pid_controller}\index{PID Controller@{PID Controller}}
+
+
+PID controller.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}}
+\begin{DoxyCompactList}\small\item\em Configuration for the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{group__pid_controller_ga0468f33e80d835337f09f749e4cd41ca}{PIDConfig}}
+\begin{DoxyCompactList}\small\item\em Configuration for the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{group__pid_controller_gaa4a0ffb22d084c505f86adfc27a15e42}{init\+PID}} (double p\+\_\+gain, double i\+\_\+gain, double d\+\_\+gain, double max\+\_\+i, double i\+\_\+relax)
+\begin{DoxyCompactList}\small\item\em Configure the PID controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__pid_controller_ga7fdbce8328ecaba39d84c6facf1b3c57}{calculate\+PIDOutput}} (double setpoint, double input, \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Calculate the output of the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PID controller. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__pid_controller_ga0468f33e80d835337f09f749e4cd41ca}\label{group__pid_controller_ga0468f33e80d835337f09f749e4cd41ca}} 
+\index{PID Controller@{PID Controller}!PIDConfig@{PIDConfig}}
+\index{PIDConfig@{PIDConfig}!PID Controller@{PID Controller}}
+\doxysubsubsection{\texorpdfstring{PIDConfig}{PIDConfig}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}}}
+
+
+
+Configuration for the PID controller. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__pid_controller_ga7fdbce8328ecaba39d84c6facf1b3c57}\label{group__pid_controller_ga7fdbce8328ecaba39d84c6facf1b3c57}} 
+\index{PID Controller@{PID Controller}!calculatePIDOutput@{calculatePIDOutput}}
+\index{calculatePIDOutput@{calculatePIDOutput}!PID Controller@{PID Controller}}
+\doxysubsubsection{\texorpdfstring{calculatePIDOutput()}{calculatePIDOutput()}}
+{\footnotesize\ttfamily double calculate\+PIDOutput (\begin{DoxyParamCaption}\item[{double}]{setpoint,  }\item[{double}]{input,  }\item[{\mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} $\ast$}]{config }\end{DoxyParamCaption})}
+
+
+
+Calculate the output of the PID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setpoint} & the desired value \\
+\hline
+{\em input} & the current value \\
+\hline
+{\em config} & the configuration of the PID controller \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value to write in order to reach the desired value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__pid_controller_gaa4a0ffb22d084c505f86adfc27a15e42}\label{group__pid_controller_gaa4a0ffb22d084c505f86adfc27a15e42}} 
+\index{PID Controller@{PID Controller}!initPID@{initPID}}
+\index{initPID@{initPID}!PID Controller@{PID Controller}}
+\doxysubsubsection{\texorpdfstring{initPID()}{initPID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} init\+PID (\begin{DoxyParamCaption}\item[{double}]{p\+\_\+gain,  }\item[{double}]{i\+\_\+gain,  }\item[{double}]{d\+\_\+gain,  }\item[{double}]{max\+\_\+i,  }\item[{double}]{i\+\_\+relax }\end{DoxyParamCaption})}
+
+
+
+Configure the PID controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+gain} & the gain for the proportional part \\
+\hline
+{\em i\+\_\+gain} & the gain for the integral part \\
+\hline
+{\em d\+\_\+gain} & the gain for the derivative part \\
+\hline
+{\em max\+\_\+i} & the maximum value for the integral part \\
+\hline
+{\em i\+\_\+relax} & the relaxation value for the integral part \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a configuration for the PID controller 
+\end{DoxyReturn}

@@ -1,0 +1,105 @@
+\hypertarget{trajectory_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/trajectory/trajectory.c File Reference}
+\label{trajectory_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.c}}
+{\ttfamily \#include \char`\"{}trajectory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wheels.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}armuro.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}line\+Follow.\+h\char`\"{}}\newline
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \mbox{\hyperlink{group__trajectory_ga2b6d716db448b10fceb7d8d2898b70ba}{Trajectory\+State\+Machine}}
+\begin{DoxyCompactList}\small\item\em The state machine of the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \{ \newline
+\mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}{DRIVE\+\_\+\+FIRST\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 0
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a90ed266e770818f4bb2d9418b4e5e505}{TURN\+\_\+\+TO\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 1
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a1619558042816ca9406ed15e66cafe6c}{DRIVE\+\_\+\+SECOND\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 2
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a7e2fd27fb4be0eb2fe2ccd9d4dd4925f}{TURN\+\_\+\+TO\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 3
+, \newline
+\mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a6bd95f64f8493d87db7fe8502dab1460}{DRIVE\+\_\+\+THIRD\+\_\+\+TRAJECTORY\+\_\+\+PART}} = 4
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3ada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}} = 5
+, \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a759cfe25886c42adb69c8075e833378a}{TRAJECTORY\+\_\+\+DONE}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine of the trajectory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{trajectory_8c_af65a05d5f058f1ffdd276e9cc7666aa8}{drive\+First\+Trajectory\+Part}} ()
+\item 
+void \mbox{\hyperlink{trajectory_8c_a10f02e8d993c79ab33f97800e490eb55}{turn\+To\+Second\+Trajectory\+Part}} ()
+\item 
+void \mbox{\hyperlink{trajectory_8c_ab168570fb845c11be9db9e9c3a1a56be}{drive\+Second\+Trajectory\+Part}} ()
+\item 
+void \mbox{\hyperlink{trajectory_8c_a020116aa5f51e9b1f1a97a3fce7ccebd}{turn\+To\+Third\+Trajectory\+Part}} ()
+\item 
+void \mbox{\hyperlink{trajectory_8c_a5eccebaee19fafe0c18ee5196466922a}{drive\+Third\+Trajectory\+Part}} ()
+\item 
+void \mbox{\hyperlink{group__trajectory_ga552790c87c87d9a29590fbfa702c0450}{start\+Trajectory}} ()
+\begin{DoxyCompactList}\small\item\em Configure the trajectory task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__trajectory_ga79f0c88505d9f9bb47c6a85a3fe42c4b}{drive\+Trajectory\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Run the trajectory task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \mbox{\hyperlink{trajectory_8c_ae56539972a825e1a3696c1d8a782ecdd}{current\+Trajectory\+State}} = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}}
+\item 
+\mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} \mbox{\hyperlink{trajectory_8c_a1c0d5e964d09b6bc93967122dab9e6fe}{next\+Trajectory\+State}} = \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}{DRIVE\+\_\+\+FIRST\+\_\+\+TRAJECTORY\+\_\+\+PART}}
+\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{trajectory_8c_a92cdc85b1e27fc5156ceb53cd24da596}{trajectory\+State\+State}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{trajectory_8c_af65a05d5f058f1ffdd276e9cc7666aa8}\label{trajectory_8c_af65a05d5f058f1ffdd276e9cc7666aa8}} 
+\index{trajectory.c@{trajectory.c}!driveFirstTrajectoryPart@{driveFirstTrajectoryPart}}
+\index{driveFirstTrajectoryPart@{driveFirstTrajectoryPart}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{driveFirstTrajectoryPart()}{driveFirstTrajectoryPart()}}
+{\footnotesize\ttfamily void drive\+First\+Trajectory\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory_8c_ab168570fb845c11be9db9e9c3a1a56be}\label{trajectory_8c_ab168570fb845c11be9db9e9c3a1a56be}} 
+\index{trajectory.c@{trajectory.c}!driveSecondTrajectoryPart@{driveSecondTrajectoryPart}}
+\index{driveSecondTrajectoryPart@{driveSecondTrajectoryPart}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{driveSecondTrajectoryPart()}{driveSecondTrajectoryPart()}}
+{\footnotesize\ttfamily void drive\+Second\+Trajectory\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory_8c_a5eccebaee19fafe0c18ee5196466922a}\label{trajectory_8c_a5eccebaee19fafe0c18ee5196466922a}} 
+\index{trajectory.c@{trajectory.c}!driveThirdTrajectoryPart@{driveThirdTrajectoryPart}}
+\index{driveThirdTrajectoryPart@{driveThirdTrajectoryPart}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{driveThirdTrajectoryPart()}{driveThirdTrajectoryPart()}}
+{\footnotesize\ttfamily void drive\+Third\+Trajectory\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory_8c_a10f02e8d993c79ab33f97800e490eb55}\label{trajectory_8c_a10f02e8d993c79ab33f97800e490eb55}} 
+\index{trajectory.c@{trajectory.c}!turnToSecondTrajectoryPart@{turnToSecondTrajectoryPart}}
+\index{turnToSecondTrajectoryPart@{turnToSecondTrajectoryPart}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{turnToSecondTrajectoryPart()}{turnToSecondTrajectoryPart()}}
+{\footnotesize\ttfamily void turn\+To\+Second\+Trajectory\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{trajectory_8c_a020116aa5f51e9b1f1a97a3fce7ccebd}\label{trajectory_8c_a020116aa5f51e9b1f1a97a3fce7ccebd}} 
+\index{trajectory.c@{trajectory.c}!turnToThirdTrajectoryPart@{turnToThirdTrajectoryPart}}
+\index{turnToThirdTrajectoryPart@{turnToThirdTrajectoryPart}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{turnToThirdTrajectoryPart()}{turnToThirdTrajectoryPart()}}
+{\footnotesize\ttfamily void turn\+To\+Third\+Trajectory\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{trajectory_8c_ae56539972a825e1a3696c1d8a782ecdd}\label{trajectory_8c_ae56539972a825e1a3696c1d8a782ecdd}} 
+\index{trajectory.c@{trajectory.c}!currentTrajectoryState@{currentTrajectoryState}}
+\index{currentTrajectoryState@{currentTrajectoryState}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{currentTrajectoryState}{currentTrajectoryState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} current\+Trajectory\+State = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}}}
+
+\mbox{\Hypertarget{trajectory_8c_a1c0d5e964d09b6bc93967122dab9e6fe}\label{trajectory_8c_a1c0d5e964d09b6bc93967122dab9e6fe}} 
+\index{trajectory.c@{trajectory.c}!nextTrajectoryState@{nextTrajectoryState}}
+\index{nextTrajectoryState@{nextTrajectoryState}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{nextTrajectoryState}{nextTrajectoryState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__trajectory_ga66b9d91c76797147da8184fc35c971d3}{Trajectory\+State\+Machine}} next\+Trajectory\+State = \mbox{\hyperlink{group__trajectory_gga66b9d91c76797147da8184fc35c971d3a2f2ec21035af05bec85971421f17f249}{DRIVE\+\_\+\+FIRST\+\_\+\+TRAJECTORY\+\_\+\+PART}}}
+
+\mbox{\Hypertarget{trajectory_8c_a92cdc85b1e27fc5156ceb53cd24da596}\label{trajectory_8c_a92cdc85b1e27fc5156ceb53cd24da596}} 
+\index{trajectory.c@{trajectory.c}!trajectoryStateState@{trajectoryStateState}}
+\index{trajectoryStateState@{trajectoryStateState}!trajectory.c@{trajectory.c}}
+\doxysubsubsection{\texorpdfstring{trajectoryStateState}{trajectoryStateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} trajectory\+State\+State = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}}
+

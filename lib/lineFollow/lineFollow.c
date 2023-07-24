@@ -21,6 +21,10 @@ int lastState = 0;
 
 CheckLineResult lastLineValues[3] = {OFF_LINE, OFF_LINE, OFF_LINE};
 
+/**
+ * @brief The state of the line following state machine
+ * @ingroup lineFollow
+ */
 typedef enum SearchLineState {
     DRIVE,
     TURNING_LEFT,

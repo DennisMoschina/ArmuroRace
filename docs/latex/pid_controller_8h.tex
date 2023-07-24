@@ -1,0 +1,20 @@
+\hypertarget{pid_controller_8h}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/pid\+Controller/pid\+Controller.h File Reference}
+\label{pid_controller_8h}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}}
+\begin{DoxyCompactList}\small\item\em Configuration for the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{group__pid_controller_ga0468f33e80d835337f09f749e4cd41ca}{PIDConfig}}
+\begin{DoxyCompactList}\small\item\em Configuration for the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{group__pid_controller_gaa4a0ffb22d084c505f86adfc27a15e42}{init\+PID}} (double p\+\_\+gain, double i\+\_\+gain, double d\+\_\+gain, double max\+\_\+i, double i\+\_\+relax)
+\begin{DoxyCompactList}\small\item\em Configure the PID controller. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__pid_controller_ga7fdbce8328ecaba39d84c6facf1b3c57}{calculate\+PIDOutput}} (double setpoint, double input, \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} $\ast$config)
+\begin{DoxyCompactList}\small\item\em Calculate the output of the PID controller. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -3,6 +3,15 @@
 
 #include <stdint.h>
 
+/**
+ * @defgroup pidController PID Controller
+ * @brief PID controller
+ */
+
+/**
+ * @brief Configuration for the PID controller
+ * @ingroup pidController
+ */
 typedef struct PIDConfig {
     double p_gain;
     double i_gain;
@@ -15,6 +24,7 @@ typedef struct PIDConfig {
 
 /**
  * @brief Configure the PID controller
+ * @ingroup pidController
  * 
  * @param p_gain the gain for the proportional part
  * @param i_gain the gain for the integral part
@@ -27,6 +37,7 @@ PIDConfig initPID(double p_gain, double i_gain, double d_gain, double max_i, dou
 
 /**
  * @brief Calculate the output of the PID controller
+ * @ingroup pidController
  * 
  * @param setpoint the desired value
  * @param input the current value

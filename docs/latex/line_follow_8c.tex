@@ -1,0 +1,135 @@
+\hypertarget{line_follow_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/line\+Follow/line\+Follow.c File Reference}
+\label{line_follow_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.c}}
+{\ttfamily \#include \char`\"{}line\+Follow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}armuro.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pid\+Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wheels.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blink\+LED.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}state\+Machine.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{line_follow_8c_a98a85a6470432069bc7533b5abcf5106}{BLACK\+\_\+\+THRESHOLD}}~900
+\item 
+\#define \mbox{\hyperlink{line_follow_8c_a31f3536c8cc47fa6bb29e59289e61fe1}{WHITE\+\_\+\+THRESHOLD}}~400
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \mbox{\hyperlink{group__line_follow_ga61a57a7c36d2a2eccf034abeb2d0e756}{Search\+Line\+State}}
+\begin{DoxyCompactList}\small\item\em The state of the line following state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \{ \newline
+\mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf7b6d6d8e5e14633d388ef9cc7a941b7}{DRIVE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faeb378d79c82921b6927bc7123b0bf76c}{TURNING\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa5debe6c441a488f531f3314809ff38ce}{TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+RIGHT}}
+, \newline
+\mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa09b11a16f947d7e95729ada9e6d3ec13}{TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+LEFT}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8faf5da91eb12f0d4a008adf66048fa9c5e}{TURN\+\_\+\+RIGHT\+\_\+\+TO\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fad5e916fa73b2edc384d17aa93597a4c3}{TURN\+\_\+\+LEFT\+\_\+\+TO\+\_\+\+MIDDLE}}
+, \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fa9c954bcf443428c80b0f107b3bc48749}{DONE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The state of the line following state machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__line_follow_gadb8e123ed67714679311906eaf1c3677}{follow\+Line}} (int speed)
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{Follow\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}{follow\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Follows the line until the end of the line is reached. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}{check\+For\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the line is lost. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}{search\+Line}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{Search\+Line\+Result}} \mbox{\hyperlink{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}{search\+Line\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Searches for the line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} \mbox{\hyperlink{line_follow_8c_a6df992f5664e3932cdda8c1bc6be98e0}{follow\+Line\+PID}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{line_follow_8c_ab41735bb912ae322be1873b7fca070fc}{line\+Follow\+Timeout}} = 0
+\item 
+int \mbox{\hyperlink{line_follow_8c_a6414986af9d6984a4983b06c7aef9938}{base\+Line\+Speed}} = 0
+\item 
+int \mbox{\hyperlink{line_follow_8c_a7c8d04b2a02a38530a7bbb870be9f094}{last\+State}} = 0
+\item 
+\mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} \mbox{\hyperlink{line_follow_8c_afa5ec3a17d465db0bbc748614e9615b9}{last\+Line\+Values}} \mbox{[}3\mbox{]} = \{\mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}\}
+\item 
+\mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \mbox{\hyperlink{line_follow_8c_a89d7e8a48ef6e23d1cc966214aa019e3}{search\+Line\+State}} = \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}
+\item 
+\mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} \mbox{\hyperlink{line_follow_8c_ace2ccaad38e95ad9468ab733de973da6}{next\+Search\+State}} = \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}
+\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{line_follow_8c_a7630f7301b14216d4ae832cf7b7042e5}{search\+Line\+State\+State}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{line_follow_8c_a98a85a6470432069bc7533b5abcf5106}\label{line_follow_8c_a98a85a6470432069bc7533b5abcf5106}} 
+\index{lineFollow.c@{lineFollow.c}!BLACK\_THRESHOLD@{BLACK\_THRESHOLD}}
+\index{BLACK\_THRESHOLD@{BLACK\_THRESHOLD}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{BLACK\_THRESHOLD}{BLACK\_THRESHOLD}}
+{\footnotesize\ttfamily \#define BLACK\+\_\+\+THRESHOLD~900}
+
+\mbox{\Hypertarget{line_follow_8c_a31f3536c8cc47fa6bb29e59289e61fe1}\label{line_follow_8c_a31f3536c8cc47fa6bb29e59289e61fe1}} 
+\index{lineFollow.c@{lineFollow.c}!WHITE\_THRESHOLD@{WHITE\_THRESHOLD}}
+\index{WHITE\_THRESHOLD@{WHITE\_THRESHOLD}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{WHITE\_THRESHOLD}{WHITE\_THRESHOLD}}
+{\footnotesize\ttfamily \#define WHITE\+\_\+\+THRESHOLD~400}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{line_follow_8c_a6414986af9d6984a4983b06c7aef9938}\label{line_follow_8c_a6414986af9d6984a4983b06c7aef9938}} 
+\index{lineFollow.c@{lineFollow.c}!baseLineSpeed@{baseLineSpeed}}
+\index{baseLineSpeed@{baseLineSpeed}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{baseLineSpeed}{baseLineSpeed}}
+{\footnotesize\ttfamily int base\+Line\+Speed = 0}
+
+\mbox{\Hypertarget{line_follow_8c_a6df992f5664e3932cdda8c1bc6be98e0}\label{line_follow_8c_a6df992f5664e3932cdda8c1bc6be98e0}} 
+\index{lineFollow.c@{lineFollow.c}!followLinePID@{followLinePID}}
+\index{followLinePID@{followLinePID}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{followLinePID}{followLinePID}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_i_d_config}{PIDConfig}} follow\+Line\+PID}
+
+\mbox{\Hypertarget{line_follow_8c_afa5ec3a17d465db0bbc748614e9615b9}\label{line_follow_8c_afa5ec3a17d465db0bbc748614e9615b9}} 
+\index{lineFollow.c@{lineFollow.c}!lastLineValues@{lastLineValues}}
+\index{lastLineValues@{lastLineValues}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{lastLineValues}{lastLineValues}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{Check\+Line\+Result}} last\+Line\+Values\mbox{[}3\mbox{]} = \{\mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}, \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\+\_\+\+LINE}}\}}
+
+\mbox{\Hypertarget{line_follow_8c_a7c8d04b2a02a38530a7bbb870be9f094}\label{line_follow_8c_a7c8d04b2a02a38530a7bbb870be9f094}} 
+\index{lineFollow.c@{lineFollow.c}!lastState@{lastState}}
+\index{lastState@{lastState}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{lastState}{lastState}}
+{\footnotesize\ttfamily int last\+State = 0}
+
+\mbox{\Hypertarget{line_follow_8c_ab41735bb912ae322be1873b7fca070fc}\label{line_follow_8c_ab41735bb912ae322be1873b7fca070fc}} 
+\index{lineFollow.c@{lineFollow.c}!lineFollowTimeout@{lineFollowTimeout}}
+\index{lineFollowTimeout@{lineFollowTimeout}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{lineFollowTimeout}{lineFollowTimeout}}
+{\footnotesize\ttfamily uint32\+\_\+t line\+Follow\+Timeout = 0}
+
+\mbox{\Hypertarget{line_follow_8c_ace2ccaad38e95ad9468ab733de973da6}\label{line_follow_8c_ace2ccaad38e95ad9468ab733de973da6}} 
+\index{lineFollow.c@{lineFollow.c}!nextSearchState@{nextSearchState}}
+\index{nextSearchState@{nextSearchState}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{nextSearchState}{nextSearchState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} next\+Search\+State = \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}}
+
+\mbox{\Hypertarget{line_follow_8c_a89d7e8a48ef6e23d1cc966214aa019e3}\label{line_follow_8c_a89d7e8a48ef6e23d1cc966214aa019e3}} 
+\index{lineFollow.c@{lineFollow.c}!searchLineState@{searchLineState}}
+\index{searchLineState@{searchLineState}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{searchLineState}{searchLineState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__line_follow_ga0b5e618bc3d6339a1f39d2eb68588b8f}{Search\+Line\+State}} search\+Line\+State = \mbox{\hyperlink{group__line_follow_gga0b5e618bc3d6339a1f39d2eb68588b8fadc2b7c397e1b521aee6d7faaab71a9af}{TURNING\+\_\+\+LEFT}}}
+
+\mbox{\Hypertarget{line_follow_8c_a7630f7301b14216d4ae832cf7b7042e5}\label{line_follow_8c_a7630f7301b14216d4ae832cf7b7042e5}} 
+\index{lineFollow.c@{lineFollow.c}!searchLineStateState@{searchLineStateState}}
+\index{searchLineStateState@{searchLineStateState}!lineFollow.c@{lineFollow.c}}
+\doxysubsubsection{\texorpdfstring{searchLineStateState}{searchLineStateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} search\+Line\+State\+State = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}}
+

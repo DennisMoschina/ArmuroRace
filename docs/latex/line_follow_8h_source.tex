@@ -1,0 +1,39 @@
+\hypertarget{line_follow_8h_source}{}\doxysection{line\+Follow.\+h}
+\label{line_follow_8h_source}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h}}
+\mbox{\hyperlink{line_follow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LINE\_FOLLOW\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LINE\_FOLLOW\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{SearchLineResult}} \{}
+\DoxyCodeLine{15     \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470aa0c0f46a51df7452ca25be1d4594e8ba}{SEARCHING}} = 0,}
+\DoxyCodeLine{17     \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a3fe5ffe68b10eb48b4a8b17eefe60154}{FOUND}} = 1,}
+\DoxyCodeLine{19     \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a339435bd0d4a842c6107333c908a5317}{LOST}} = -\/1,}
+\DoxyCodeLine{21     \mbox{\hyperlink{group__line_follow_gga6dc7e98a64b32c30d34000a524531470a9cf23bed2fc1273a8124124fb53bd01d}{END\_OF\_LINE}} = 2}
+\DoxyCodeLine{22 \} \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{SearchLineResult}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{CheckLineResult}} \{}
+\DoxyCodeLine{30     \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa315cfb9fb52108a0b61be1c5228d63a8}{ON\_LINE}} = 0,}
+\DoxyCodeLine{32     \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa42e9aec396c33797e1d95ab45a725e2f}{OFF\_LINE}} = -\/1,}
+\DoxyCodeLine{34     \mbox{\hyperlink{group__line_follow_ggaeb5e4e7da0454d14c5b034dc0c1cce7fa4e4bb06a708a870bafec30d283c7369d}{ALL\_BLACK}} = 1}
+\DoxyCodeLine{35 \} \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{CheckLineResult}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{FollowLineResult}} \{}
+\DoxyCodeLine{43     \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3ac241aecbe2e3eba2f42ce28777f6ab65}{FOLLOWING}} = 0,}
+\DoxyCodeLine{45     \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a0646b39cab9db1de846f829fe958f165}{LOST\_LINE}} = -\/1,}
+\DoxyCodeLine{47     \mbox{\hyperlink{group__line_follow_ggacb73f259552887a0cc99305e8a1016f3a97840dfad76cadb83f9254ec80b310ca}{ALL\_LINE}} = 1}
+\DoxyCodeLine{48 \} \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{FollowLineResult}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__line_follow_gadb8e123ed67714679311906eaf1c3677}{followLine}}(\textcolor{keywordtype}{int} speed);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{66 \mbox{\hyperlink{group__line_follow_gacb73f259552887a0cc99305e8a1016f3}{FollowLineResult}} \mbox{\hyperlink{group__line_follow_ga856b4c9da43e5ed8e093a81474462c25}{followLineTask}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{74 \mbox{\hyperlink{group__line_follow_gaeb5e4e7da0454d14c5b034dc0c1cce7f}{CheckLineResult}} \mbox{\hyperlink{group__line_follow_ga6adcd63936dd9327f98426c2188bf71d}{checkForLine}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__line_follow_ga587662b0f9f26d26cb6f1eb4c90b7a5b}{searchLine}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{92 \mbox{\hyperlink{group__line_follow_ga6dc7e98a64b32c30d34000a524531470}{SearchLineResult}} \mbox{\hyperlink{group__line_follow_ga5517bf75e1725bb28b2495d3719da978}{searchLineTask}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

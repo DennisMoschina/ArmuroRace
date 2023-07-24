@@ -1,0 +1,814 @@
+\begin{theindex}
+
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.c}, 
+		\hyperpage{43}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h}, 
+		\hyperpage{48}, \hyperpage{53}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.c}, 
+		\hyperpage{54}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/blinkLED/blinkLED.h}, 
+		\hyperpage{55, 56}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.c}, 
+		\hyperpage{56}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/calibrate/calibrate.h}, 
+		\hyperpage{57, 58}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.c}, 
+		\hyperpage{58}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/lineFollow/lineFollow.h}, 
+		\hyperpage{61, 62}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.c}, 
+		\hyperpage{62}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.h}, 
+		\hyperpage{64, 65}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.c}, 
+		\hyperpage{65}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/parcour/parcour.h}, 
+		\hyperpage{67}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.c}, 
+		\hyperpage{67}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/pidController/pidController.h}, 
+		\hyperpage{67, 68}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/stateMachine/stateMachine.h}, 
+		\hyperpage{68, 69}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.c}, 
+		\hyperpage{69}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/trajectory/trajectory.h}, 
+		\hyperpage{71, 72}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.c}, 
+		\hyperpage{72}
+  \item {/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/wheels/wheels.h}, 
+		\hyperpage{75}, \hyperpage{77}
+
+  \indexspace
+
+  \item {ALL\_BLACK}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {ALL\_LINE}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {ANGLE}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {angle}
+    \subitem {WheelAngleListItem}, \hyperpage{41}
+  \item {angleSetpoint}
+    \subitem {wheels.c}, \hyperpage{74}
+  \item {angleTimeout}
+    \subitem {wheels.c}, \hyperpage{74}
+  \item {angleToDistance}
+    \subitem {Armuro Hardware}, \hyperpage{8}
+  \item {Armuro Hardware}, \hyperpage{7}
+    \subitem {angleToDistance}, \hyperpage{8}
+    \subitem {checkSwitchesPressed}, \hyperpage{8}
+    \subitem {didReadSensors}, \hyperpage{9}
+    \subitem {didReadWheelEncoder}, \hyperpage{9}
+    \subitem {distanceToAngle}, \hyperpage{9}
+    \subitem {getAngleForWheel}, \hyperpage{10}
+    \subitem {getAngleForWheels}, \hyperpage{10}
+    \subitem {getLineSensorReadings}, \hyperpage{10}
+    \subitem {getRawLineSensorReadings}, \hyperpage{11}
+    \subitem {map}, \hyperpage{11}
+    \subitem {mapLineSensorReadingToRange}, \hyperpage{11}
+    \subitem {print}, \hyperpage{12}
+    \subitem {resetAngleMeasurement}, \hyperpage{12}
+    \subitem {setLED}, \hyperpage{12}
+    \subitem {setRearLED}, \hyperpage{13}
+    \subitem {speedDifferenceForRadius}, \hyperpage{13}
+    \subitem {stopAngleMeasurement}, \hyperpage{13}
+    \subitem {stopMotor}, \hyperpage{14}
+    \subitem {turnMotor}, \hyperpage{14}
+  \item {armuro.c}
+    \subitem {initMotors}, \hyperpage{46}
+    \subitem {LEFT\_ENCODER\_HIGH\_THRESHOLD}, \hyperpage{45}
+    \subitem {LEFT\_ENCODER\_LOW\_THRESHOLD}, \hyperpage{45}
+    \subitem {MAX\_PWM}, \hyperpage{45}
+    \subitem {maxLineSensorValues}, \hyperpage{46}
+    \subitem {minLineSensorValues}, \hyperpage{47}
+    \subitem {RIGHT\_ENCODER\_HIGH\_THRESHOLD}, \hyperpage{45}
+    \subitem {RIGHT\_ENCODER\_LOW\_THRESHOLD}, \hyperpage{45}
+    \subitem {schmittTrigger}, \hyperpage{46}
+    \subitem {startAngleMeasurement}, \hyperpage{46}
+    \subitem {wheelAngleList}, \hyperpage{47}
+    \subitem {wheelAngleListEnd}, \hyperpage{47}
+    \subitem {WheelAngleListItem}, \hyperpage{45}
+    \subitem {wheelEncoderOldValues}, \hyperpage{47}
+    \subitem {wheelEncoderTicksCount}, \hyperpage{47}
+  \item {armuro.h}
+    \subitem {ARMURO\_LENGTH}, \hyperpage{49}
+    \subitem {BACKWARD}, \hyperpage{49}
+    \subitem {buffer}, \hyperpage{52}
+    \subitem {FORWARD}, \hyperpage{50}
+    \subitem {HIGH}, \hyperpage{50}
+    \subitem {initMotors}, \hyperpage{52}
+    \subitem {LEFT}, \hyperpage{52}
+    \subitem {LOW}, \hyperpage{50}
+    \subitem {MAX\_LEFT\_LINE\_SENSOR\_VALUE}, \hyperpage{50}
+    \subitem {MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}, \hyperpage{50}
+    \subitem {MAX\_RIGHT\_LINE\_SENSOR\_VALUE}, \hyperpage{50}
+    \subitem {maxLineSensorValues}, \hyperpage{52}
+    \subitem {MIDDLE}, \hyperpage{52}
+    \subitem {MIN\_ANGLE}, \hyperpage{50}
+    \subitem {MIN\_LEFT\_LINE\_SENSOR\_VALUE}, \hyperpage{50}
+    \subitem {MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}, \hyperpage{51}
+    \subitem {MIN\_RIGHT\_LINE\_SENSOR\_VALUE}, \hyperpage{51}
+    \subitem {minLineSensorValues}, \hyperpage{52}
+    \subitem {RIGHT}, \hyperpage{52}
+    \subitem {Side}, \hyperpage{51}
+    \subitem {startAngleMeasurement}, \hyperpage{52}
+    \subitem {TURN\_CIRCUMFERENCE}, \hyperpage{51}
+    \subitem {WHEEL\_CIRCUMFERENCE}, \hyperpage{51}
+    \subitem {WHEEL\_DISTANCE}, \hyperpage{51}
+    \subitem {wheelEncoderTicksCount}, \hyperpage{53}
+  \item {ARMURO\_LENGTH}
+    \subitem {armuro.h}, \hyperpage{49}
+  \item {ATTACK\_ANGLE}
+    \subitem {obstacleAvoidance.c}, \hyperpage{63}
+  \item {attackAngle}
+    \subitem {ObstacleAvoidanceConfig}, \hyperpage{37}
+  \item {AVOID\_OBSTACLE}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {avoidingObstacle}
+    \subitem {parcour.c}, \hyperpage{66}
+  \item {avoidObstacle}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {avoidObstacleTask}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+
+  \indexspace
+
+  \item {BACK\_OFF}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {backOffDistance}
+    \subitem {ObstacleAvoidanceConfig}, \hyperpage{37}
+  \item {BACKWARD}
+    \subitem {armuro.h}, \hyperpage{49}
+  \item {baseLineSpeed}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {BLACK\_THRESHOLD}
+    \subitem {lineFollow.c}, \hyperpage{59}
+  \item {Blink LED}, \hyperpage{14}
+    \subitem {blinkLED}, \hyperpage{15}
+    \subitem {blinkLEDTask}, \hyperpage{15}
+    \subitem {stopBlinkingLED}, \hyperpage{15}
+  \item {blinkLED}
+    \subitem {Blink LED}, \hyperpage{15}
+  \item {blinkLED.c}
+    \subitem {LEDState}, \hyperpage{54}
+    \subitem {ledState}, \hyperpage{55}
+    \subitem {ledTimeInterval}, \hyperpage{55}
+    \subitem {OFF}, \hyperpage{55}
+    \subitem {ON}, \hyperpage{55}
+    \subitem {taskLEDTimeout}, \hyperpage{55}
+  \item {blinkLEDTask}
+    \subitem {Blink LED}, \hyperpage{15}
+  \item {buffer}
+    \subitem {armuro.h}, \hyperpage{52}
+
+  \indexspace
+
+  \item {calculatePIDOutput}
+    \subitem {PID Controller}, \hyperpage{28}
+  \item {CALIBRATE}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {calibrate}
+    \subitem {Calibrate Robot}, \hyperpage{16}
+  \item {Calibrate Robot}, \hyperpage{15}
+    \subitem {calibrate}, \hyperpage{16}
+    \subitem {calibrateTask}, \hyperpage{16}
+    \subitem {readBlackLineSensors}, \hyperpage{16}
+    \subitem {readWhiteLineSensors}, \hyperpage{16}
+  \item {calibrate.c}
+    \subitem {CALIBRATE\_BLACK}, \hyperpage{57}
+    \subitem {CALIBRATE\_DONE}, \hyperpage{57}
+    \subitem {CALIBRATE\_START}, \hyperpage{57}
+    \subitem {CALIBRATE\_WHITE}, \hyperpage{57}
+    \subitem {CalibrateState}, \hyperpage{56}
+    \subitem {calibrateState}, \hyperpage{57}
+    \subitem {calibrateStateState}, \hyperpage{57}
+    \subitem {nextCalibrateState}, \hyperpage{57}
+    \subitem {startCalibrate}, \hyperpage{57}
+  \item {CALIBRATE\_BLACK}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {CALIBRATE\_DONE}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {CALIBRATE\_START}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {CALIBRATE\_WHITE}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {calibrateArmuro}
+    \subitem {parcour.c}, \hyperpage{66}
+  \item {CalibrateState}
+    \subitem {calibrate.c}, \hyperpage{56}
+  \item {calibrateState}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {calibrateStateState}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {calibrateTask}
+    \subitem {Calibrate Robot}, \hyperpage{16}
+  \item {checkForLine}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {checkForObstacle}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {CheckLineResult}
+    \subitem {Line Follow}, \hyperpage{18}
+  \item {checkSwitchesPressed}
+    \subitem {Armuro Hardware}, \hyperpage{8}
+  \item {circleRadius}
+    \subitem {ObstacleAvoidanceConfig}, \hyperpage{38}
+  \item {configureObstacleAvoidance}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {currentSpeedSetpoint}
+    \subitem {wheels.c}, \hyperpage{74}
+  \item {currentState}
+    \subitem {Parcour}, \hyperpage{27}
+  \item {currentTrajectoryState}
+    \subitem {trajectory.c}, \hyperpage{71}
+
+  \indexspace
+
+  \item {d\_gain}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {didReadSensors}
+    \subitem {Armuro Hardware}, \hyperpage{9}
+  \item {didReadWheelEncoder}
+    \subitem {Armuro Hardware}, \hyperpage{9}
+  \item {distanceToAngle}
+    \subitem {Armuro Hardware}, \hyperpage{9}
+  \item {distanceToDrive}
+    \subitem {ObstacleAvoidanceConfig}, \hyperpage{38}
+  \item {DONE}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {DRIVE}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {DRIVE\_CIRCLE}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {DRIVE\_FIRST\_TRAJECTORY\_PART}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {DRIVE\_SECOND\_TRAJECTORY\_PART}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {DRIVE\_THIRD\_TRAJECTORY\_PART}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {DRIVE\_TRAJECTORY}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {driveFirstTrajectoryPart}
+    \subitem {trajectory.c}, \hyperpage{70}
+  \item {driveParcour}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {driveSecondTrajectoryPart}
+    \subitem {trajectory.c}, \hyperpage{70}
+  \item {driveThirdTrajectoryPart}
+    \subitem {trajectory.c}, \hyperpage{70}
+  \item {driveTrajectory}
+    \subitem {parcour.c}, \hyperpage{66}
+  \item {driveTrajectoryTask}
+    \subitem {Trajectory}, \hyperpage{30}
+
+  \indexspace
+
+  \item {END\_OF\_LINE}
+    \subitem {Line Follow}, \hyperpage{19}
+
+  \indexspace
+
+  \item {FINISHED}
+    \subitem {stateMachine.h}, \hyperpage{69}
+  \item {FOLLOW\_LINE}
+    \subitem {Parcour}, \hyperpage{26}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {FOLLOWING}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {followLine}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {followLinePID}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {FollowLineResult}
+    \subitem {Line Follow}, \hyperpage{18, 19}
+  \item {followLineTask}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {FORWARD}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {FOUND}
+    \subitem {Line Follow}, \hyperpage{19}
+
+  \indexspace
+
+  \item {getAngleForWheel}
+    \subitem {Armuro Hardware}, \hyperpage{10}
+  \item {getAngleForWheels}
+    \subitem {Armuro Hardware}, \hyperpage{10}
+  \item {getLineSensorReadings}
+    \subitem {Armuro Hardware}, \hyperpage{10}
+  \item {getRawLineSensorReadings}
+    \subitem {Armuro Hardware}, \hyperpage{11}
+
+  \indexspace
+
+  \item {HIGH}
+    \subitem {armuro.h}, \hyperpage{50}
+
+  \indexspace
+
+  \item {i\_gain}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {i\_relax}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {IDLE}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {initMotors}
+    \subitem {armuro.c}, \hyperpage{46}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {initPID}
+    \subitem {PID Controller}, \hyperpage{28}
+  \item {integral}
+    \subitem {PIDConfig}, \hyperpage{39}
+
+  \indexspace
+
+  \item {lastLineValues}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {lastState}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {LEDState}
+    \subitem {blinkLED.c}, \hyperpage{54}
+  \item {ledState}
+    \subitem {blinkLED.c}, \hyperpage{55}
+  \item {ledTimeInterval}
+    \subitem {blinkLED.c}, \hyperpage{55}
+  \item {LEFT}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {left}
+    \subitem {WheelAngle}, \hyperpage{40}
+  \item {LEFT\_ENCODER\_HIGH\_THRESHOLD}
+    \subitem {armuro.c}, \hyperpage{45}
+  \item {LEFT\_ENCODER\_LOW\_THRESHOLD}
+    \subitem {armuro.c}, \hyperpage{45}
+  \item {leftTicks}
+    \subitem {WheelAngle}, \hyperpage{40}
+  \item {Line Follow}, \hyperpage{17}
+    \subitem {ALL\_BLACK}, \hyperpage{19}
+    \subitem {ALL\_LINE}, \hyperpage{19}
+    \subitem {checkForLine}, \hyperpage{20}
+    \subitem {CheckLineResult}, \hyperpage{18}
+    \subitem {DONE}, \hyperpage{20}
+    \subitem {DRIVE}, \hyperpage{19}
+    \subitem {END\_OF\_LINE}, \hyperpage{19}
+    \subitem {FOLLOWING}, \hyperpage{19}
+    \subitem {followLine}, \hyperpage{20}
+    \subitem {FollowLineResult}, \hyperpage{18, 19}
+    \subitem {followLineTask}, \hyperpage{20}
+    \subitem {FOUND}, \hyperpage{19}
+    \subitem {LOST}, \hyperpage{19}
+    \subitem {LOST\_LINE}, \hyperpage{19}
+    \subitem {OFF\_LINE}, \hyperpage{19}
+    \subitem {ON\_LINE}, \hyperpage{19}
+    \subitem {SEARCHING}, \hyperpage{19}
+    \subitem {searchLine}, \hyperpage{21}
+    \subitem {SearchLineResult}, \hyperpage{18, 19}
+    \subitem {SearchLineState}, \hyperpage{18, 19}
+    \subitem {searchLineTask}, \hyperpage{21}
+    \subitem {TURN\_LEFT\_TO\_MIDDLE}, \hyperpage{20}
+    \subitem {TURN\_LEFT\_TO\_RIGHT}, \hyperpage{20}
+    \subitem {TURN\_RIGHT\_TO\_LEFT}, \hyperpage{20}
+    \subitem {TURN\_RIGHT\_TO\_MIDDLE}, \hyperpage{20}
+    \subitem {TURNING\_LEFT}, \hyperpage{19}
+    \subitem {TURNING\_RIGHT}, \hyperpage{20}
+  \item {lineFollow}
+    \subitem {parcour.c}, \hyperpage{66}
+  \item {lineFollow.c}
+    \subitem {baseLineSpeed}, \hyperpage{60}
+    \subitem {BLACK\_THRESHOLD}, \hyperpage{59}
+    \subitem {followLinePID}, \hyperpage{60}
+    \subitem {lastLineValues}, \hyperpage{60}
+    \subitem {lastState}, \hyperpage{60}
+    \subitem {lineFollowTimeout}, \hyperpage{60}
+    \subitem {nextSearchState}, \hyperpage{60}
+    \subitem {searchLineState}, \hyperpage{60}
+    \subitem {searchLineStateState}, \hyperpage{60}
+    \subitem {WHITE\_THRESHOLD}, \hyperpage{59}
+  \item {lineFollowTimeout}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {LOST}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {LOST\_LINE}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {LOW}
+    \subitem {armuro.h}, \hyperpage{50}
+
+  \indexspace
+
+  \item {map}
+    \subitem {Armuro Hardware}, \hyperpage{11}
+  \item {mapLineSensorReadingToRange}
+    \subitem {Armuro Hardware}, \hyperpage{11}
+  \item {max\_i}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {MAX\_LEFT\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {MAX\_PWM}
+    \subitem {armuro.c}, \hyperpage{45}
+  \item {MAX\_RIGHT\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {MAX\_ROTATION\_RATE}
+    \subitem {wheels.c}, \hyperpage{73}
+  \item {maxLineSensorValues}
+    \subitem {armuro.c}, \hyperpage{46}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {MIDDLE}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {MIN\_ANGLE}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {MIN\_LEFT\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{50}
+  \item {MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {MIN\_RIGHT\_LINE\_SENSOR\_VALUE}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {minLineSensorValues}
+    \subitem {armuro.c}, \hyperpage{47}
+    \subitem {armuro.h}, \hyperpage{52}
+
+  \indexspace
+
+  \item {next}
+    \subitem {WheelAngleListItem}, \hyperpage{41}
+  \item {nextCalibrateState}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {nextObstacleAvoidanceState}
+    \subitem {obstacleAvoidance.c}, \hyperpage{64}
+  \item {nextSearchState}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {nextState}
+    \subitem {Parcour}, \hyperpage{27}
+  \item {nextTrajectoryState}
+    \subitem {trajectory.c}, \hyperpage{71}
+  \item {NONE}
+    \subitem {Wheels}, \hyperpage{32}
+
+  \indexspace
+
+  \item {Obstacle Avoidance}, \hyperpage{21}
+    \subitem {avoidObstacle}, \hyperpage{23}
+    \subitem {avoidObstacleTask}, \hyperpage{23}
+    \subitem {BACK\_OFF}, \hyperpage{23}
+    \subitem {checkForObstacle}, \hyperpage{23}
+    \subitem {configureObstacleAvoidance}, \hyperpage{23}
+    \subitem {DRIVE\_CIRCLE}, \hyperpage{23}
+    \subitem {OBSTACLE\_AVOIDANCE\_DONE}, \hyperpage{23}
+    \subitem {ObstacleAvoidanceConfig}, \hyperpage{22}
+    \subitem {ObstacleAvoidanceState}, \hyperpage{22}
+    \subitem {TURN\_FROM\_OBSTACLE}, \hyperpage{23}
+  \item {OBSTACLE\_AVOIDANCE\_DONE}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {OBSTACLE\_RADIUS}
+    \subitem {obstacleAvoidance.c}, \hyperpage{63}
+  \item {obstacleAvoidance.c}
+    \subitem {ATTACK\_ANGLE}, \hyperpage{63}
+    \subitem {nextObstacleAvoidanceState}, \hyperpage{64}
+    \subitem {OBSTACLE\_RADIUS}, \hyperpage{63}
+    \subitem {obstacleAvoidanceConfig}, \hyperpage{64}
+    \subitem {obstacleAvoidanceState}, \hyperpage{64}
+    \subitem {obstacleAvoidanceStateState}, \hyperpage{64}
+    \subitem {SAFETY\_DISTANCE}, \hyperpage{63}
+  \item {ObstacleAvoidanceConfig}, \hyperpage{37}
+    \subitem {attackAngle}, \hyperpage{37}
+    \subitem {backOffDistance}, \hyperpage{37}
+    \subitem {circleRadius}, \hyperpage{38}
+    \subitem {distanceToDrive}, \hyperpage{38}
+    \subitem {Obstacle Avoidance}, \hyperpage{22}
+  \item {obstacleAvoidanceConfig}
+    \subitem {obstacleAvoidance.c}, \hyperpage{64}
+  \item {ObstacleAvoidanceState}
+    \subitem {Obstacle Avoidance}, \hyperpage{22}
+  \item {obstacleAvoidanceState}
+    \subitem {obstacleAvoidance.c}, \hyperpage{64}
+  \item {obstacleAvoidanceStateState}
+    \subitem {obstacleAvoidance.c}, \hyperpage{64}
+  \item {OFF}
+    \subitem {blinkLED.c}, \hyperpage{55}
+  \item {OFF\_LINE}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {old\_input}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {oldAngle}
+    \subitem {wheels.c}, \hyperpage{74}
+  \item {ON}
+    \subitem {blinkLED.c}, \hyperpage{55}
+  \item {ON\_LINE}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {OVERCOME\_GAP}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {overcomeGap}
+    \subitem {parcour.c}, \hyperpage{66}
+
+  \indexspace
+
+  \item {p\_gain}
+    \subitem {PIDConfig}, \hyperpage{39}
+  \item {Parcour}, \hyperpage{25}
+    \subitem {AVOID\_OBSTACLE}, \hyperpage{26}
+    \subitem {CALIBRATE}, \hyperpage{26}
+    \subitem {currentState}, \hyperpage{27}
+    \subitem {DRIVE\_TRAJECTORY}, \hyperpage{26}
+    \subitem {driveParcour}, \hyperpage{26}
+    \subitem {FOLLOW\_LINE}, \hyperpage{26}
+    \subitem {IDLE}, \hyperpage{26}
+    \subitem {nextState}, \hyperpage{27}
+    \subitem {OVERCOME\_GAP}, \hyperpage{26}
+    \subitem {SEARCH\_LINE}, \hyperpage{26}
+    \subitem {startParcour}, \hyperpage{26}
+    \subitem {state}, \hyperpage{27}
+    \subitem {StateMachine}, \hyperpage{26}
+  \item {parcour.c}
+    \subitem {avoidingObstacle}, \hyperpage{66}
+    \subitem {calibrateArmuro}, \hyperpage{66}
+    \subitem {driveTrajectory}, \hyperpage{66}
+    \subitem {lineFollow}, \hyperpage{66}
+    \subitem {overcomeGap}, \hyperpage{66}
+    \subitem {searchTheLine}, \hyperpage{66}
+  \item {PID Controller}, \hyperpage{27}
+    \subitem {calculatePIDOutput}, \hyperpage{28}
+    \subitem {initPID}, \hyperpage{28}
+    \subitem {PIDConfig}, \hyperpage{28}
+  \item {PIDConfig}, \hyperpage{38}
+    \subitem {d\_gain}, \hyperpage{39}
+    \subitem {i\_gain}, \hyperpage{39}
+    \subitem {i\_relax}, \hyperpage{39}
+    \subitem {integral}, \hyperpage{39}
+    \subitem {max\_i}, \hyperpage{39}
+    \subitem {old\_input}, \hyperpage{39}
+    \subitem {p\_gain}, \hyperpage{39}
+    \subitem {PID Controller}, \hyperpage{28}
+  \item {prev}
+    \subitem {WheelAngleListItem}, \hyperpage{41}
+  \item {print}
+    \subitem {Armuro Hardware}, \hyperpage{12}
+
+  \indexspace
+
+  \item {readBlackLineSensors}
+    \subitem {Calibrate Robot}, \hyperpage{16}
+  \item {readWhiteLineSensors}
+    \subitem {Calibrate Robot}, \hyperpage{16}
+  \item {READY}
+    \subitem {stateMachine.h}, \hyperpage{69}
+  \item {resetAngleMeasurement}
+    \subitem {Armuro Hardware}, \hyperpage{12}
+  \item {RIGHT}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {right}
+    \subitem {WheelAngle}, \hyperpage{40}
+  \item {RIGHT\_ENCODER\_HIGH\_THRESHOLD}
+    \subitem {armuro.c}, \hyperpage{45}
+  \item {RIGHT\_ENCODER\_LOW\_THRESHOLD}
+    \subitem {armuro.c}, \hyperpage{45}
+  \item {rightTicks}
+    \subitem {WheelAngle}, \hyperpage{40}
+  \item {rotationRateSetpoint}
+    \subitem {wheels.c}, \hyperpage{74}
+  \item {RUNNING}
+    \subitem {stateMachine.h}, \hyperpage{69}
+
+  \indexspace
+
+  \item {SAFETY\_DISTANCE}
+    \subitem {obstacleAvoidance.c}, \hyperpage{63}
+  \item {schmittTrigger}
+    \subitem {armuro.c}, \hyperpage{46}
+  \item {SEARCH\_LINE}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {SEARCHING}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {searchLine}
+    \subitem {Line Follow}, \hyperpage{21}
+  \item {SearchLineResult}
+    \subitem {Line Follow}, \hyperpage{18, 19}
+  \item {SearchLineState}
+    \subitem {Line Follow}, \hyperpage{18, 19}
+  \item {searchLineState}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {searchLineStateState}
+    \subitem {lineFollow.c}, \hyperpage{60}
+  \item {searchLineTask}
+    \subitem {Line Follow}, \hyperpage{21}
+  \item {searchTheLine}
+    \subitem {parcour.c}, \hyperpage{66}
+  \item {setLED}
+    \subitem {Armuro Hardware}, \hyperpage{12}
+  \item {setRearLED}
+    \subitem {Armuro Hardware}, \hyperpage{13}
+  \item {setupSynchronizedPID}
+    \subitem {wheels.c}, \hyperpage{73}
+  \item {Side}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {SPEED}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {speedDifferenceForRadius}
+    \subitem {Armuro Hardware}, \hyperpage{13}
+  \item {speedSetpoint}
+    \subitem {wheels.c}, \hyperpage{75}
+  \item {startAngleMeasurement}
+    \subitem {armuro.c}, \hyperpage{46}
+    \subitem {armuro.h}, \hyperpage{52}
+  \item {startCalibrate}
+    \subitem {calibrate.c}, \hyperpage{57}
+  \item {startParcour}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {startTrajectory}
+    \subitem {Trajectory}, \hyperpage{31}
+  \item {State}
+    \subitem {stateMachine.h}, \hyperpage{68, 69}
+  \item {state}
+    \subitem {Parcour}, \hyperpage{27}
+  \item {StateMachine}
+    \subitem {Parcour}, \hyperpage{26}
+  \item {stateMachine.h}
+    \subitem {FINISHED}, \hyperpage{69}
+    \subitem {READY}, \hyperpage{69}
+    \subitem {RUNNING}, \hyperpage{69}
+    \subitem {State}, \hyperpage{68, 69}
+  \item {stopAngleMeasurement}
+    \subitem {Armuro Hardware}, \hyperpage{13}
+  \item {stopBlinkingLED}
+    \subitem {Blink LED}, \hyperpage{15}
+  \item {stopMotor}
+    \subitem {Armuro Hardware}, \hyperpage{14}
+  \item {stopWheel}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {SYNCHRONIZED}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {SYNCHRONIZED\_ANGLE}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {synchronizeWheelsPID}
+    \subitem {wheels.c}, \hyperpage{75}
+  \item {synchronizeWheelsTimeout}
+    \subitem {wheels.c}, \hyperpage{75}
+
+  \indexspace
+
+  \item {taskLEDTimeout}
+    \subitem {blinkLED.c}, \hyperpage{55}
+  \item {TIMED\_ANGLE}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {Trajectory}, \hyperpage{29}
+    \subitem {DRIVE\_FIRST\_TRAJECTORY\_PART}, \hyperpage{30}
+    \subitem {DRIVE\_SECOND\_TRAJECTORY\_PART}, \hyperpage{30}
+    \subitem {DRIVE\_THIRD\_TRAJECTORY\_PART}, \hyperpage{30}
+    \subitem {driveTrajectoryTask}, \hyperpage{30}
+    \subitem {FOLLOW\_LINE}, \hyperpage{30}
+    \subitem {startTrajectory}, \hyperpage{31}
+    \subitem {TRAJECTORY\_DONE}, \hyperpage{30}
+    \subitem {TrajectoryStateMachine}, \hyperpage{30}
+    \subitem {TURN\_TO\_SECOND\_TRAJECTORY\_PART}, \hyperpage{30}
+    \subitem {TURN\_TO\_THIRD\_TRAJECTORY\_PART}, \hyperpage{30}
+  \item {trajectory.c}
+    \subitem {currentTrajectoryState}, \hyperpage{71}
+    \subitem {driveFirstTrajectoryPart}, \hyperpage{70}
+    \subitem {driveSecondTrajectoryPart}, \hyperpage{70}
+    \subitem {driveThirdTrajectoryPart}, \hyperpage{70}
+    \subitem {nextTrajectoryState}, \hyperpage{71}
+    \subitem {trajectoryStateState}, \hyperpage{71}
+    \subitem {turnToSecondTrajectoryPart}, \hyperpage{70}
+    \subitem {turnToThirdTrajectoryPart}, \hyperpage{71}
+  \item {TRAJECTORY\_DONE}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {TrajectoryStateMachine}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {trajectoryStateState}
+    \subitem {trajectory.c}, \hyperpage{71}
+  \item {TURN}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {TURN\_CIRCUMFERENCE}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {TURN\_FROM\_OBSTACLE}
+    \subitem {Obstacle Avoidance}, \hyperpage{23}
+  \item {TURN\_LEFT\_TO\_MIDDLE}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {TURN\_LEFT\_TO\_RIGHT}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {TURN\_RIGHT\_TO\_LEFT}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {TURN\_RIGHT\_TO\_MIDDLE}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {TURN\_TO\_SECOND\_TRAJECTORY\_PART}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {TURN\_TO\_THIRD\_TRAJECTORY\_PART}
+    \subitem {Trajectory}, \hyperpage{30}
+  \item {turnArmuro}
+    \subitem {Wheels}, \hyperpage{33}
+  \item {turnArmuroInTime}
+    \subitem {Wheels}, \hyperpage{33}
+  \item {turnArmuroTask}
+    \subitem {wheels.c}, \hyperpage{73}
+    \subitem {wheels.h}, \hyperpage{76}
+  \item {TURNING\_LEFT}
+    \subitem {Line Follow}, \hyperpage{19}
+  \item {TURNING\_RIGHT}
+    \subitem {Line Follow}, \hyperpage{20}
+  \item {turningWheels}
+    \subitem {wheels.c}, \hyperpage{75}
+  \item {turnMotor}
+    \subitem {Armuro Hardware}, \hyperpage{14}
+  \item {turnToSecondTrajectoryPart}
+    \subitem {trajectory.c}, \hyperpage{70}
+  \item {turnToThirdTrajectoryPart}
+    \subitem {trajectory.c}, \hyperpage{71}
+  \item {turnWheelByAngle}
+    \subitem {Wheels}, \hyperpage{33}
+  \item {turnWheelByAngleInTime}
+    \subitem {Wheels}, \hyperpage{34}
+  \item {turnWheelByAngleInTimeTask}
+    \subitem {wheels.c}, \hyperpage{73}
+    \subitem {wheels.h}, \hyperpage{76}
+  \item {turnWheelByAngleTask}
+    \subitem {wheels.c}, \hyperpage{73}
+    \subitem {wheels.h}, \hyperpage{76}
+  \item {turnWheelsSynchronized}
+    \subitem {Wheels}, \hyperpage{34}
+  \item {turnWheelsSynchronizedByAngle}
+    \subitem {Wheels}, \hyperpage{34}
+  \item {turnWheelsSynchronizedByAngleTask}
+    \subitem {wheels.c}, \hyperpage{74}
+    \subitem {wheels.h}, \hyperpage{77}
+  \item {turnWheelsSynchronizedTask}
+    \subitem {wheels.c}, \hyperpage{74}
+    \subitem {wheels.h}, \hyperpage{77}
+  \item {turnWheelsTask}
+    \subitem {Wheels}, \hyperpage{35}
+  \item {TurnWheelsTaskType}
+    \subitem {Wheels}, \hyperpage{32}
+  \item {turnWheelWithSpeed}
+    \subitem {Wheels}, \hyperpage{35}
+
+  \indexspace
+
+  \item {WHEEL\_CIRCUMFERENCE}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {WHEEL\_DISTANCE}
+    \subitem {armuro.h}, \hyperpage{51}
+  \item {WheelAngle}, \hyperpage{40}
+    \subitem {left}, \hyperpage{40}
+    \subitem {leftTicks}, \hyperpage{40}
+    \subitem {right}, \hyperpage{40}
+    \subitem {rightTicks}, \hyperpage{40}
+  \item {wheelAngleList}
+    \subitem {armuro.c}, \hyperpage{47}
+  \item {wheelAngleListEnd}
+    \subitem {armuro.c}, \hyperpage{47}
+  \item {WheelAngleListItem}, \hyperpage{41}
+    \subitem {angle}, \hyperpage{41}
+    \subitem {armuro.c}, \hyperpage{45}
+    \subitem {next}, \hyperpage{41}
+    \subitem {prev}, \hyperpage{41}
+  \item {wheelEncoderOldValues}
+    \subitem {armuro.c}, \hyperpage{47}
+  \item {wheelEncoderTicksCount}
+    \subitem {armuro.c}, \hyperpage{47}
+    \subitem {armuro.h}, \hyperpage{53}
+  \item {Wheels}, \hyperpage{31}
+    \subitem {ANGLE}, \hyperpage{32}
+    \subitem {NONE}, \hyperpage{32}
+    \subitem {SPEED}, \hyperpage{32}
+    \subitem {stopWheel}, \hyperpage{32}
+    \subitem {SYNCHRONIZED}, \hyperpage{32}
+    \subitem {SYNCHRONIZED\_ANGLE}, \hyperpage{32}
+    \subitem {TIMED\_ANGLE}, \hyperpage{32}
+    \subitem {TURN}, \hyperpage{32}
+    \subitem {turnArmuro}, \hyperpage{33}
+    \subitem {turnArmuroInTime}, \hyperpage{33}
+    \subitem {turnWheelByAngle}, \hyperpage{33}
+    \subitem {turnWheelByAngleInTime}, \hyperpage{34}
+    \subitem {turnWheelsSynchronized}, \hyperpage{34}
+    \subitem {turnWheelsSynchronizedByAngle}, \hyperpage{34}
+    \subitem {turnWheelsTask}, \hyperpage{35}
+    \subitem {TurnWheelsTaskType}, \hyperpage{32}
+    \subitem {turnWheelWithSpeed}, \hyperpage{35}
+  \item {wheels.c}
+    \subitem {angleSetpoint}, \hyperpage{74}
+    \subitem {angleTimeout}, \hyperpage{74}
+    \subitem {currentSpeedSetpoint}, \hyperpage{74}
+    \subitem {MAX\_ROTATION\_RATE}, \hyperpage{73}
+    \subitem {oldAngle}, \hyperpage{74}
+    \subitem {rotationRateSetpoint}, \hyperpage{74}
+    \subitem {setupSynchronizedPID}, \hyperpage{73}
+    \subitem {speedSetpoint}, \hyperpage{75}
+    \subitem {synchronizeWheelsPID}, \hyperpage{75}
+    \subitem {synchronizeWheelsTimeout}, \hyperpage{75}
+    \subitem {turnArmuroTask}, \hyperpage{73}
+    \subitem {turningWheels}, \hyperpage{75}
+    \subitem {turnWheelByAngleInTimeTask}, \hyperpage{73}
+    \subitem {turnWheelByAngleTask}, \hyperpage{73}
+    \subitem {turnWheelsSynchronizedByAngleTask}, \hyperpage{74}
+    \subitem {turnWheelsSynchronizedTask}, \hyperpage{74}
+    \subitem {wheelsPID}, \hyperpage{75}
+  \item {wheels.h}
+    \subitem {turnArmuroTask}, \hyperpage{76}
+    \subitem {turnWheelByAngleInTimeTask}, \hyperpage{76}
+    \subitem {turnWheelByAngleTask}, \hyperpage{76}
+    \subitem {turnWheelsSynchronizedByAngleTask}, \hyperpage{77}
+    \subitem {turnWheelsSynchronizedTask}, \hyperpage{77}
+  \item {wheelsPID}
+    \subitem {wheels.c}, \hyperpage{75}
+  \item {WHITE\_THRESHOLD}
+    \subitem {lineFollow.c}, \hyperpage{59}
+
+\end{theindex}

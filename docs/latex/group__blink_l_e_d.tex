@@ -1,0 +1,69 @@
+\hypertarget{group__blink_l_e_d}{}\doxysection{Blink LED}
+\label{group__blink_l_e_d}\index{Blink LED@{Blink LED}}
+
+
+Let the LEDs blink.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__blink_l_e_d_ga9241c778ac42e7dbde0769e96738bec1}{blink\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side, uint16\+\_\+t time\+Interval)
+\begin{DoxyCompactList}\small\item\em Blink the LED on the given side with the given time interval. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__blink_l_e_d_gac5759c4dfaae6c8bd8ee90518616328f}{stop\+Blinking\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side)
+\begin{DoxyCompactList}\small\item\em Stop blinking the LED and turn it off on the given side. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__blink_l_e_d_gacdb86ba2ada451667298ccc32e52b836}{blink\+LEDTask}} ()
+\begin{DoxyCompactList}\small\item\em Run the blinking Task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Let the LEDs blink. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__blink_l_e_d_ga9241c778ac42e7dbde0769e96738bec1}\label{group__blink_l_e_d_ga9241c778ac42e7dbde0769e96738bec1}} 
+\index{Blink LED@{Blink LED}!blinkLED@{blinkLED}}
+\index{blinkLED@{blinkLED}!Blink LED@{Blink LED}}
+\doxysubsubsection{\texorpdfstring{blinkLED()}{blinkLED()}}
+{\footnotesize\ttfamily void blink\+LED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{side,  }\item[{uint16\+\_\+t}]{time\+Interval }\end{DoxyParamCaption})}
+
+
+
+Blink the LED on the given side with the given time interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & the side to blink the LED on \\
+\hline
+{\em time\+Interval} & the interval at which the LED should blink \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__blink_l_e_d_gacdb86ba2ada451667298ccc32e52b836}\label{group__blink_l_e_d_gacdb86ba2ada451667298ccc32e52b836}} 
+\index{Blink LED@{Blink LED}!blinkLEDTask@{blinkLEDTask}}
+\index{blinkLEDTask@{blinkLEDTask}!Blink LED@{Blink LED}}
+\doxysubsubsection{\texorpdfstring{blinkLEDTask()}{blinkLEDTask()}}
+{\footnotesize\ttfamily void blink\+LEDTask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the blinking Task. 
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__blink_l_e_d_gac5759c4dfaae6c8bd8ee90518616328f}\label{group__blink_l_e_d_gac5759c4dfaae6c8bd8ee90518616328f}} 
+\index{Blink LED@{Blink LED}!stopBlinkingLED@{stopBlinkingLED}}
+\index{stopBlinkingLED@{stopBlinkingLED}!Blink LED@{Blink LED}}
+\doxysubsubsection{\texorpdfstring{stopBlinkingLED()}{stopBlinkingLED()}}
+{\footnotesize\ttfamily void stop\+Blinking\+LED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{side }\end{DoxyParamCaption})}
+
+
+
+Stop blinking the LED and turn it off on the given side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & the side to of the LED \\
+\hline
+\end{DoxyParams}

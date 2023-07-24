@@ -1,0 +1,107 @@
+\hypertarget{obstacle_avoidance_8c}{}\doxysection{/\+Users/dennis/\+Cloud\+Station/\+Studium/\+Mobile Roboter/\+Software/lib/obstacle\+Avoidance/obstacle\+Avoidance.c File Reference}
+\label{obstacle_avoidance_8c}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.c@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/obstacleAvoidance/obstacleAvoidance.c}}
+{\ttfamily \#include \char`\"{}obstacle\+Avoidance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}armuro.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wheels.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}line\+Follow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}}
+\begin{DoxyCompactList}\small\item\em The configuration for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{obstacle_avoidance_8c_a6b65d403ba11089719ca459d4d088462}{OBSTACLE\+\_\+\+RADIUS}}~4
+\item 
+\#define \mbox{\hyperlink{obstacle_avoidance_8c_a8ed4cb0ddaead2f6489bb41f7ed8e091}{SAFETY\+\_\+\+DISTANCE}}~3
+\item 
+\#define \mbox{\hyperlink{obstacle_avoidance_8c_a8ac473159ae2c6a1404a5a5b725f78f5}{ATTACK\+\_\+\+ANGLE}}~60
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \mbox{\hyperlink{group__obstacle_avoidance_gae3d472f49d0079368727c92862c0ece7}{Obstacle\+Avoidance\+State}}
+\begin{DoxyCompactList}\small\item\em The state machine for the obstacle avoidance. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{group__obstacle_avoidance_gae8584b37b6405204d6dc179d4ba3dd52}{Obstacle\+Avoidance\+Config}}
+\begin{DoxyCompactList}\small\item\em The configuration for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \{ \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a32ae2d3413ea9dcf77f3bc2a8c54059d}{BACK\+\_\+\+OFF}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a0577326eb8a7ac46891961a76869c664}{DRIVE\+\_\+\+CIRCLE}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351ae8ef0119cb02ae7e5d8a3e1bc65c559d}{OBSTACLE\+\_\+\+AVOIDANCE\+\_\+\+DONE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{group__obstacle_avoidance_gae5228fb93fea5488c6af948f499e1c32}{configure\+Obstacle\+Avoidance}} (double obstacle\+Radius, int attack\+Angle)
+\begin{DoxyCompactList}\small\item\em Configure the obstacle avoidance task with the given parameters. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__obstacle_avoidance_ga73f1f2c9532b66f8163750b82e01c04f}{check\+For\+Obstacle}} ()
+\begin{DoxyCompactList}\small\item\em Check if there is an obstacle in front of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__obstacle_avoidance_ga7de9c96d3932678d9e17241708df7a8c}{avoid\+Obstacle}} ()
+\begin{DoxyCompactList}\small\item\em Configure the obstacle avoidance task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__obstacle_avoidance_gaef65571acb1fd02e7d23b8661f7e9553}{avoid\+Obstacle\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Run the obstacle avoidance task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \mbox{\hyperlink{obstacle_avoidance_8c_ab498cbbc8af2381f9ac3cb27b0e8fd45}{obstacle\+Avoidance\+State}} = \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}
+\item 
+\mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \mbox{\hyperlink{obstacle_avoidance_8c_ac2c23feb0006b5ae854151bbe5ea40c3}{next\+Obstacle\+Avoidance\+State}} = \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}
+\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{obstacle_avoidance_8c_ac95edb48afdb88414c1f571a2863285d}{obstacle\+Avoidance\+State\+State}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\item 
+\mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{obstacle_avoidance_8c_a5b02713e1e73f3364fb509e4ffd06e2f}{obstacle\+Avoidance\+Config}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{obstacle_avoidance_8c_a8ac473159ae2c6a1404a5a5b725f78f5}\label{obstacle_avoidance_8c_a8ac473159ae2c6a1404a5a5b725f78f5}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!ATTACK\_ANGLE@{ATTACK\_ANGLE}}
+\index{ATTACK\_ANGLE@{ATTACK\_ANGLE}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_ANGLE}{ATTACK\_ANGLE}}
+{\footnotesize\ttfamily \#define ATTACK\+\_\+\+ANGLE~60}
+
+\mbox{\Hypertarget{obstacle_avoidance_8c_a6b65d403ba11089719ca459d4d088462}\label{obstacle_avoidance_8c_a6b65d403ba11089719ca459d4d088462}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!OBSTACLE\_RADIUS@{OBSTACLE\_RADIUS}}
+\index{OBSTACLE\_RADIUS@{OBSTACLE\_RADIUS}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{OBSTACLE\_RADIUS}{OBSTACLE\_RADIUS}}
+{\footnotesize\ttfamily \#define OBSTACLE\+\_\+\+RADIUS~4}
+
+\mbox{\Hypertarget{obstacle_avoidance_8c_a8ed4cb0ddaead2f6489bb41f7ed8e091}\label{obstacle_avoidance_8c_a8ed4cb0ddaead2f6489bb41f7ed8e091}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!SAFETY\_DISTANCE@{SAFETY\_DISTANCE}}
+\index{SAFETY\_DISTANCE@{SAFETY\_DISTANCE}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{SAFETY\_DISTANCE}{SAFETY\_DISTANCE}}
+{\footnotesize\ttfamily \#define SAFETY\+\_\+\+DISTANCE~3}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{obstacle_avoidance_8c_ac2c23feb0006b5ae854151bbe5ea40c3}\label{obstacle_avoidance_8c_ac2c23feb0006b5ae854151bbe5ea40c3}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!nextObstacleAvoidanceState@{nextObstacleAvoidanceState}}
+\index{nextObstacleAvoidanceState@{nextObstacleAvoidanceState}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{nextObstacleAvoidanceState}{nextObstacleAvoidanceState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} next\+Obstacle\+Avoidance\+State = \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}}
+
+\mbox{\Hypertarget{obstacle_avoidance_8c_a5b02713e1e73f3364fb509e4ffd06e2f}\label{obstacle_avoidance_8c_a5b02713e1e73f3364fb509e4ffd06e2f}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceConfig@{obstacleAvoidanceConfig}}
+\index{obstacleAvoidanceConfig@{obstacleAvoidanceConfig}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{obstacleAvoidanceConfig}{obstacleAvoidanceConfig}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} obstacle\+Avoidance\+Config}
+
+\mbox{\Hypertarget{obstacle_avoidance_8c_ab498cbbc8af2381f9ac3cb27b0e8fd45}\label{obstacle_avoidance_8c_ab498cbbc8af2381f9ac3cb27b0e8fd45}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceState@{obstacleAvoidanceState}}
+\index{obstacleAvoidanceState@{obstacleAvoidanceState}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{obstacleAvoidanceState}{obstacleAvoidanceState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} obstacle\+Avoidance\+State = \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}}
+
+\mbox{\Hypertarget{obstacle_avoidance_8c_ac95edb48afdb88414c1f571a2863285d}\label{obstacle_avoidance_8c_ac95edb48afdb88414c1f571a2863285d}} 
+\index{obstacleAvoidance.c@{obstacleAvoidance.c}!obstacleAvoidanceStateState@{obstacleAvoidanceStateState}}
+\index{obstacleAvoidanceStateState@{obstacleAvoidanceStateState}!obstacleAvoidance.c@{obstacleAvoidance.c}}
+\doxysubsubsection{\texorpdfstring{obstacleAvoidanceStateState}{obstacleAvoidanceStateState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} obstacle\+Avoidance\+State\+State = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}}
+

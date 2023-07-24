@@ -1,0 +1,162 @@
+\hypertarget{group__parcour}{}\doxysection{Parcour}
+\label{group__parcour}\index{Parcour@{Parcour}}
+
+
+Let the robot run the parcour.  
+
+
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga8c98d70f8288820465bb3fd3f59cd4ca}{State\+Machine}}
+\begin{DoxyCompactList}\small\item\em The state machine of the parcour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \{ \newline
+\mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}{DRIVE\+\_\+\+TRAJECTORY}} = 0
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}{FOLLOW\+\_\+\+LINE}} = 1
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}{SEARCH\+\_\+\+LINE}} = 2
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebac9c0846624df37f0edddf0491424a7d1}{OVERCOME\+\_\+\+GAP}} = 3
+, \newline
+\mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193eba662efcb45444c1e715f8715c03a25efc}{AVOID\+\_\+\+OBSTACLE}} = 4
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaaab5a2bcea860b4f52557e01cb37c66f}{CALIBRATE}} = 5
+, \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebafd6a0e4343048b10646dd2976cc5ad18}{IDLE}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine of the parcour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__parcour_gad10559e529a136be5bc3de127aa4b353}{start\+Parcour}} ()
+\begin{DoxyCompactList}\small\item\em Configure the parcour task. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__parcour_ga964127a3f70269ae7e49eb56efe8b833}{drive\+Parcour}} ()
+\begin{DoxyCompactList}\small\item\em Run the parcour task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga1dd4fcf1bc3719c3adfb57cd694387f6}{current\+State}} = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}{DRIVE\+\_\+\+TRAJECTORY}}
+\begin{DoxyCompactList}\small\item\em The current state of the parcour state machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga21f5ac9613bd154bc9be65c741f635ec}{next\+State}} = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}{SEARCH\+\_\+\+LINE}}
+\begin{DoxyCompactList}\small\item\em The next state of the parcour state machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}} = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}
+\begin{DoxyCompactList}\small\item\em The status of the parcour state machine\textquotesingle{}s state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Let the robot run the parcour. 
+
+The parcour is implemented as a hirachical state machine. The robot is in a certain state and performs a certain action depending on the state. The differenet states of the robot while running the parcour are defined in the \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} enum. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__parcour_ga8c98d70f8288820465bb3fd3f59cd4ca}\label{group__parcour_ga8c98d70f8288820465bb3fd3f59cd4ca}} 
+\index{Parcour@{Parcour}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{StateMachine}{StateMachine}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}}}
+
+
+
+The state machine of the parcour. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}\label{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}} 
+\index{Parcour@{Parcour}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{StateMachine}{StateMachine}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}}}
+
+
+
+The state machine of the parcour. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE\_TRAJECTORY@{DRIVE\_TRAJECTORY}!Parcour@{Parcour}}\index{Parcour@{Parcour}!DRIVE\_TRAJECTORY@{DRIVE\_TRAJECTORY}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}} 
+DRIVE\+\_\+\+TRAJECTORY&Drive the trajectory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FOLLOW\_LINE@{FOLLOW\_LINE}!Parcour@{Parcour}}\index{Parcour@{Parcour}!FOLLOW\_LINE@{FOLLOW\_LINE}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebada9bf40bddc6fcd34a63cacb19ca3641}} 
+FOLLOW\+\_\+\+LINE&Follow the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SEARCH\_LINE@{SEARCH\_LINE}!Parcour@{Parcour}}\index{Parcour@{Parcour}!SEARCH\_LINE@{SEARCH\_LINE}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}} 
+SEARCH\+\_\+\+LINE&Search the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERCOME\_GAP@{OVERCOME\_GAP}!Parcour@{Parcour}}\index{Parcour@{Parcour}!OVERCOME\_GAP@{OVERCOME\_GAP}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebac9c0846624df37f0edddf0491424a7d1}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebac9c0846624df37f0edddf0491424a7d1}} 
+OVERCOME\+\_\+\+GAP&Overcome a gap in the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVOID\_OBSTACLE@{AVOID\_OBSTACLE}!Parcour@{Parcour}}\index{Parcour@{Parcour}!AVOID\_OBSTACLE@{AVOID\_OBSTACLE}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193eba662efcb45444c1e715f8715c03a25efc}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193eba662efcb45444c1e715f8715c03a25efc}} 
+AVOID\+\_\+\+OBSTACLE&Avoid an obstacle on the line. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALIBRATE@{CALIBRATE}!Parcour@{Parcour}}\index{Parcour@{Parcour}!CALIBRATE@{CALIBRATE}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaaab5a2bcea860b4f52557e01cb37c66f}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaaab5a2bcea860b4f52557e01cb37c66f}} 
+CALIBRATE&Calibrate the hardware of the robot. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE@{IDLE}!Parcour@{Parcour}}\index{Parcour@{Parcour}!IDLE@{IDLE}}}\mbox{\Hypertarget{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebafd6a0e4343048b10646dd2976cc5ad18}\label{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebafd6a0e4343048b10646dd2976cc5ad18}} 
+IDLE&Stop the robot. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__parcour_ga964127a3f70269ae7e49eb56efe8b833}\label{group__parcour_ga964127a3f70269ae7e49eb56efe8b833}} 
+\index{Parcour@{Parcour}!driveParcour@{driveParcour}}
+\index{driveParcour@{driveParcour}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{driveParcour()}{driveParcour()}}
+{\footnotesize\ttfamily void drive\+Parcour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the parcour task. 
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__parcour_gad10559e529a136be5bc3de127aa4b353}\label{group__parcour_gad10559e529a136be5bc3de127aa4b353}} 
+\index{Parcour@{Parcour}!startParcour@{startParcour}}
+\index{startParcour@{startParcour}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{startParcour()}{startParcour()}}
+{\footnotesize\ttfamily void start\+Parcour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure the parcour task. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__parcour_ga1dd4fcf1bc3719c3adfb57cd694387f6}\label{group__parcour_ga1dd4fcf1bc3719c3adfb57cd694387f6}} 
+\index{Parcour@{Parcour}!currentState@{currentState}}
+\index{currentState@{currentState}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{currentState}{currentState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} current\+State = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaf678bada3e3576fd3952f4da72e9cf00}{DRIVE\+\_\+\+TRAJECTORY}}}
+
+
+
+The current state of the parcour state machine. 
+
+\mbox{\Hypertarget{group__parcour_ga21f5ac9613bd154bc9be65c741f635ec}\label{group__parcour_ga21f5ac9613bd154bc9be65c741f635ec}} 
+\index{Parcour@{Parcour}!nextState@{nextState}}
+\index{nextState@{nextState}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{nextState}{nextState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__parcour_ga8e8a2ea6199f95a4595785d3e9e193eb}{State\+Machine}} next\+State = \mbox{\hyperlink{group__parcour_gga8e8a2ea6199f95a4595785d3e9e193ebaac8181afceaff44d85a91c1131990719}{SEARCH\+\_\+\+LINE}}}
+
+
+
+The next state of the parcour state machine. 
+
+\mbox{\Hypertarget{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}\label{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}} 
+\index{Parcour@{Parcour}!state@{state}}
+\index{state@{state}!Parcour@{Parcour}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} state = \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8a6564f2f3e15be06b670547bbcaaf0798}{READY}}}
+
+
+
+The status of the parcour state machine\textquotesingle{}s state. 
+

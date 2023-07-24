@@ -9,18 +9,41 @@
 #include "calibrate.h"
 #include "obstacleAvoidance.h"
 
+/**
+ * @brief The state machine of the parcour
+ * @ingroup parcour
+ */
 typedef enum StateMachine {
+    /// @brief Drive the trajectory
     DRIVE_TRAJECTORY = 0,
+    /// @brief Follow the line
     FOLLOW_LINE = 1,
+    /// @brief Search the line
     SEARCH_LINE = 2,
+    /// @brief Overcome a gap in the line
     OVERCOME_GAP = 3,
+    /// @brief Avoid an obstacle on the line
     AVOID_OBSTACLE = 4,
+    /// @brief Calibrate the hardware of the robot
     CALIBRATE = 5,
+    /// @brief Stop the robot
     IDLE = -1
 } StateMachine;
 
+/**
+ * @brief The current state of the parcour state machine
+ * @ingroup parcour
+ */
 StateMachine currentState = DRIVE_TRAJECTORY;
+/**
+ * @brief The next state of the parcour state machine
+ * @ingroup parcour
+ */
 StateMachine nextState = SEARCH_LINE;
+/**
+ * @brief The status of the parcour state machine's state
+ * @ingroup parcour
+ */
 State state = READY;
 
 //MARK: - Drive Trajectory

@@ -4,6 +4,10 @@
 #include "armuro.h"
 #include "lineFollow.h"
 
+/**
+ * @brief The state machine of the trajectory.
+ * @ingroup trajectory
+ */
 typedef enum TrajectoryStateMachine {
     DRIVE_FIRST_TRAJECTORY_PART = 0,
     TURN_TO_SECOND_TRAJECTORY_PART = 1,

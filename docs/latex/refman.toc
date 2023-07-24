@@ -1,0 +1,305 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Module Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Modules}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Data Structure Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Data Structures}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Module Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Armuro Hardware}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}angleToDistance()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}checkSwitchesPressed()}{8}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}didReadSensors()}{9}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}didReadWheelEncoder()}{9}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}distanceToAngle()}{9}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}getAngleForWheel()}{10}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}getAngleForWheels()}{10}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}getLineSensorReadings()}{10}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}getRawLineSensorReadings()}{11}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}map()}{11}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}mapLineSensorReadingToRange()}{11}{subsubsection.4.1.2.11}%
+\contentsline {subsubsection}{\numberline {4.1.2.12}print()}{12}{subsubsection.4.1.2.12}%
+\contentsline {subsubsection}{\numberline {4.1.2.13}resetAngleMeasurement()}{12}{subsubsection.4.1.2.13}%
+\contentsline {subsubsection}{\numberline {4.1.2.14}setLED()}{12}{subsubsection.4.1.2.14}%
+\contentsline {subsubsection}{\numberline {4.1.2.15}setRearLED()}{13}{subsubsection.4.1.2.15}%
+\contentsline {subsubsection}{\numberline {4.1.2.16}speedDifferenceForRadius()}{13}{subsubsection.4.1.2.16}%
+\contentsline {subsubsection}{\numberline {4.1.2.17}stopAngleMeasurement()}{13}{subsubsection.4.1.2.17}%
+\contentsline {subsubsection}{\numberline {4.1.2.18}stopMotor()}{14}{subsubsection.4.1.2.18}%
+\contentsline {subsubsection}{\numberline {4.1.2.19}turnMotor()}{14}{subsubsection.4.1.2.19}%
+\contentsline {section}{\numberline {4.2}Blink LED}{14}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{14}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Function Documentation}{15}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}blinkLED()}{15}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}blinkLEDTask()}{15}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}stopBlinkingLED()}{15}{subsubsection.4.2.2.3}%
+\contentsline {section}{\numberline {4.3}Calibrate Robot}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{16}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{16}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}calibrate()}{16}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}calibrateTask()}{16}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}readBlackLineSensors()}{16}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}readWhiteLineSensors()}{17}{subsubsection.4.3.2.4}%
+\contentsline {section}{\numberline {4.4}Line Follow}{17}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{18}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Typedef Documentation}{18}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}CheckLineResult}{18}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}FollowLineResult}{18}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}SearchLineResult}{18}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}SearchLineState}{18}{subsubsection.4.4.2.4}%
+\contentsline {subsection}{\numberline {4.4.3}Enumeration Type Documentation}{18}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}CheckLineResult}{18}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}FollowLineResult}{19}{subsubsection.4.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}SearchLineResult}{19}{subsubsection.4.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.4}SearchLineState}{19}{subsubsection.4.4.3.4}%
+\contentsline {subsection}{\numberline {4.4.4}Function Documentation}{20}{subsection.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.1}checkForLine()}{20}{subsubsection.4.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.4.2}followLine()}{20}{subsubsection.4.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.4.3}followLineTask()}{20}{subsubsection.4.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4.4}searchLine()}{21}{subsubsection.4.4.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.4.5}searchLineTask()}{21}{subsubsection.4.4.4.5}%
+\contentsline {section}{\numberline {4.5}Obstacle Avoidance}{21}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{22}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Typedef Documentation}{22}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}ObstacleAvoidanceConfig}{22}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}ObstacleAvoidanceState}{22}{subsubsection.4.5.2.2}%
+\contentsline {subsection}{\numberline {4.5.3}Enumeration Type Documentation}{22}{subsection.4.5.3}%
+\contentsline {subsubsection}{\numberline {4.5.3.1}ObstacleAvoidanceState}{22}{subsubsection.4.5.3.1}%
+\contentsline {subsection}{\numberline {4.5.4}Function Documentation}{23}{subsection.4.5.4}%
+\contentsline {subsubsection}{\numberline {4.5.4.1}avoidObstacle()}{23}{subsubsection.4.5.4.1}%
+\contentsline {subsubsection}{\numberline {4.5.4.2}avoidObstacleTask()}{23}{subsubsection.4.5.4.2}%
+\contentsline {subsubsection}{\numberline {4.5.4.3}checkForObstacle()}{23}{subsubsection.4.5.4.3}%
+\contentsline {subsubsection}{\numberline {4.5.4.4}configureObstacleAvoidance()}{24}{subsubsection.4.5.4.4}%
+\contentsline {section}{\numberline {4.6}Parcour}{25}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{25}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Typedef Documentation}{26}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}StateMachine}{26}{subsubsection.4.6.2.1}%
+\contentsline {subsection}{\numberline {4.6.3}Enumeration Type Documentation}{26}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}StateMachine}{26}{subsubsection.4.6.3.1}%
+\contentsline {subsection}{\numberline {4.6.4}Function Documentation}{26}{subsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.4.1}driveParcour()}{26}{subsubsection.4.6.4.1}%
+\contentsline {subsubsection}{\numberline {4.6.4.2}startParcour()}{27}{subsubsection.4.6.4.2}%
+\contentsline {subsection}{\numberline {4.6.5}Variable Documentation}{27}{subsection.4.6.5}%
+\contentsline {subsubsection}{\numberline {4.6.5.1}currentState}{27}{subsubsection.4.6.5.1}%
+\contentsline {subsubsection}{\numberline {4.6.5.2}nextState}{27}{subsubsection.4.6.5.2}%
+\contentsline {subsubsection}{\numberline {4.6.5.3}state}{27}{subsubsection.4.6.5.3}%
+\contentsline {section}{\numberline {4.7}PID Controller}{27}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{28}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Typedef Documentation}{28}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}PIDConfig}{28}{subsubsection.4.7.2.1}%
+\contentsline {subsection}{\numberline {4.7.3}Function Documentation}{28}{subsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.1}calculatePIDOutput()}{28}{subsubsection.4.7.3.1}%
+\contentsline {subsubsection}{\numberline {4.7.3.2}initPID()}{29}{subsubsection.4.7.3.2}%
+\contentsline {section}{\numberline {4.8}Trajectory}{29}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{30}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Typedef Documentation}{30}{subsection.4.8.2}%
+\contentsline {subsubsection}{\numberline {4.8.2.1}TrajectoryStateMachine}{30}{subsubsection.4.8.2.1}%
+\contentsline {subsection}{\numberline {4.8.3}Enumeration Type Documentation}{30}{subsection.4.8.3}%
+\contentsline {subsubsection}{\numberline {4.8.3.1}TrajectoryStateMachine}{30}{subsubsection.4.8.3.1}%
+\contentsline {subsection}{\numberline {4.8.4}Function Documentation}{30}{subsection.4.8.4}%
+\contentsline {subsubsection}{\numberline {4.8.4.1}driveTrajectoryTask()}{30}{subsubsection.4.8.4.1}%
+\contentsline {subsubsection}{\numberline {4.8.4.2}startTrajectory()}{31}{subsubsection.4.8.4.2}%
+\contentsline {section}{\numberline {4.9}Wheels}{31}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{32}{subsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.9.2}Typedef Documentation}{32}{subsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.2.1}TurnWheelsTaskType}{32}{subsubsection.4.9.2.1}%
+\contentsline {subsection}{\numberline {4.9.3}Enumeration Type Documentation}{32}{subsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.3.1}TurnWheelsTaskType}{32}{subsubsection.4.9.3.1}%
+\contentsline {subsection}{\numberline {4.9.4}Function Documentation}{32}{subsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.4.1}stopWheel()}{32}{subsubsection.4.9.4.1}%
+\contentsline {subsubsection}{\numberline {4.9.4.2}turnArmuro()}{33}{subsubsection.4.9.4.2}%
+\contentsline {subsubsection}{\numberline {4.9.4.3}turnArmuroInTime()}{33}{subsubsection.4.9.4.3}%
+\contentsline {subsubsection}{\numberline {4.9.4.4}turnWheelByAngle()}{33}{subsubsection.4.9.4.4}%
+\contentsline {subsubsection}{\numberline {4.9.4.5}turnWheelByAngleInTime()}{34}{subsubsection.4.9.4.5}%
+\contentsline {subsubsection}{\numberline {4.9.4.6}turnWheelsSynchronized()}{34}{subsubsection.4.9.4.6}%
+\contentsline {subsubsection}{\numberline {4.9.4.7}turnWheelsSynchronizedByAngle()}{34}{subsubsection.4.9.4.7}%
+\contentsline {subsubsection}{\numberline {4.9.4.8}turnWheelsTask()}{35}{subsubsection.4.9.4.8}%
+\contentsline {subsubsection}{\numberline {4.9.4.9}turnWheelWithSpeed()}{35}{subsubsection.4.9.4.9}%
+\contentsline {chapter}{\numberline {5}Data Structure Documentation}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Struct Reference}{37}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{37}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Field Documentation}{37}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}attackAngle}{37}{subsubsection.5.1.2.1}%
+\contentsline {subsubsection}{\numberline {5.1.2.2}backOffDistance}{38}{subsubsection.5.1.2.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.3}circleRadius}{38}{subsubsection.5.1.2.3}%
+\contentsline {subsubsection}{\numberline {5.1.2.4}distanceToDrive}{38}{subsubsection.5.1.2.4}%
+\contentsline {section}{\numberline {5.2}PIDConfig Struct Reference}{38}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{38}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Field Documentation}{39}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}d\_gain}{39}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}i\_gain}{39}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}i\_relax}{39}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}integral}{39}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}max\_i}{39}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}old\_input}{39}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}p\_gain}{39}{subsubsection.5.2.2.7}%
+\contentsline {section}{\numberline {5.3}Wheel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angle Struct Reference}{40}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Field Documentation}{40}{subsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}left}{40}{subsubsection.5.3.1.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}leftTicks}{40}{subsubsection.5.3.1.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.3}right}{40}{subsubsection.5.3.1.3}%
+\contentsline {subsubsection}{\numberline {5.3.1.4}rightTicks}{40}{subsubsection.5.3.1.4}%
+\contentsline {section}{\numberline {5.4}Wheel\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Angle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}List\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Item Struct Reference}{41}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Field Documentation}{41}{subsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}angle}{41}{subsubsection.5.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.2}next}{41}{subsubsection.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {5.4.1.3}prev}{41}{subsubsection.5.4.1.3}%
+\contentsline {chapter}{\numberline {6}File Documentation}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/armuro/armuro.c File Reference}{43}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Macro Definition Documentation}{45}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}LEFT\_ENCODER\_HIGH\_THRESHOLD}{45}{subsubsection.6.1.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.2}LEFT\_ENCODER\_LOW\_THRESHOLD}{45}{subsubsection.6.1.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.1.3}MAX\_PWM}{45}{subsubsection.6.1.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.1.4}RIGHT\_ENCODER\_HIGH\_THRESHOLD}{45}{subsubsection.6.1.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.1.5}RIGHT\_ENCODER\_LOW\_THRESHOLD}{45}{subsubsection.6.1.1.5}%
+\contentsline {subsection}{\numberline {6.1.2}Typedef Documentation}{45}{subsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2.1}WheelAngleListItem}{46}{subsubsection.6.1.2.1}%
+\contentsline {subsection}{\numberline {6.1.3}Function Documentation}{46}{subsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.3.1}initMotors()}{46}{subsubsection.6.1.3.1}%
+\contentsline {subsubsection}{\numberline {6.1.3.2}schmittTrigger()}{46}{subsubsection.6.1.3.2}%
+\contentsline {subsubsection}{\numberline {6.1.3.3}startAngleMeasurement()}{46}{subsubsection.6.1.3.3}%
+\contentsline {subsection}{\numberline {6.1.4}Variable Documentation}{46}{subsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.1}maxLineSensorValues}{47}{subsubsection.6.1.4.1}%
+\contentsline {subsubsection}{\numberline {6.1.4.2}minLineSensorValues}{47}{subsubsection.6.1.4.2}%
+\contentsline {subsubsection}{\numberline {6.1.4.3}wheelAngleList}{47}{subsubsection.6.1.4.3}%
+\contentsline {subsubsection}{\numberline {6.1.4.4}wheelAngleListEnd}{47}{subsubsection.6.1.4.4}%
+\contentsline {subsubsection}{\numberline {6.1.4.5}wheelEncoderOldValues}{47}{subsubsection.6.1.4.5}%
+\contentsline {subsubsection}{\numberline {6.1.4.6}wheelEncoderTicksCount}{47}{subsubsection.6.1.4.6}%
+\contentsline {section}{\numberline {6.2}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/armuro/armuro.h File Reference}{48}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Macro Definition Documentation}{49}{subsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.1}ARMURO\_LENGTH}{49}{subsubsection.6.2.1.1}%
+\contentsline {subsubsection}{\numberline {6.2.1.2}BACKWARD}{50}{subsubsection.6.2.1.2}%
+\contentsline {subsubsection}{\numberline {6.2.1.3}FORWARD}{50}{subsubsection.6.2.1.3}%
+\contentsline {subsubsection}{\numberline {6.2.1.4}HIGH}{50}{subsubsection.6.2.1.4}%
+\contentsline {subsubsection}{\numberline {6.2.1.5}LOW}{50}{subsubsection.6.2.1.5}%
+\contentsline {subsubsection}{\numberline {6.2.1.6}MAX\_LEFT\_LINE\_SENSOR\_VALUE}{50}{subsubsection.6.2.1.6}%
+\contentsline {subsubsection}{\numberline {6.2.1.7}MAX\_MIDDLE\_LINE\_SENSOR\_VALUE}{50}{subsubsection.6.2.1.7}%
+\contentsline {subsubsection}{\numberline {6.2.1.8}MAX\_RIGHT\_LINE\_SENSOR\_VALUE}{50}{subsubsection.6.2.1.8}%
+\contentsline {subsubsection}{\numberline {6.2.1.9}MIN\_ANGLE}{50}{subsubsection.6.2.1.9}%
+\contentsline {subsubsection}{\numberline {6.2.1.10}MIN\_LEFT\_LINE\_SENSOR\_VALUE}{51}{subsubsection.6.2.1.10}%
+\contentsline {subsubsection}{\numberline {6.2.1.11}MIN\_MIDDLE\_LINE\_SENSOR\_VALUE}{51}{subsubsection.6.2.1.11}%
+\contentsline {subsubsection}{\numberline {6.2.1.12}MIN\_RIGHT\_LINE\_SENSOR\_VALUE}{51}{subsubsection.6.2.1.12}%
+\contentsline {subsubsection}{\numberline {6.2.1.13}TURN\_CIRCUMFERENCE}{51}{subsubsection.6.2.1.13}%
+\contentsline {subsubsection}{\numberline {6.2.1.14}WHEEL\_CIRCUMFERENCE}{51}{subsubsection.6.2.1.14}%
+\contentsline {subsubsection}{\numberline {6.2.1.15}WHEEL\_DISTANCE}{51}{subsubsection.6.2.1.15}%
+\contentsline {subsection}{\numberline {6.2.2}Enumeration Type Documentation}{51}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Side}{51}{subsubsection.6.2.2.1}%
+\contentsline {subsection}{\numberline {6.2.3}Function Documentation}{52}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}initMotors()}{52}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}startAngleMeasurement()}{52}{subsubsection.6.2.3.2}%
+\contentsline {subsection}{\numberline {6.2.4}Variable Documentation}{52}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}buffer}{52}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}maxLineSensorValues}{52}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}minLineSensorValues}{53}{subsubsection.6.2.4.3}%
+\contentsline {subsubsection}{\numberline {6.2.4.4}wheelEncoderTicksCount}{53}{subsubsection.6.2.4.4}%
+\contentsline {section}{\numberline {6.3}armuro.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/blink\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LED/blink\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LED.c File Reference}{54}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Enumeration Type Documentation}{54}{subsection.6.4.1}%
+\contentsline {subsubsection}{\numberline {6.4.1.1}LEDState}{54}{subsubsection.6.4.1.1}%
+\contentsline {subsection}{\numberline {6.4.2}Variable Documentation}{55}{subsection.6.4.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.1}ledState}{55}{subsubsection.6.4.2.1}%
+\contentsline {subsubsection}{\numberline {6.4.2.2}ledTimeInterval}{55}{subsubsection.6.4.2.2}%
+\contentsline {subsubsection}{\numberline {6.4.2.3}taskLEDTimeout}{55}{subsubsection.6.4.2.3}%
+\contentsline {section}{\numberline {6.5}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/blink\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LED/blink\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LED.h File Reference}{55}{section.6.5}%
+\contentsline {section}{\numberline {6.6}blink\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}LED.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{56}{section.6.6}%
+\contentsline {section}{\numberline {6.7}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/calibrate/calibrate.c File Reference}{56}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Enumeration Type Documentation}{56}{subsection.6.7.1}%
+\contentsline {subsubsection}{\numberline {6.7.1.1}CalibrateState}{56}{subsubsection.6.7.1.1}%
+\contentsline {subsection}{\numberline {6.7.2}Function Documentation}{57}{subsection.6.7.2}%
+\contentsline {subsubsection}{\numberline {6.7.2.1}startCalibrate()}{57}{subsubsection.6.7.2.1}%
+\contentsline {subsection}{\numberline {6.7.3}Variable Documentation}{57}{subsection.6.7.3}%
+\contentsline {subsubsection}{\numberline {6.7.3.1}calibrateState}{57}{subsubsection.6.7.3.1}%
+\contentsline {subsubsection}{\numberline {6.7.3.2}calibrateStateState}{57}{subsubsection.6.7.3.2}%
+\contentsline {subsubsection}{\numberline {6.7.3.3}nextCalibrateState}{57}{subsubsection.6.7.3.3}%
+\contentsline {section}{\numberline {6.8}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/calibrate/calibrate.h File Reference}{57}{section.6.8}%
+\contentsline {section}{\numberline {6.9}calibrate.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{58}{section.6.9}%
+\contentsline {section}{\numberline {6.10}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Follow/line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Follow.c File Reference}{58}{section.6.10}%
+\contentsline {subsection}{\numberline {6.10.1}Macro Definition Documentation}{59}{subsection.6.10.1}%
+\contentsline {subsubsection}{\numberline {6.10.1.1}BLACK\_THRESHOLD}{59}{subsubsection.6.10.1.1}%
+\contentsline {subsubsection}{\numberline {6.10.1.2}WHITE\_THRESHOLD}{59}{subsubsection.6.10.1.2}%
+\contentsline {subsection}{\numberline {6.10.2}Variable Documentation}{60}{subsection.6.10.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.1}baseLineSpeed}{60}{subsubsection.6.10.2.1}%
+\contentsline {subsubsection}{\numberline {6.10.2.2}followLinePID}{60}{subsubsection.6.10.2.2}%
+\contentsline {subsubsection}{\numberline {6.10.2.3}lastLineValues}{60}{subsubsection.6.10.2.3}%
+\contentsline {subsubsection}{\numberline {6.10.2.4}lastState}{60}{subsubsection.6.10.2.4}%
+\contentsline {subsubsection}{\numberline {6.10.2.5}lineFollowTimeout}{60}{subsubsection.6.10.2.5}%
+\contentsline {subsubsection}{\numberline {6.10.2.6}nextSearchState}{60}{subsubsection.6.10.2.6}%
+\contentsline {subsubsection}{\numberline {6.10.2.7}searchLineState}{60}{subsubsection.6.10.2.7}%
+\contentsline {subsubsection}{\numberline {6.10.2.8}searchLineStateState}{61}{subsubsection.6.10.2.8}%
+\contentsline {section}{\numberline {6.11}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Follow/line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Follow.h File Reference}{61}{section.6.11}%
+\contentsline {section}{\numberline {6.12}line\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Follow.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{62}{section.6.12}%
+\contentsline {section}{\numberline {6.13}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance/obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance.c File Reference}{62}{section.6.13}%
+\contentsline {subsection}{\numberline {6.13.1}Macro Definition Documentation}{63}{subsection.6.13.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.1}ATTACK\_ANGLE}{63}{subsubsection.6.13.1.1}%
+\contentsline {subsubsection}{\numberline {6.13.1.2}OBSTACLE\_RADIUS}{63}{subsubsection.6.13.1.2}%
+\contentsline {subsubsection}{\numberline {6.13.1.3}SAFETY\_DISTANCE}{64}{subsubsection.6.13.1.3}%
+\contentsline {subsection}{\numberline {6.13.2}Variable Documentation}{64}{subsection.6.13.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.1}nextObstacleAvoidanceState}{64}{subsubsection.6.13.2.1}%
+\contentsline {subsubsection}{\numberline {6.13.2.2}obstacleAvoidanceConfig}{64}{subsubsection.6.13.2.2}%
+\contentsline {subsubsection}{\numberline {6.13.2.3}obstacleAvoidanceState}{64}{subsubsection.6.13.2.3}%
+\contentsline {subsubsection}{\numberline {6.13.2.4}obstacleAvoidanceStateState}{64}{subsubsection.6.13.2.4}%
+\contentsline {section}{\numberline {6.14}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance/obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance.h File Reference}{64}{section.6.14}%
+\contentsline {section}{\numberline {6.15}obstacle\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Avoidance.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{65}{section.6.15}%
+\contentsline {section}{\numberline {6.16}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/parcour/parcour.c File Reference}{65}{section.6.16}%
+\contentsline {subsection}{\numberline {6.16.1}Function Documentation}{66}{subsection.6.16.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.1}avoidingObstacle()}{66}{subsubsection.6.16.1.1}%
+\contentsline {subsubsection}{\numberline {6.16.1.2}calibrateArmuro()}{66}{subsubsection.6.16.1.2}%
+\contentsline {subsubsection}{\numberline {6.16.1.3}driveTrajectory()}{66}{subsubsection.6.16.1.3}%
+\contentsline {subsubsection}{\numberline {6.16.1.4}lineFollow()}{66}{subsubsection.6.16.1.4}%
+\contentsline {subsubsection}{\numberline {6.16.1.5}overcomeGap()}{66}{subsubsection.6.16.1.5}%
+\contentsline {subsubsection}{\numberline {6.16.1.6}searchTheLine()}{66}{subsubsection.6.16.1.6}%
+\contentsline {section}{\numberline {6.17}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/parcour/parcour.h File Reference}{67}{section.6.17}%
+\contentsline {section}{\numberline {6.18}parcour.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{67}{section.6.18}%
+\contentsline {section}{\numberline {6.19}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller/pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.c File Reference}{67}{section.6.19}%
+\contentsline {section}{\numberline {6.20}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller/pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.h File Reference}{67}{section.6.20}%
+\contentsline {section}{\numberline {6.21}pid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Controller.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{68}{section.6.21}%
+\contentsline {section}{\numberline {6.22}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/state\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine/state\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine.h File Reference}{68}{section.6.22}%
+\contentsline {subsection}{\numberline {6.22.1}Typedef Documentation}{68}{subsection.6.22.1}%
+\contentsline {subsubsection}{\numberline {6.22.1.1}State}{69}{subsubsection.6.22.1.1}%
+\contentsline {subsection}{\numberline {6.22.2}Enumeration Type Documentation}{69}{subsection.6.22.2}%
+\contentsline {subsubsection}{\numberline {6.22.2.1}State}{69}{subsubsection.6.22.2.1}%
+\contentsline {section}{\numberline {6.23}state\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Machine.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{69}{section.6.23}%
+\contentsline {section}{\numberline {6.24}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/trajectory/trajectory.c File Reference}{69}{section.6.24}%
+\contentsline {subsection}{\numberline {6.24.1}Function Documentation}{70}{subsection.6.24.1}%
+\contentsline {subsubsection}{\numberline {6.24.1.1}driveFirstTrajectoryPart()}{70}{subsubsection.6.24.1.1}%
+\contentsline {subsubsection}{\numberline {6.24.1.2}driveSecondTrajectoryPart()}{70}{subsubsection.6.24.1.2}%
+\contentsline {subsubsection}{\numberline {6.24.1.3}driveThirdTrajectoryPart()}{70}{subsubsection.6.24.1.3}%
+\contentsline {subsubsection}{\numberline {6.24.1.4}turnToSecondTrajectoryPart()}{71}{subsubsection.6.24.1.4}%
+\contentsline {subsubsection}{\numberline {6.24.1.5}turnToThirdTrajectoryPart()}{71}{subsubsection.6.24.1.5}%
+\contentsline {subsection}{\numberline {6.24.2}Variable Documentation}{71}{subsection.6.24.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.1}currentTrajectoryState}{71}{subsubsection.6.24.2.1}%
+\contentsline {subsubsection}{\numberline {6.24.2.2}nextTrajectoryState}{71}{subsubsection.6.24.2.2}%
+\contentsline {subsubsection}{\numberline {6.24.2.3}trajectoryStateState}{71}{subsubsection.6.24.2.3}%
+\contentsline {section}{\numberline {6.25}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/trajectory/trajectory.h File Reference}{71}{section.6.25}%
+\contentsline {section}{\numberline {6.26}trajectory.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{72}{section.6.26}%
+\contentsline {section}{\numberline {6.27}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/wheels/wheels.c File Reference}{72}{section.6.27}%
+\contentsline {subsection}{\numberline {6.27.1}Macro Definition Documentation}{73}{subsection.6.27.1}%
+\contentsline {subsubsection}{\numberline {6.27.1.1}MAX\_ROTATION\_RATE}{73}{subsubsection.6.27.1.1}%
+\contentsline {subsection}{\numberline {6.27.2}Function Documentation}{73}{subsection.6.27.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.1}setupSynchronizedPID()}{73}{subsubsection.6.27.2.1}%
+\contentsline {subsubsection}{\numberline {6.27.2.2}turnArmuroTask()}{73}{subsubsection.6.27.2.2}%
+\contentsline {subsubsection}{\numberline {6.27.2.3}turnWheelByAngleInTimeTask()}{73}{subsubsection.6.27.2.3}%
+\contentsline {subsubsection}{\numberline {6.27.2.4}turnWheelByAngleTask()}{74}{subsubsection.6.27.2.4}%
+\contentsline {subsubsection}{\numberline {6.27.2.5}turnWheelsSynchronizedByAngleTask()}{74}{subsubsection.6.27.2.5}%
+\contentsline {subsubsection}{\numberline {6.27.2.6}turnWheelsSynchronizedTask()}{74}{subsubsection.6.27.2.6}%
+\contentsline {subsection}{\numberline {6.27.3}Variable Documentation}{74}{subsection.6.27.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.1}angleSetpoint}{74}{subsubsection.6.27.3.1}%
+\contentsline {subsubsection}{\numberline {6.27.3.2}angleTimeout}{74}{subsubsection.6.27.3.2}%
+\contentsline {subsubsection}{\numberline {6.27.3.3}currentSpeedSetpoint}{74}{subsubsection.6.27.3.3}%
+\contentsline {subsubsection}{\numberline {6.27.3.4}oldAngle}{74}{subsubsection.6.27.3.4}%
+\contentsline {subsubsection}{\numberline {6.27.3.5}rotationRateSetpoint}{75}{subsubsection.6.27.3.5}%
+\contentsline {subsubsection}{\numberline {6.27.3.6}speedSetpoint}{75}{subsubsection.6.27.3.6}%
+\contentsline {subsubsection}{\numberline {6.27.3.7}synchronizeWheelsPID}{75}{subsubsection.6.27.3.7}%
+\contentsline {subsubsection}{\numberline {6.27.3.8}synchronizeWheelsTimeout}{75}{subsubsection.6.27.3.8}%
+\contentsline {subsubsection}{\numberline {6.27.3.9}turningWheels}{75}{subsubsection.6.27.3.9}%
+\contentsline {subsubsection}{\numberline {6.27.3.10}wheelsPID}{75}{subsubsection.6.27.3.10}%
+\contentsline {section}{\numberline {6.28}/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Users/dennis/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Cloud\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Station/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Studium/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Mobile Roboter/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Software/lib/wheels/wheels.h File Reference}{75}{section.6.28}%
+\contentsline {subsection}{\numberline {6.28.1}Function Documentation}{76}{subsection.6.28.1}%
+\contentsline {subsubsection}{\numberline {6.28.1.1}turnArmuroTask()}{76}{subsubsection.6.28.1.1}%
+\contentsline {subsubsection}{\numberline {6.28.1.2}turnWheelByAngleInTimeTask()}{76}{subsubsection.6.28.1.2}%
+\contentsline {subsubsection}{\numberline {6.28.1.3}turnWheelByAngleTask()}{77}{subsubsection.6.28.1.3}%
+\contentsline {subsubsection}{\numberline {6.28.1.4}turnWheelsSynchronizedByAngleTask()}{77}{subsubsection.6.28.1.4}%
+\contentsline {subsubsection}{\numberline {6.28.1.5}turnWheelsSynchronizedTask()}{77}{subsubsection.6.28.1.5}%
+\contentsline {section}{\numberline {6.29}wheels.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{77}{section.6.29}%
+\contentsline {chapter}{Index}{79}{section*.83}%

@@ -1,0 +1,392 @@
+\hypertarget{group__armuro}{}\doxysection{Armuro Hardware}
+\label{group__armuro}\index{Armuro Hardware@{Armuro Hardware}}
+
+
+Manage the hardware of the Armuro Robot.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__armuro_gaaa243895d9759ee3e3ef401c142ee17a}{print}} (char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Print a message to the serial port. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__armuro_ga723a7566bee8647143479ade219e8814}{map}} (int32\+\_\+t x, int32\+\_\+t in\+\_\+min, int32\+\_\+t in\+\_\+max, int32\+\_\+t out\+\_\+min, int32\+\_\+t out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Map a value from one range to another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga878c0a8823e11617b6b8f7192807bafa}{turn\+Motor}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor, int direction, int speed)
+\begin{DoxyCompactList}\small\item\em Activate the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga5d104fdb4976b0f57b1fed60a335bdba}{stop\+Motor}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor)
+\begin{DoxyCompactList}\small\item\em Stop the motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_gabff02d95cbc134c0ac694758ff6961e3}{set\+LED}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} led, int \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}})
+\begin{DoxyCompactList}\small\item\em Turn the led on the side on and off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga1aa84bcd500ca4114bc89710357f1c48}{set\+Rear\+LED}} (int \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}})
+\begin{DoxyCompactList}\small\item\em Set the rear LED on or off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga8b626121b9ce251e41486740f5f76356}{did\+Read\+Sensors}} (uint32\+\_\+t $\ast$values)
+\begin{DoxyCompactList}\small\item\em Handle a new value from the sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga4c151a7c1ee7f60b1080ce8c198beb53}{did\+Read\+Wheel\+Encoder}} (uint32\+\_\+t left\+Value, uint32\+\_\+t right\+Value)
+\begin{DoxyCompactList}\small\item\em Handle a new value from the wheel encoders. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga988b6cc75281ebdac3130eb04108bec4}{reset\+Angle\+Measurement}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\begin{DoxyCompactList}\small\item\em Reset the angle measurement for the wheels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga44b34ea8943304233fd99b81d6b25f6c}{stop\+Angle\+Measurement}} (\mbox{\hyperlink{struct_wheel_angle}{Wheel\+Angle}} $\ast$angle)
+\begin{DoxyCompactList}\small\item\em Stop measuring the angle for the wheels. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__armuro_gafe1c4888aa9ba01a919d28eec18847fa}{get\+Angle\+For\+Wheel}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel)
+\begin{DoxyCompactList}\small\item\em et the Angle (in degrees) for the wheel \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga724c58b78a7093d7bac96cdd4eb47453}{get\+Angle\+For\+Wheels}} (int $\ast$left\+Angle, int $\ast$right\+Angle)
+\begin{DoxyCompactList}\small\item\em Get the Angle (in degrees) for the wheels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga962d993161668beac5e5d4647af1e9ce}{get\+Raw\+Line\+Sensor\+Readings}} (uint32\+\_\+t $\ast$left, uint32\+\_\+t $\ast$middle, uint32\+\_\+t $\ast$right)
+\begin{DoxyCompactList}\small\item\em Get the raw readings of the line sensors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__armuro_ga7e9b4a2ece50e9599410c20a63be6a3f}{get\+Line\+Sensor\+Readings}} (uint32\+\_\+t $\ast$left, uint32\+\_\+t $\ast$middle, uint32\+\_\+t $\ast$right)
+\begin{DoxyCompactList}\small\item\em Get the readings of the line sensors mapped to their typical range (0 -\/ 1023) \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__armuro_ga1020aad5750784b2b465cc5a5748af5c}{map\+Line\+Sensor\+Reading\+To\+Range}} (uint32\+\_\+t value, \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side)
+\begin{DoxyCompactList}\small\item\em Map a line sensor reading to its typical range (0 -\/ 1023) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__armuro_gaadb1acbbedc62f22c4a6daf7122d5c89}{distance\+To\+Angle}} (double distance)
+\begin{DoxyCompactList}\small\item\em Translate a distance (in cm) to an angle (in degrees) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__armuro_gadf67d54477e61cf75999e0da96dc9986}{angle\+To\+Distance}} (int angle)
+\begin{DoxyCompactList}\small\item\em Get the Distance (in cm) for an angle (in degrees) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{group__armuro_ga87bc0d1098809563b89238736d915a8d}{speed\+Difference\+For\+Radius}} (double radius)
+\begin{DoxyCompactList}\small\item\em Calculate the speed difference for the wheels to drive a circle with the given radius. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__armuro_ga082783e97b1b19d4cd3a8da051daa985}{check\+Switches\+Pressed}} (\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} $\ast$side)
+\begin{DoxyCompactList}\small\item\em Check if a switch is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manage the hardware of the Armuro Robot. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__armuro_gadf67d54477e61cf75999e0da96dc9986}\label{group__armuro_gadf67d54477e61cf75999e0da96dc9986}} 
+\index{Armuro Hardware@{Armuro Hardware}!angleToDistance@{angleToDistance}}
+\index{angleToDistance@{angleToDistance}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{angleToDistance()}{angleToDistance()}}
+{\footnotesize\ttfamily double angle\+To\+Distance (\begin{DoxyParamCaption}\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+Get the Distance (in cm) for an angle (in degrees) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle for which the distance should be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the distance for the angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_ga082783e97b1b19d4cd3a8da051daa985}\label{group__armuro_ga082783e97b1b19d4cd3a8da051daa985}} 
+\index{Armuro Hardware@{Armuro Hardware}!checkSwitchesPressed@{checkSwitchesPressed}}
+\index{checkSwitchesPressed@{checkSwitchesPressed}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{checkSwitchesPressed()}{checkSwitchesPressed()}}
+{\footnotesize\ttfamily uint8\+\_\+t check\+Switches\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} $\ast$}]{side }\end{DoxyParamCaption})}
+
+
+
+Check if a switch is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & a pointer to store the pressed switch in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a switch is pressed, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_ga8b626121b9ce251e41486740f5f76356}\label{group__armuro_ga8b626121b9ce251e41486740f5f76356}} 
+\index{Armuro Hardware@{Armuro Hardware}!didReadSensors@{didReadSensors}}
+\index{didReadSensors@{didReadSensors}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{didReadSensors()}{didReadSensors()}}
+{\footnotesize\ttfamily void did\+Read\+Sensors (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{values }\end{DoxyParamCaption})}
+
+
+
+Handle a new value from the sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & an array of 6 values, containing the sensor readigns \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga4c151a7c1ee7f60b1080ce8c198beb53}\label{group__armuro_ga4c151a7c1ee7f60b1080ce8c198beb53}} 
+\index{Armuro Hardware@{Armuro Hardware}!didReadWheelEncoder@{didReadWheelEncoder}}
+\index{didReadWheelEncoder@{didReadWheelEncoder}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{didReadWheelEncoder()}{didReadWheelEncoder()}}
+{\footnotesize\ttfamily void did\+Read\+Wheel\+Encoder (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{left\+Value,  }\item[{uint32\+\_\+t}]{right\+Value }\end{DoxyParamCaption})}
+
+
+
+Handle a new value from the wheel encoders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Value} & the value of the left wheel encoder \\
+\hline
+{\em right\+Value} & the value of the right wheel encoder \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_gaadb1acbbedc62f22c4a6daf7122d5c89}\label{group__armuro_gaadb1acbbedc62f22c4a6daf7122d5c89}} 
+\index{Armuro Hardware@{Armuro Hardware}!distanceToAngle@{distanceToAngle}}
+\index{distanceToAngle@{distanceToAngle}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{distanceToAngle()}{distanceToAngle()}}
+{\footnotesize\ttfamily int distance\+To\+Angle (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Translate a distance (in cm) to an angle (in degrees) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & the distance for which the angle should be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the angle for the distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_gafe1c4888aa9ba01a919d28eec18847fa}\label{group__armuro_gafe1c4888aa9ba01a919d28eec18847fa}} 
+\index{Armuro Hardware@{Armuro Hardware}!getAngleForWheel@{getAngleForWheel}}
+\index{getAngleForWheel@{getAngleForWheel}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{getAngleForWheel()}{getAngleForWheel()}}
+{\footnotesize\ttfamily int get\+Angle\+For\+Wheel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{wheel }\end{DoxyParamCaption})}
+
+
+
+et the Angle (in degrees) for the wheel 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wheel} & the wheel for which the angle should be returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the angle of the wheel in degrees 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_ga724c58b78a7093d7bac96cdd4eb47453}\label{group__armuro_ga724c58b78a7093d7bac96cdd4eb47453}} 
+\index{Armuro Hardware@{Armuro Hardware}!getAngleForWheels@{getAngleForWheels}}
+\index{getAngleForWheels@{getAngleForWheels}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{getAngleForWheels()}{getAngleForWheels()}}
+{\footnotesize\ttfamily void get\+Angle\+For\+Wheels (\begin{DoxyParamCaption}\item[{int $\ast$}]{left\+Angle,  }\item[{int $\ast$}]{right\+Angle }\end{DoxyParamCaption})}
+
+
+
+Get the Angle (in degrees) for the wheels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Angle} & a pointer to a variable in which the left angle should be stored \\
+\hline
+{\em right\+Angle} & a pointer to a variable in which the right angle should be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga7e9b4a2ece50e9599410c20a63be6a3f}\label{group__armuro_ga7e9b4a2ece50e9599410c20a63be6a3f}} 
+\index{Armuro Hardware@{Armuro Hardware}!getLineSensorReadings@{getLineSensorReadings}}
+\index{getLineSensorReadings@{getLineSensorReadings}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{getLineSensorReadings()}{getLineSensorReadings()}}
+{\footnotesize\ttfamily void get\+Line\+Sensor\+Readings (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{left,  }\item[{uint32\+\_\+t $\ast$}]{middle,  }\item[{uint32\+\_\+t $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+Get the readings of the line sensors mapped to their typical range (0 -\/ 1023) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & a pointer to a variable in which the left sensor reading should be stored \\
+\hline
+{\em middle} & a pointer to a variable in which the middle sensor reading should be stored \\
+\hline
+{\em right} & a pointer to a variable in which the right sensor reading should be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga962d993161668beac5e5d4647af1e9ce}\label{group__armuro_ga962d993161668beac5e5d4647af1e9ce}} 
+\index{Armuro Hardware@{Armuro Hardware}!getRawLineSensorReadings@{getRawLineSensorReadings}}
+\index{getRawLineSensorReadings@{getRawLineSensorReadings}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{getRawLineSensorReadings()}{getRawLineSensorReadings()}}
+{\footnotesize\ttfamily void get\+Raw\+Line\+Sensor\+Readings (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{left,  }\item[{uint32\+\_\+t $\ast$}]{middle,  }\item[{uint32\+\_\+t $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+
+Get the raw readings of the line sensors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & a pointer to a variable in which the left sensor reading should be stored \\
+\hline
+{\em middle} & a pointer to a variable in which the middle sensor reading should be stored \\
+\hline
+{\em right} & a pointer to a variable in which the right sensor reading should be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga723a7566bee8647143479ade219e8814}\label{group__armuro_ga723a7566bee8647143479ade219e8814}} 
+\index{Armuro Hardware@{Armuro Hardware}!map@{map}}
+\index{map@{map}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily int32\+\_\+t map (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{x,  }\item[{int32\+\_\+t}]{in\+\_\+min,  }\item[{int32\+\_\+t}]{in\+\_\+max,  }\item[{int32\+\_\+t}]{out\+\_\+min,  }\item[{int32\+\_\+t}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Map a value from one range to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the value to map \\
+\hline
+{\em in\+\_\+min} & the minimum value of the input range \\
+\hline
+{\em in\+\_\+max} & the maximum value of the input range \\
+\hline
+{\em out\+\_\+min} & the minimum value of the output range \\
+\hline
+{\em out\+\_\+max} & the maximum value of the output range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value mapped to the output range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_ga1020aad5750784b2b465cc5a5748af5c}\label{group__armuro_ga1020aad5750784b2b465cc5a5748af5c}} 
+\index{Armuro Hardware@{Armuro Hardware}!mapLineSensorReadingToRange@{mapLineSensorReadingToRange}}
+\index{mapLineSensorReadingToRange@{mapLineSensorReadingToRange}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{mapLineSensorReadingToRange()}{mapLineSensorReadingToRange()}}
+{\footnotesize\ttfamily uint32\+\_\+t map\+Line\+Sensor\+Reading\+To\+Range (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value,  }\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{side }\end{DoxyParamCaption})}
+
+
+
+Map a line sensor reading to its typical range (0 -\/ 1023) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & the value to map \\
+\hline
+{\em side} & the side on which the sensor is located \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the mapped value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_gaaa243895d9759ee3e3ef401c142ee17a}\label{group__armuro_gaaa243895d9759ee3e3ef401c142ee17a}} 
+\index{Armuro Hardware@{Armuro Hardware}!print@{print}}
+\index{print@{print}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Print a message to the serial port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & the format of the message \\
+\hline
+{\em ...} & the parameters for the format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga988b6cc75281ebdac3130eb04108bec4}\label{group__armuro_ga988b6cc75281ebdac3130eb04108bec4}} 
+\index{Armuro Hardware@{Armuro Hardware}!resetAngleMeasurement@{resetAngleMeasurement}}
+\index{resetAngleMeasurement@{resetAngleMeasurement}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{resetAngleMeasurement()}{resetAngleMeasurement()}}
+{\footnotesize\ttfamily void reset\+Angle\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{wheel }\end{DoxyParamCaption})}
+
+
+
+Reset the angle measurement for the wheels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wheel} & the wheel for which the angle measurement should be reset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_gabff02d95cbc134c0ac694758ff6961e3}\label{group__armuro_gabff02d95cbc134c0ac694758ff6961e3}} 
+\index{Armuro Hardware@{Armuro Hardware}!setLED@{setLED}}
+\index{setLED@{setLED}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{setLED()}{setLED()}}
+{\footnotesize\ttfamily void set\+LED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{led,  }\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Turn the led on the side on and off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led} & the side on which the led should be controlled \\
+\hline
+{\em state} & the state of the LED (HIGH or LOW) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga1aa84bcd500ca4114bc89710357f1c48}\label{group__armuro_ga1aa84bcd500ca4114bc89710357f1c48}} 
+\index{Armuro Hardware@{Armuro Hardware}!setRearLED@{setRearLED}}
+\index{setRearLED@{setRearLED}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{setRearLED()}{setRearLED()}}
+{\footnotesize\ttfamily void set\+Rear\+LED (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
+
+
+
+Set the rear LED on or off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state of the LED (HIGH or LOW) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga87bc0d1098809563b89238736d915a8d}\label{group__armuro_ga87bc0d1098809563b89238736d915a8d}} 
+\index{Armuro Hardware@{Armuro Hardware}!speedDifferenceForRadius@{speedDifferenceForRadius}}
+\index{speedDifferenceForRadius@{speedDifferenceForRadius}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{speedDifferenceForRadius()}{speedDifferenceForRadius()}}
+{\footnotesize\ttfamily double speed\+Difference\+For\+Radius (\begin{DoxyParamCaption}\item[{double}]{radius }\end{DoxyParamCaption})}
+
+
+
+Calculate the speed difference for the wheels to drive a circle with the given radius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em radius} & the radius (in cm) of the circle to drive (to the middle of the robot) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the factor by which the speed of the outer wheel should be multiplied to get the speed for the inner wheel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__armuro_ga44b34ea8943304233fd99b81d6b25f6c}\label{group__armuro_ga44b34ea8943304233fd99b81d6b25f6c}} 
+\index{Armuro Hardware@{Armuro Hardware}!stopAngleMeasurement@{stopAngleMeasurement}}
+\index{stopAngleMeasurement@{stopAngleMeasurement}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{stopAngleMeasurement()}{stopAngleMeasurement()}}
+{\footnotesize\ttfamily void stop\+Angle\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_wheel_angle}{Wheel\+Angle}} $\ast$}]{angle }\end{DoxyParamCaption})}
+
+
+
+Stop measuring the angle for the wheels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle struct to stop measuring for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga5d104fdb4976b0f57b1fed60a335bdba}\label{group__armuro_ga5d104fdb4976b0f57b1fed60a335bdba}} 
+\index{Armuro Hardware@{Armuro Hardware}!stopMotor@{stopMotor}}
+\index{stopMotor@{stopMotor}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{stopMotor()}{stopMotor()}}
+{\footnotesize\ttfamily void stop\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+Stop the motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & the motor to stop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__armuro_ga878c0a8823e11617b6b8f7192807bafa}\label{group__armuro_ga878c0a8823e11617b6b8f7192807bafa}} 
+\index{Armuro Hardware@{Armuro Hardware}!turnMotor@{turnMotor}}
+\index{turnMotor@{turnMotor}!Armuro Hardware@{Armuro Hardware}}
+\doxysubsubsection{\texorpdfstring{turnMotor()}{turnMotor()}}
+{\footnotesize\ttfamily void turn\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}}]{motor,  }\item[{int}]{direction,  }\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Activate the motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & the motor to activate \\
+\hline
+{\em direction} & the direction in which the motor should turn \\
+\hline
+{\em speed} & the speed at which the motor should turn (in \%) \\
+\hline
+\end{DoxyParams}

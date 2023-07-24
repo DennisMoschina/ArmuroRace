@@ -1,0 +1,95 @@
+\hypertarget{armuro_8h_source}{}\doxysection{armuro.\+h}
+\label{armuro_8h_source}\index{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h@{/Users/dennis/CloudStation/Studium/Mobile Roboter/Software/lib/armuro/armuro.h}}
+\mbox{\hyperlink{armuro_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_ARMURO\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_ARMURO\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define FORWARD 0}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define BACKWARD 1}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define HIGH 1}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define LOW 0}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define WHEEL\_CIRCUMFERENCE 12.566}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define TURN\_CIRCUMFERENCE 24.504422698}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define WHEEL\_DISTANCE 7.8}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define ARMURO\_LENGTH 9}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MIN\_ANGLE 15}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define MAX\_LEFT\_LINE\_SENSOR\_VALUE 3380}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define MAX\_MIDDLE\_LINE\_SENSOR\_VALUE 3380}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define MAX\_RIGHT\_LINE\_SENSOR\_VALUE 2900}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define MIN\_LEFT\_LINE\_SENSOR\_VALUE 1250}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define MIN\_MIDDLE\_LINE\_SENSOR\_VALUE 1120}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define MIN\_RIGHT\_LINE\_SENSOR\_VALUE 170}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <stdarg.h>}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{32 \textcolor{keyword}{extern} uint32\_t \mbox{\hyperlink{armuro_8h_abf0f857f7e7bc4d0ab7f4d1ff63bec22}{minLineSensorValues}}[3];}
+\DoxyCodeLine{33 \textcolor{keyword}{extern} uint32\_t \mbox{\hyperlink{armuro_8h_ad2e792f64c824c5201ee3ffdba2f5183}{maxLineSensorValues}}[3];}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{extern} uint16\_t \mbox{\hyperlink{armuro_8h_abed556648db33e08fcbfdc5a83ab48d0}{wheelEncoderTicksCount}}[2];}
+\DoxyCodeLine{36 \textcolor{keyword}{extern} uint32\_t \mbox{\hyperlink{armuro_8h_a8ef1e077dd0fbe9fd090ab74ddea94c5}{buffer}}[6];}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{39     \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00aec8379af7490bb9eaaf579cf17876f38}{RIGHT}} = 0,}
+\DoxyCodeLine{40     \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00adb45120aafd37a973140edee24708065}{LEFT}} = 1,}
+\DoxyCodeLine{41     \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00a1a2710fb8b50ea593b207d1e79fea574}{MIDDLE}} = 3}
+\DoxyCodeLine{42 \} \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_wheel_angle_ad8f5e19e19f12974c9713e920ec54331}{left}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_wheel_angle_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{47     }
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_wheel_angle_afe6f7ec748e85357bc6515bbebbf1880}{leftTicks}};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_wheel_angle_adeec44f0a1a03bb9acba0acc6b2d50e7}{rightTicks}};}
+\DoxyCodeLine{50 \} \mbox{\hyperlink{struct_wheel_angle}{WheelAngle}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_gaaa243895d9759ee3e3ef401c142ee17a}{print}}(\textcolor{keywordtype}{char}* format, ...);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{72 int32\_t \mbox{\hyperlink{group__armuro_ga723a7566bee8647143479ade219e8814}{map}}(int32\_t x, int32\_t in\_min, int32\_t in\_max, int32\_t out\_min, int32\_t out\_max);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{armuro_8h_a984b662dbcf5b55b90fc02e2f866a206}{initMotors}}();}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{87 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga878c0a8823e11617b6b8f7192807bafa}{turnMotor}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor, \textcolor{keywordtype}{int} direction, \textcolor{keywordtype}{int} speed);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{95 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga5d104fdb4976b0f57b1fed60a335bdba}{stopMotor}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} motor);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_gabff02d95cbc134c0ac694758ff6961e3}{setLED}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} led, \textcolor{keywordtype}{int} \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga1aa84bcd500ca4114bc89710357f1c48}{setRearLED}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{group__parcour_ga876b486d3a5241a126bd5751c5f70f79}{state}});}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga8b626121b9ce251e41486740f5f76356}{didReadSensors}}(uint32\_t* values);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga4c151a7c1ee7f60b1080ce8c198beb53}{didReadWheelEncoder}}(uint32\_t leftValue, uint32\_t rightValue);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga988b6cc75281ebdac3130eb04108bec4}{resetAngleMeasurement}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144 \mbox{\hyperlink{struct_wheel_angle}{WheelAngle}}* \mbox{\hyperlink{armuro_8h_a211c5cc06a9b16ff0b76fbd4b5507192}{startAngleMeasurement}}();}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{152 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga44b34ea8943304233fd99b81d6b25f6c}{stopAngleMeasurement}}(\mbox{\hyperlink{struct_wheel_angle}{WheelAngle}}* angle);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__armuro_gafe1c4888aa9ba01a919d28eec18847fa}{getAngleForWheel}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} wheel);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{170 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga724c58b78a7093d7bac96cdd4eb47453}{getAngleForWheels}}(\textcolor{keywordtype}{int}* leftAngle, \textcolor{keywordtype}{int}* rightAngle);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{180 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga962d993161668beac5e5d4647af1e9ce}{getRawLineSensorReadings}}(uint32\_t* left, uint32\_t* middle, uint32\_t* right);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{190 \textcolor{keywordtype}{void} \mbox{\hyperlink{group__armuro_ga7e9b4a2ece50e9599410c20a63be6a3f}{getLineSensorReadings}}(uint32\_t* left, uint32\_t* middle, uint32\_t* right);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{200 uint32\_t \mbox{\hyperlink{group__armuro_ga1020aad5750784b2b465cc5a5748af5c}{mapLineSensorReadingToRange}}(uint32\_t value, \mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}} side);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{209 \textcolor{keywordtype}{int} \mbox{\hyperlink{group__armuro_gaadb1acbbedc62f22c4a6daf7122d5c89}{distanceToAngle}}(\textcolor{keywordtype}{double} distance);}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{218 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__armuro_gadf67d54477e61cf75999e0da96dc9986}{angleToDistance}}(\textcolor{keywordtype}{int} angle);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{227 \textcolor{keywordtype}{double} \mbox{\hyperlink{group__armuro_ga87bc0d1098809563b89238736d915a8d}{speedDifferenceForRadius}}(\textcolor{keywordtype}{double} radius);}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{236 uint8\_t \mbox{\hyperlink{group__armuro_ga082783e97b1b19d4cd3a8da051daa985}{checkSwitchesPressed}}(\mbox{\hyperlink{armuro_8h_a8c0137d7160ad71b6ed265c53c99ed00}{Side}}* side);}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,185 @@
+\hypertarget{group__obstacle_avoidance}{}\doxysection{Obstacle Avoidance}
+\label{group__obstacle_avoidance}\index{Obstacle Avoidance@{Obstacle Avoidance}}
+
+
+Let the robot avoid obstacles.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}}
+\begin{DoxyCompactList}\small\item\em The configuration for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \mbox{\hyperlink{group__obstacle_avoidance_gae3d472f49d0079368727c92862c0ece7}{Obstacle\+Avoidance\+State}}
+\begin{DoxyCompactList}\small\item\em The state machine for the obstacle avoidance. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{group__obstacle_avoidance_gae8584b37b6405204d6dc179d4ba3dd52}{Obstacle\+Avoidance\+Config}}
+\begin{DoxyCompactList}\small\item\em The configuration for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \{ \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a32ae2d3413ea9dcf77f3bc2a8c54059d}{BACK\+\_\+\+OFF}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}{TURN\+\_\+\+FROM\+\_\+\+OBSTACLE}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a0577326eb8a7ac46891961a76869c664}{DRIVE\+\_\+\+CIRCLE}}
+, \mbox{\hyperlink{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351ae8ef0119cb02ae7e5d8a3e1bc65c559d}{OBSTACLE\+\_\+\+AVOIDANCE\+\_\+\+DONE}}
+ \}
+\begin{DoxyCompactList}\small\item\em The state machine for the obstacle avoidance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{group__obstacle_avoidance_gae5228fb93fea5488c6af948f499e1c32}{configure\+Obstacle\+Avoidance}} (double obstacle\+Radius, int attack\+Angle)
+\begin{DoxyCompactList}\small\item\em Configure the obstacle avoidance task with the given parameters. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__obstacle_avoidance_ga73f1f2c9532b66f8163750b82e01c04f}{check\+For\+Obstacle}} ()
+\begin{DoxyCompactList}\small\item\em Check if there is an obstacle in front of the robot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__obstacle_avoidance_ga7de9c96d3932678d9e17241708df7a8c}{avoid\+Obstacle}} ()
+\begin{DoxyCompactList}\small\item\em Configure the obstacle avoidance task. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{group__obstacle_avoidance_gaef65571acb1fd02e7d23b8661f7e9553}{avoid\+Obstacle\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Run the obstacle avoidance task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Let the robot avoid obstacles. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__obstacle_avoidance_gae8584b37b6405204d6dc179d4ba3dd52}\label{group__obstacle_avoidance_gae8584b37b6405204d6dc179d4ba3dd52}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}}
+\index{ObstacleAvoidanceConfig@{ObstacleAvoidanceConfig}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{ObstacleAvoidanceConfig}{ObstacleAvoidanceConfig}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}}}
+
+
+
+The configuration for the obstacle avoidance. 
+
+\mbox{\Hypertarget{group__obstacle_avoidance_gae3d472f49d0079368727c92862c0ece7}\label{group__obstacle_avoidance_gae3d472f49d0079368727c92862c0ece7}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceState@{ObstacleAvoidanceState}}
+\index{ObstacleAvoidanceState@{ObstacleAvoidanceState}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{ObstacleAvoidanceState}{ObstacleAvoidanceState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}} \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}}}
+
+
+
+The state machine for the obstacle avoidance. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}\label{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!ObstacleAvoidanceState@{ObstacleAvoidanceState}}
+\index{ObstacleAvoidanceState@{ObstacleAvoidanceState}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{ObstacleAvoidanceState}{ObstacleAvoidanceState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}}}
+
+
+
+The state machine for the obstacle avoidance. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BACK\_OFF@{BACK\_OFF}!Obstacle Avoidance@{Obstacle Avoidance}}\index{Obstacle Avoidance@{Obstacle Avoidance}!BACK\_OFF@{BACK\_OFF}}}\mbox{\Hypertarget{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a32ae2d3413ea9dcf77f3bc2a8c54059d}\label{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a32ae2d3413ea9dcf77f3bc2a8c54059d}} 
+BACK\+\_\+\+OFF&Backing off from the obstacle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_FROM\_OBSTACLE@{TURN\_FROM\_OBSTACLE}!Obstacle Avoidance@{Obstacle Avoidance}}\index{Obstacle Avoidance@{Obstacle Avoidance}!TURN\_FROM\_OBSTACLE@{TURN\_FROM\_OBSTACLE}}}\mbox{\Hypertarget{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}\label{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a371447127fc0aa90951f1f38ec1dd27c}} 
+TURN\+\_\+\+FROM\+\_\+\+OBSTACLE&Turning from the obstacle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DRIVE\_CIRCLE@{DRIVE\_CIRCLE}!Obstacle Avoidance@{Obstacle Avoidance}}\index{Obstacle Avoidance@{Obstacle Avoidance}!DRIVE\_CIRCLE@{DRIVE\_CIRCLE}}}\mbox{\Hypertarget{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a0577326eb8a7ac46891961a76869c664}\label{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351a0577326eb8a7ac46891961a76869c664}} 
+DRIVE\+\_\+\+CIRCLE&Driving a circle around the obstacle. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBSTACLE\_AVOIDANCE\_DONE@{OBSTACLE\_AVOIDANCE\_DONE}!Obstacle Avoidance@{Obstacle Avoidance}}\index{Obstacle Avoidance@{Obstacle Avoidance}!OBSTACLE\_AVOIDANCE\_DONE@{OBSTACLE\_AVOIDANCE\_DONE}}}\mbox{\Hypertarget{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351ae8ef0119cb02ae7e5d8a3e1bc65c559d}\label{group__obstacle_avoidance_ggaf1a160909b2ad83c80354b0080d99351ae8ef0119cb02ae7e5d8a3e1bc65c559d}} 
+OBSTACLE\+\_\+\+AVOIDANCE\+\_\+\+DONE&Finished driving around the obstacle. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__obstacle_avoidance_ga7de9c96d3932678d9e17241708df7a8c}\label{group__obstacle_avoidance_ga7de9c96d3932678d9e17241708df7a8c}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!avoidObstacle@{avoidObstacle}}
+\index{avoidObstacle@{avoidObstacle}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{avoidObstacle()}{avoidObstacle()}}
+{\footnotesize\ttfamily void avoid\+Obstacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Configure the obstacle avoidance task. 
+
+Back off from the obstacle, and drive a circle around it to avoid it. This behaviour is implemented in a state machine in \mbox{\hyperlink{group__obstacle_avoidance_gaf1a160909b2ad83c80354b0080d99351}{Obstacle\+Avoidance\+State}}. \mbox{\Hypertarget{group__obstacle_avoidance_gaef65571acb1fd02e7d23b8661f7e9553}\label{group__obstacle_avoidance_gaef65571acb1fd02e7d23b8661f7e9553}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!avoidObstacleTask@{avoidObstacleTask}}
+\index{avoidObstacleTask@{avoidObstacleTask}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{avoidObstacleTask()}{avoidObstacleTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{state_machine_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} avoid\+Obstacle\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the obstacle avoidance task. 
+
+\begin{DoxyNote}{Note}
+This method should be called in the main loop of the program as frequent as possible to assure the correct timing.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+RUNNING if task is still running, FINISHED if task is finished 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__obstacle_avoidance_ga73f1f2c9532b66f8163750b82e01c04f}\label{group__obstacle_avoidance_ga73f1f2c9532b66f8163750b82e01c04f}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!checkForObstacle@{checkForObstacle}}
+\index{checkForObstacle@{checkForObstacle}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{checkForObstacle()}{checkForObstacle()}}
+{\footnotesize\ttfamily uint8\+\_\+t check\+For\+Obstacle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if there is an obstacle in front of the robot. 
+
+Checks all three switches in the front of the robot to detect an obstacle.
+
+\begin{DoxyReturn}{Returns}
+true if there is an obstacle, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__obstacle_avoidance_gae5228fb93fea5488c6af948f499e1c32}\label{group__obstacle_avoidance_gae5228fb93fea5488c6af948f499e1c32}} 
+\index{Obstacle Avoidance@{Obstacle Avoidance}!configureObstacleAvoidance@{configureObstacleAvoidance}}
+\index{configureObstacleAvoidance@{configureObstacleAvoidance}!Obstacle Avoidance@{Obstacle Avoidance}}
+\doxysubsubsection{\texorpdfstring{configureObstacleAvoidance()}{configureObstacleAvoidance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} configure\+Obstacle\+Avoidance (\begin{DoxyParamCaption}\item[{double}]{obstacle\+Radius,  }\item[{int}]{attack\+Angle }\end{DoxyParamCaption})}
+
+
+
+Configure the obstacle avoidance task with the given parameters. 
+
+Calculate the distance to back off from the obstacle, the radius of the circle to drive around the obstacle, and the distance to drive around the obstacle based on the desired angel of attack and the radius of the obstacle. The minimum distance to the obstacle is always the same, no matter the parameters.  
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{ObstacleAvoidance.png}}
+\end{DoxyImageNoCaption}
+  \[
+             \beta = 90 - \alpha
+         \]  \[
+             s = sin(\beta) \cdot r
+         \]  \[
+             h = r - s = r_o + \delta + \frac{1}{2} w
+         \]  \[
+             r = \frac{1}{1 - sin(\beta)} \cdot h
+         \]  \[
+             d = cos(\beta) \cdot r
+         \]  \[
+             b = r \cdot (\pi - 2 \cdot sin(\beta))
+         \] where $\alpha$ is the attack angle, ~\newline
+ $\delta$ is the safety distance, ~\newline
+ $w$ is the wheel distance, ~\newline
+ $d$ is the distance to back off from the obstacle, ~\newline
+ $r$ is the radius of the circle to drive around the obstacle, ~\newline
+ $b$ is the distance to drive around the obstacle
+
+
+\begin{DoxyParams}{Parameters}
+{\em obstacle\+Radius} & the radius of the obstacle \\
+\hline
+{\em attack\+Angle} & the angle to start the circle drive \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_obstacle_avoidance_config}{Obstacle\+Avoidance\+Config}} 
+\end{DoxyReturn}
