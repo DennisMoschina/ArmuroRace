@@ -116,8 +116,8 @@ void turnArmuro(int angle) {
     angleSetpoint[LEFT] = -distanceToAngle(distanceOnCircumference);
 
     // in this task the speedSetpoint is used to store the direction of an angle
-    speedSetpoint[RIGHT] = distanceOnCircumference;
-    speedSetpoint[LEFT] = distanceOnCircumference;
+    speedSetpoint[RIGHT] = angleSetpoint[RIGHT];
+    speedSetpoint[LEFT] = angleSetpoint[LEFT];
 
     resetAngleMeasurement(LEFT);
     resetAngleMeasurement(RIGHT);
@@ -289,12 +289,13 @@ void turnArmuroTask(Side wheel) {
     angleTimeout[wheel] = angleTimeout[wheel] + 100;
 
     int8_t angleSign = speedSetpoint[wheel] > 0 ? 1 : -1;
-    int speed = calculatePIDOutput(angleSetpoint[wheel], angleSign * getAngleForWheel(wheel), &wheelsPID[wheel]);
+    // int speed = calculatePIDOutput(angleSetpoint[wheel], angleSign * getAngleForWheel(wheel), &wheelsPID[wheel]);
+    int speed = 30 * angleSign;
 
     speedSetpoint[wheel] = speed;
 
-    if (speed > 50) { speed = 50; }
-    if (speed < -50) { speed = -50; }
+    if (speed > 30) { speed = 30; }
+    if (speed < -30) { speed = -30; }
 
     turnMotor(wheel, FORWARD, speed);
 }

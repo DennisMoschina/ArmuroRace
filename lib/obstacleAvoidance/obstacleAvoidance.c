@@ -36,7 +36,7 @@ ObstacleAvoidanceConfig configureObstacleAvoidance(double obstacleRadius, int at
     config.circleRadius = 1.0 / (1 - sin(betaRad)) * (obstacleRadius + SAFETY_DISTANCE + 0.5 * WHEEL_DISTANCE);
     config.backOffDistance = cos(betaRad) * config.circleRadius;
     config.attackAngle = attackAngle;
-    config.distanceToDrive = config.circleRadius * (M_PI - 2 * betaRad);
+    config.distanceToDrive = (config.circleRadius * (M_PI - 2 * betaRad)) + 5;
     return config;
 }
 

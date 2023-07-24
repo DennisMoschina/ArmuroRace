@@ -22,7 +22,7 @@ State trajectoryStateState = READY;
 
 void driveFirstTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50), 1);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(33), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TURN_TO_SECOND_TRAJECTORY_PART;
     } else {
@@ -38,7 +38,7 @@ void driveFirstTrajectoryPart() {
 void turnToSecondTrajectoryPart() {
     if (trajectoryStateState == READY) {
         print("setting up turn to second trajectory part\n");
-        turnArmuro(-150);
+        turnArmuro(110);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = DRIVE_SECOND_TRAJECTORY_PART;
     } else {
@@ -53,7 +53,7 @@ void turnToSecondTrajectoryPart() {
 
 void driveSecondTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(35.5), 1);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(66.2), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TURN_TO_THIRD_TRAJECTORY_PART;
     } else {
@@ -68,7 +68,7 @@ void driveSecondTrajectoryPart() {
 
 void turnToThirdTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnArmuro(90);
+        turnArmuro(-160);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = DRIVE_THIRD_TRAJECTORY_PART;
     } else {
@@ -83,7 +83,7 @@ void turnToThirdTrajectoryPart() {
 
 void driveThirdTrajectoryPart() {
     if (trajectoryStateState == READY) {
-        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(32.8), 1);
+        turnWheelsSynchronizedByAngle(70, 70, distanceToAngle(50), 1);
         trajectoryStateState = RUNNING;
         nextTrajectoryState = TRAJECTORY_DONE;
     } else {
